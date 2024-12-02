@@ -60,7 +60,7 @@
                 <textarea name="content" id="note-text" placeholder="Write your journal here..." required></textarea>
                 <input type="hidden" name="color" id="note-color">
                 <button type="submit">Add Journal</button>
-                <button type="button" class="close-btn" onclick="closePopup()">Cancel</button>
+                <button type="button" class="bg-gray-500 text-white p-2 rounded" onclick="closePopup()">Cancel</button>
             </form>
         </div>
     </div>

@@ -2,129 +2,246 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Mental Health Tracker Admin</title>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css') ?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 
 <body>
-    <input type="checkbox" id="nav-toggle">
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <h2>
-                <span class="fas fa-heart"></span>
-                <span> Mental Health<center>Tracker</center></span>
-            </h2>
-        </div>
-        <div class="sidebar-menu">
-            <ul>
-                <li><a href="#" class="active"><span class="las la-tachometer-alt"></span><span> Dashboard </span></a></li>
-                <li><a href="#"><span class="las la-chart-bar"></span><span> Analysis </span></a></li>
-                <li><a href="#"><span class="las la-comments"></span><span> Counseling </span></a></li>
-                <li><a href="#"><span class="las la-file-alt"></span><span> Content </span></a></li>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-heart"></i>
+                        <span class="menu-text">Mental Health <center>Tracker</center></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="las la-tachometer-alt"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="las la-chart-bar"></i>
+                        <span class="menu-text">Analysis</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="las la-comments"></i>
+                        <span class="menu-text">Counseling</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="las la-file-alt"></i>
+                        <span class="menu-text">Content</span>
+                    </a>
+                </li>
             </ul>
         </div>
-    </div>
-    <div class="main-content">
-        <header>
-            <h2>
-                <label for="nav-toggle">
-                    <span class="las la-bars"></span>
-                </label>
-                Dashboard
-            </h2>
-            <div class="user-wrapper">
-                <img src="<?php echo base_url('assets/img/2.jpeg') ?>" width="30" height="30" alt="User profile">
-                <div>
-                    <h4>SAASS</h4>
-                    <small>admin</small>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <div class="logo-container">
+                    <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
+                    <span class="site-name">Mindfulmatters</span>
                 </div>
-            </div>
-        </header>
-        <main>
-            <div class="cards">
-                <div class="card-single">
-                    <div>
-                        <h1>3</h1>
-                        <span>Total Accounts</span>
+                <div class="actions-container">
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Search..." />
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
-                    <div><span class="las la-users"></span></div>
-                </div>
-                <div class="card-single">
-                    <div>
-                        <h1>1</h1>
-                        <span>Total Journals</span>
-                    </div>
-                    <div><span class="las la-book-open"></span></div>
-                </div>
-            </div>
-            <div class="recent-grid">
-                <!-- Data User -->
-                <div class="data-user">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Data User</h3>
-                            <button>See all <span class="las la-arrow-right"></span></button>
+                    <div class="notification-container">
+                        <button class="notification-btn" id="notification-btn">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div class="notification-dropdown" id="notification-dropdown">
+                            <p>new notifications</p>
                         </div>
-                        <div class="card-body">
-                            <table width="100%">
-                                <thead>
-                                    <tr>
-                                        <td>Nama</td>
-                                        <td>Email</td>
-                                        <td>Role ID</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Sahlah R</td>
-                                        <td>sahla@gmail.com</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mahmud</td>
-                                        <td>Mahmud@gmail.com</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dadang</td>
-                                        <td>Dadang@gmail.com</td>
-                                        <td>1</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    </div>
+
+                    <div class="settings-container">
+                        <button class="settings-btn" id="settings-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="settings-dropdown" id="settings-dropdown">
+                            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                            <a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
                         </div>
                     </div>
                 </div>
-                <!-- Data Journal -->
-                <div class="data-journal">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Data Journal</h3>
-                            <button>See all <span class="las la-arrow-right"></span></button>
+            </header>
+
+            <section class="analytics">
+                <div class="analytics-card total-accounts">
+                    <i class="fas fa-user"></i>
+                    <div class="text-container">
+                        <h3>Total Accounts</h3>
+                        <p>200</p>
+                    </div>
+                </div>
+                <div class="analytics-card total-journal">
+                    <i class="fas fa-book"></i>
+                    <div class="text-container">
+                        <h3>Total Journal</h3>
+                        <p>35</p>
+                    </div>
+                </div>
+                <div class="analytics-card total-post">
+                    <i class="fas fa-pencil-alt"></i>
+                    <div class="text-container">
+                        <h3>Total Post</h3>
+                        <p>100</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tables-section">
+                <div class="tables-container">
+                    <!-- Table Pengguna -->
+                    <div class="table-box">
+                        <div class="table-header">
+                            <h3>Data Pengguna</h3>
+                            <button class="see-all-btn">See All</button>
                         </div>
-                        <div class="card-body">
-                            <table width="100%">
-                                <thead>
-                                    <tr>
-                                        <td>Journal</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Wopyu</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alwan N</td>
+                                    <td>Alwan@gmail.com</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>Jaehyun</td>
+                                    <td>masjae@gmail.com</td>
+                                    <td>Inactive</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Table Jurnal -->
+                    <div class="table-box">
+                        <div class="table-header">
+                            <h3>Data Jurnal</h3>
+                            <button class="see-all-btn">See All</button>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Judul</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-12-01</td>
+                                    <td>Jatuh Hati</td>
+                                    <td>Completed</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-12-02</td>
+                                    <td>Ada Apa dengan Cinta?</td>
+                                    <td>Pending</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <div class="weekly-analytics">
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h3>
+                            Weekly Activity Insights
+                            <div class="chart-options">
+                                <button id="barChartBtn" class="btn active">
+                                    <i class="fas fa-chart-bar"></i>
+                                </button>
+                                <button id="lineChartBtn" class="btn">
+                                    <i class="fas fa-chart-line"></i>
+                                </button>
+                            </div>
+                        </h3>
+                        <div class="chart-container">
+                            <canvas id="barChartCanvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <h3>
+                            Sentiment Overview
+                            <div class="chart-options">
+                                <button id="pieChartBtn" class="btn active">
+                                    <i class="fas fa-chart-pie"></i>
+                                </button>
+                            </div>
+                        </h3>
+                        <div class="chart-container">
+                            <canvas id="pieChartCanvas"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+
+        <!-- Profile Section -->
+        <div class="profile">
+            <div class="profile-header">
+                <div class="image-container">
+                    <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
+                    <button class="edit-btn" onclick="window.location.href='edit-profile.html'">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h4 id="userName">[Name]</h4>
+                    <p id="userRole">[Role]</p>
+                </div>
+            </div>
+            <div class="personal-info">
+                <h3>Personal Information</h3>
+                <ul>
+                    <li>Email: <span id="userEmail">[Email]</span></li>
+                    <li>Phone: <span id="userPhone">[Phone]</span></li>
+                    <li>Address: <span id="userAddress">[Address]</span></li>
+                </ul>
+            </div>
+            <div class="current-time">
+                <h3>Current Time</h3>
+                <div id="timeDisplay" class="time-display">--:--:--</div>
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="<?php echo base_url('assets/js/chart.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
 </body>
 
 </html>

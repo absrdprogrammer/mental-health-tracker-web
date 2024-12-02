@@ -107,34 +107,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Gaya teks konten */
-.note-card p {
-    font-size: 1rem; /* Ukuran teks */
-    font-weight: 600; /* Ketebalan teks */
-    color: white; /* Warna teks */
-    word-wrap: break-word; /* Memastikan teks membungkus */
-    white-space: normal; /* Membungkus teks panjang */
-    overflow: hidden; /* Menyembunyikan teks jika terlalu panjang */
-    margin: 0; /* Menghilangkan margin default */
-}
-
-/* Gaya ikon sebelum konten */
-.note-card i:first-child {
-    font-size: 1.5rem; /* Ukuran ikon */
-    color: white; /* Warna ikon */
-    display: block; /* Membuat elemen tampil di baris baru */
-    margin-bottom: 16px; /* Jarak bawah ikon */
-}
-
-/* Gaya ikon setelah konten */
-.note-card i:last-child {
-    font-size: 1.5rem; /* Ukuran ikon */
-    color: white; /* Warna ikon */
-    position: absolute; /* Posisi absolut */
-    bottom: 10px; /* Geser ke bawah */
-    right: 10px; /* Geser ke kanan */
-}
-
 .note {
     width: calc(32.345% - 45px);
     min-height: 120px;
@@ -147,21 +119,6 @@ body {
     justify-content: space-between;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.note-card {
-    width: calc(32.345% - 45px);
-    min-height: 120px;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-
 
 .note:hover {
     transform: translateY(-5px);
