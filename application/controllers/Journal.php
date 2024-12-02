@@ -26,7 +26,6 @@ class Journal extends CI_Controller
     public function create()
     {
         $color = $this->input->post('color') ?: '#ffffff'; // Default ke warna putih
-        log_message('info', 'Color received: ' . $color);
         $user_id = $this->session->userdata('user_id');
         $content = $this->input->post('content');
 
