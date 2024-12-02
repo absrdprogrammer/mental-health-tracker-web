@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2024 at 02:05 PM
+-- Generation Time: Dec 02, 2024 at 08:00 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -45,6 +45,7 @@ CREATE TABLE `journals` (
   `journal_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `content` text NOT NULL,
+  `color` varchar(7) NOT NULL,
   `sentiment` enum('Positive','Neutral','Negative') DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -54,17 +55,42 @@ CREATE TABLE `journals` (
 -- Dumping data for table `journals`
 --
 
-INSERT INTO `journals` (`journal_id`, `user_id`, `content`, `sentiment`, `created_at`, `updated_at`) VALUES
-(1, 1, 'erer', '', '2024-11-29 05:02:53', '2024-11-29 05:02:53'),
-(2, 1, 'dfdsf', '', '2024-11-29 05:03:12', '2024-11-29 05:03:12'),
-(3, 1, 'dfdg', '', '2024-11-29 05:04:12', '2024-11-29 05:04:12'),
-(4, 1, 'fdfef', '', '2024-11-29 05:05:07', '2024-11-29 05:05:07'),
-(5, 1, 'wrett', '', '2024-11-29 05:05:12', '2024-11-29 05:05:12'),
-(6, 1, 'ttr', 'Neutral', '2024-11-29 05:12:06', '2024-11-29 05:12:06'),
-(7, 1, 'hfjy', 'Neutral', '2024-11-29 05:12:13', '2024-11-29 05:12:13'),
-(8, 1, 'hjh', 'Neutral', '2024-11-29 05:57:50', '2024-11-29 05:57:50'),
-(9, 1, 'hjgjh', 'Neutral', '2024-11-29 06:25:28', '2024-11-29 06:25:28'),
-(10, 1, 'bhjkjhj', 'Neutral', '2024-11-29 06:25:42', '2024-11-29 06:25:42');
+INSERT INTO `journals` (`journal_id`, `user_id`, `content`, `color`, `sentiment`, `created_at`, `updated_at`) VALUES
+(23, 1, 'terre', '#ff8a65', 'Neutral', '2024-11-30 23:20:26', '2024-11-30 23:20:26'),
+(24, 1, 'eryt', '#ffd54f', 'Neutral', '2024-11-30 23:20:32', '2024-11-30 23:20:32'),
+(25, 1, 'rera', '#ffd54f', 'Neutral', '2024-11-30 23:20:37', '2024-11-30 23:20:37'),
+(26, 1, 'trtrtr', '#ff8a65', 'Neutral', '2024-11-30 23:20:42', '2024-11-30 23:20:42'),
+(27, 1, 'rretrtre', '#4fc3f7', 'Neutral', '2024-11-30 23:20:46', '2024-11-30 23:20:46'),
+(28, 1, 'retretretr', '#ba68c8', 'Neutral', '2024-11-30 23:20:51', '2024-11-30 23:20:51'),
+(29, 2, 'wgegre', '#ba68c8', 'Neutral', '2024-11-30 23:23:10', '2024-11-30 23:23:10'),
+(30, 1, 'ffgrgr', '#ffd54f', 'Neutral', '2024-12-01 19:25:27', '2024-12-01 19:25:27'),
+(31, 1, 'jhdjshkg', '#4fc3f7', 'Neutral', '2024-12-01 19:25:34', '2024-12-01 19:25:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `message_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `color` varchar(7) DEFAULT '#ffffff',
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_id`, `user_id`, `content`, `color`, `created_at`, `updated_at`) VALUES
+(9, 1, 'This is a test message for card display.', '#4fc3f7', '2024-12-02 10:48:55', '2024-12-02 10:48:55'),
+(10, 1, 'Another journal entry to check the style.', '#ffd54f', '2024-12-02 10:48:55', '2024-12-02 10:48:55'),
+(11, 1, 'Feeling a little down today, but pushing through.', '#ff8a65', '2024-12-02 10:48:55', '2024-12-02 10:48:55'),
+(12, 1, 'Excited for the new challenges ahead!', '#ba68c8', '2024-12-02 10:48:55', '2024-12-02 10:48:55'),
+(13, 1, 'hjfhjgf', '#ffd54f', '2024-12-02 05:41:47', '2024-12-02 05:41:47');
 
 -- --------------------------------------------------------
 
@@ -77,19 +103,6 @@ CREATE TABLE `mood_checkins` (
   `user_id` int(11) NOT NULL,
   `mood` enum('Happy','Sad','Neutral','Anxious','Excited') NOT NULL,
   `note` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `posts`
---
-
-CREATE TABLE `posts` (
-  `post_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -136,17 +149,17 @@ ALTER TABLE `journals`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`message_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `mood_checkins`
 --
 ALTER TABLE `mood_checkins`
   ADD PRIMARY KEY (`checkin_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`post_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -170,19 +183,19 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `journals`
 --
 ALTER TABLE `journals`
-  MODIFY `journal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `journal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `mood_checkins`
 --
 ALTER TABLE `mood_checkins`
   MODIFY `checkin_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -207,16 +220,16 @@ ALTER TABLE `journals`
   ADD CONSTRAINT `journals_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 --
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
 -- Constraints for table `mood_checkins`
 --
 ALTER TABLE `mood_checkins`
   ADD CONSTRAINT `mood_checkins_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `posts`
---
-ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
