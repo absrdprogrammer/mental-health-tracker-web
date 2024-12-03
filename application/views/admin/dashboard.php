@@ -184,7 +184,7 @@
                 <div class="charts-container">
                     <div class="chart-box">
                         <h3>
-                            Weekly Activity Insights
+                            Daily Mood Overview
                             <div class="chart-options">
                                 <button id="barChartBtn" class="btn active">
                                     <i class="fas fa-chart-bar"></i>
@@ -244,7 +244,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="<?php echo base_url('assets/js/chart_main.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/chart_admin.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
 </body>
 
