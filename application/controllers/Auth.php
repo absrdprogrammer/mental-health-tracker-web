@@ -40,7 +40,7 @@ class Auth extends CI_Controller
                 $this->session->set_userdata('username', $user['username']);
                 log_message('info', 'Session user_id set: ' . $this->session->userdata('user_id'));
 
-                redirect('journal'); // Ganti dengan controller dashboard
+                redirect('main'); // Ganti dengan controller dashboard
             } else {
                 $this->session->set_flashdata('error', 'Username atau password salah.');
                 redirect('auth');
@@ -65,6 +65,8 @@ class Auth extends CI_Controller
                 'email' => $this->input->post('email'),
                 'username' => $this->input->post('username'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
+                'registered_at' => date('Y-m-d H:i:s'),
+
             ];
             print_r($data);
 

@@ -94,21 +94,21 @@
                     <i class="fas fa-user"></i>
                     <div class="text-container">
                         <h3>Total Accounts</h3>
-                        <p>200</p>
+                        <p><?= $counts['total_users'] ?></p>
                     </div>
                 </div>
                 <div class="analytics-card total-journal">
                     <i class="fas fa-book"></i>
                     <div class="text-container">
                         <h3>Total Journal</h3>
-                        <p>35</p>
+                        <p><?= $counts['total_journals'] ?></p>
                     </div>
                 </div>
                 <div class="analytics-card total-post">
                     <i class="fas fa-pencil-alt"></i>
                     <div class="text-container">
                         <h3>Total Post</h3>
-                        <p>100</p>
+                        <p><?= $counts['total_messages'] ?></p>
                     </div>
                 </div>
             </section>
@@ -130,16 +130,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Alwan N</td>
-                                    <td>Alwan@gmail.com</td>
-                                    <td>Active</td>
-                                </tr>
-                                <tr>
-                                    <td>Jaehyun</td>
-                                    <td>masjae@gmail.com</td>
-                                    <td>Inactive</td>
-                                </tr>
+                                <?php if (!empty($users)): ?>
+                                    <?php foreach ($users as $user): ?>
+                                        <tr>
+                                            <td><?= htmlspecialchars($user['username']); ?></td>
+                                            <td><?= htmlspecialchars($user['email']); ?></td>
+                                            <td>
+                                                <?= $user['is_active'] ? 'Active' : 'Inactive'; ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="3">No users found.</td>
+                                    </tr>
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
@@ -219,15 +224,14 @@
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                 </div>
-                <div class="profile-info">
-                    <h4 id="userName">[Name]</h4>
-                    <p id="userRole">[Role]</p>
+                <div class="profile-info"><?= htmlspecialchars($userbyid['username']); ?></h4>
+                    <p id="userRole"><?= htmlspecialchars($userbyid['role']) ?></p>
                 </div>
             </div>
             <div class="personal-info">
                 <h3>Personal Information</h3>
                 <ul>
-                    <li>Email: <span id="userEmail">[Email]</span></li>
+                    <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
                     <li>Phone: <span id="userPhone">[Phone]</span></li>
                     <li>Address: <span id="userAddress">[Address]</span></li>
                 </ul>
@@ -240,7 +244,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="<?php echo base_url('assets/js/chart.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/chart_main.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
 </body>
 

@@ -138,14 +138,14 @@
                     </button>
                 </div>
                 <div class="profile-info">
-                    <h4 id="userName">[Name]</h4>
-                    <p id="userRole">[Role]</p>
+                    <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
+                    <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
                 </div>
             </div>
             <div class="personal-info">
                 <h3>Personal Information</h3>
                 <ul>
-                    <li>Email: <span id="userEmail">[Email]</span></li>
+                    <li>Email: <span id="userEmail"><?= htmlspecialchars($user['email']); ?></span></li>
                     <li>Phone: <span id="userPhone">[Phone]</span></li>
                     <li>Address: <span id="userAddress">[Address]</span></li>
                 </ul>
@@ -182,7 +182,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="<?php echo base_url('assets/js/chart.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/chart_main.js'); ?>"></script>
 </body>
 
 </html>
