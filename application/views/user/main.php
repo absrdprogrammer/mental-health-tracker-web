@@ -54,43 +54,49 @@
                     </div>
                 </div>
                 <div class="stats-section">
-                    <div class="stats-card">
-                        <h2>+11</h2>
-                        <p>Reviews</p>
-                        <canvas class="stat-chart"></canvas>
-                    </div>
-                    <div class="stats-card">
-                        <h2>+78</h2>
-                        <p>Patients</p>
-                        <canvas class="stat-chart"></canvas>
-                    </div>
-                </div>
+                    <!-- Journal Card -->
+            <div class="stats-card stats-journal" onclick="navigateToJournal()">
+              <h2>Journal</h2>
+              <p>View Your Journals</p>
+              <i class="fas fa-book-open"></i>
+            </div>
+
+            <!-- Wordspace Card (Motivation) -->
+            <div class="stats-card stats-wordspace">
+              <div class="decoration">
+                <i class="fas fa-comments"></i>
+                <p>Stay Motivated!</p>
+              </div>
+            </div>
+          </div>
             </header>
 
-            <h3>Your Progress</h3>
-            <section class="analytics">
-                <div class="analytics-card journey">
-                    <i class="fas fa-note-sticky"></i>
-                    <div class="text-container">
-                        <h3>Your Journey</h3>
-                        <p>You're on the right path!</p>
-                    </div>
-                </div>
-                <div class="analytics-card goals">
-                    <i class="fas fa-clipboard-list"></i>
-                    <div class="text-container">
-                        <h3>Goals</h3>
-                        <p>125 for the month</p>
-                    </div>
-                </div>
-                <div class="analytics-card progress">
-                    <i class="fas fa-file-waveform"></i>
-                    <div class="text-container">
-                        <h3>Total Wellness Progress</h3>
-                        <p>20+</p>
-                    </div>
-                </div>
-            </section>
+            <h3>Empower Your Mind</h3>
+            <section class="motivation-cards">
+          <!-- Motivational Card 1: Quote -->
+          <div class="motivation-card journey">
+            <div class="text-container">
+              <i class="fas fa-quote-left text-5xl text-orange-500 mb-4 mt-9"></i>
+              <p class="testimonial-text">Your mental health is a priority. <br />Your happiness is an essential. <br>Your self-care is a necessity.</p>
+            </div>
+          </div>
+
+          <!-- Motivational Card 2: Goals -->
+          <div class="motivation-card goals">
+            <div class="text-container">
+              <i class="fas fa-smile"></i>
+              <p class="testimonial-text">Dream big, work hard, stay focused, and make it happen.</p>
+            </div>
+          </div>
+
+          <!-- Motivational Card Progress -->
+          <div class="motivation-card progress">
+            <div class="text-container">
+              <i class="fas fa-heart"></i>
+              <p class="testimonial-text">You are stronger than you think.</p>
+            </div>
+          </div>
+        </section>
 
             <div class="weekly-analytics">
                 <div class="charts-container">
@@ -112,19 +118,7 @@
                     </div>
 
                     <!-- Pie Chart Card -->
-                    <div class="chart-box">
-                        <h3>
-                            Mood Tracker
-                            <div class="chart-options">
-                                <button id="pieChartBtn" class="btn active">
-                                    <i class="fas fa-chart-pie"></i>
-                                </button>
-                            </div>
-                        </h3>
-                        <div class="chart-container">
-                            <canvas id="pieChartCanvas"></canvas>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </main>
@@ -141,14 +135,6 @@
                     <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
                     <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
                 </div>
-            </div>
-            <div class="personal-info">
-                <h3>Personal Information</h3>
-                <ul>
-                    <li>Email: <span id="userEmail"><?= htmlspecialchars($user['email']); ?></span></li>
-                    <li>Phone: <span id="userPhone">[Phone]</span></li>
-                    <li>Address: <span id="userAddress">[Address]</span></li>
-                </ul>
             </div>
 
             <div class="mood-tracker">
@@ -169,14 +155,19 @@
                 </div>
             </div>
 
-            <!-- Progress -->
-            <div class="progress-section">
-                <h3>Progress</h3>
-                <div class="progress-bar">
-                    <div id="progressFill" class="progress-fill" style="width: 70%">70%</div>
-                </div>
-                <small>Based on your recent activities.</small>
-            </div>
+            <div class="chart-box">
+                        <h3>
+                            Mood Tracker
+                            <div class="chart-options">
+                                <button id="pieChartBtn" class="btn active">
+                                    <i class="fas fa-chart-pie"></i>
+                                </button>
+                            </div>
+                        </h3>
+                        <div class="chart-container">
+                            <canvas id="pieChartCanvas"></canvas>
+                        </div>
+                    </div>
         </div>
     </div>
     </div>
