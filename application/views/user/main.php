@@ -14,17 +14,15 @@
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
-            <button class="sidebar-toggle" id="sidebar-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="menu">
-                <li><a href="#"><i class="fas fa-tachometer-alt"></i></a></li>
-                <li><a href="#"><i class="fas fa-calendar-check"></i></a></li>
-                <li><a href="#"><i class="fas fa-user-injured"></i></a></li>
-                <li><a href="#"><i class="fas fa-flask"></i></a></li>
-            </ul>
-                    
+        <button class="sidebar-toggle" id="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="menu-bottom">
+          <button class="logout-btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
         </div>
+      </div>
 
         <!-- Main Content -->
         <main class="content">
@@ -102,7 +100,7 @@
                 <div class="charts-container">
                     <div class="chart-box">
                         <h3>
-                            Your Weekly Progress
+                            Daily Mood Overview
                             <div class="chart-options">
                                 <button id="barChartBtn" class="btn active">
                                     <i class="fas fa-chart-bar"></i>
@@ -117,7 +115,19 @@
                         </div>
                     </div>
 
-                    <!-- Pie Chart Card -->
+                    <div class="chart-box">
+                        <h3>
+                            Mood Tracker
+                            <div class="chart-options">
+                                <button id="pieChartBtn" class="btn active">
+                                    <i class="fas fa-chart-pie"></i>
+                                </button>
+                            </div>
+                        </h3>
+                        <div class="chart-container">
+                            <canvas id="pieChartCanvas"></canvas>
+                        </div>
+                    </div>
                     
                 </div>
             </div>
@@ -155,19 +165,7 @@
                 </div>
             </div>
 
-            <div class="chart-box">
-                        <h3>
-                            Mood Tracker
-                            <div class="chart-options">
-                                <button id="pieChartBtn" class="btn active">
-                                    <i class="fas fa-chart-pie"></i>
-                                </button>
-                            </div>
-                        </h3>
-                        <div class="chart-container">
-                            <canvas id="pieChartCanvas"></canvas>
-                        </div>
-                    </div>
+            
         </div>
     </div>
     </div>
