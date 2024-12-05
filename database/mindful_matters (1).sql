@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2024 at 08:00 AM
+-- Generation Time: Dec 04, 2024 at 05:42 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -90,7 +90,13 @@ INSERT INTO `messages` (`message_id`, `user_id`, `content`, `color`, `created_at
 (10, 1, 'Another journal entry to check the style.', '#ffd54f', '2024-12-02 10:48:55', '2024-12-02 10:48:55'),
 (11, 1, 'Feeling a little down today, but pushing through.', '#ff8a65', '2024-12-02 10:48:55', '2024-12-02 10:48:55'),
 (12, 1, 'Excited for the new challenges ahead!', '#ba68c8', '2024-12-02 10:48:55', '2024-12-02 10:48:55'),
-(13, 1, 'hjfhjgf', '#ffd54f', '2024-12-02 05:41:47', '2024-12-02 05:41:47');
+(13, 1, 'hjfhjgf', '#ffd54f', '2024-12-02 05:41:47', '2024-12-02 05:41:47'),
+(14, 1, 'tretret', '#ba68c8', '2024-12-02 09:54:35', '2024-12-02 09:54:35'),
+(15, 1, 'frtretret', '#ba68c8', '2024-12-02 09:54:43', '2024-12-02 09:54:43'),
+(16, 1, 'dsfsdfds', '#ffd54f', '2024-12-02 09:54:51', '2024-12-02 09:54:51'),
+(17, 1, 'sfdsffr', '#3b82f6', '2024-12-02 09:54:59', '2024-12-02 09:54:59'),
+(18, 1, 'fesfre', '#ba68c8', '2024-12-02 09:55:13', '2024-12-02 09:55:13'),
+(19, 1, 'sfesfrerewr', '#ba68c8', '2024-12-02 09:55:44', '2024-12-02 09:55:44');
 
 -- --------------------------------------------------------
 
@@ -101,10 +107,34 @@ INSERT INTO `messages` (`message_id`, `user_id`, `content`, `color`, `created_at
 CREATE TABLE `mood_checkins` (
   `checkin_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `mood` enum('Happy','Sad','Neutral','Anxious','Excited') NOT NULL,
-  `note` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `mood` enum('sad','neutral','happy') NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mood_checkins`
+--
+
+INSERT INTO `mood_checkins` (`checkin_id`, `user_id`, `mood`, `date`) VALUES
+(1, 1, 'sad', '2024-12-01'),
+(2, 2, 'happy', '2024-12-01'),
+(3, 3, 'neutral', '2024-12-01'),
+(4, 1, 'sad', '2024-12-02'),
+(5, 2, 'neutral', '2024-12-02'),
+(6, 3, 'happy', '2024-12-02'),
+(7, 1, 'happy', '2024-12-03'),
+(8, 2, 'sad', '2024-12-03'),
+(9, 3, 'neutral', '2024-12-03'),
+(10, 1, 'neutral', '2024-12-04'),
+(11, 4, 'sad', '2024-12-01'),
+(12, 5, 'sad', '2024-12-01'),
+(13, 6, 'sad', '2024-12-01'),
+(14, 4, 'sad', '2024-12-02'),
+(15, 5, 'neutral', '2024-12-02'),
+(16, 6, 'neutral', '2024-12-02'),
+(17, 4, 'happy', '2024-12-03'),
+(18, 5, 'happy', '2024-12-03'),
+(19, 6, 'neutral', '2024-12-03');
 
 -- --------------------------------------------------------
 
@@ -119,16 +149,18 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `role` enum('student','admin','counselor') NOT NULL,
   `registered_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `is_active` int(10) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role`, `registered_at`, `updated_at`) VALUES
-(1, 'silvy', 'absrdgmrs@gmail.com', '$2y$10$rdBYKau8hsDZnGSisZ/ov.hOBD1TQi53VYH8TzXmOB.NnEbRaAF/q', 'student', '2024-11-20 10:46:20', '2024-11-20 10:46:20'),
-(2, 'silvy2', 'silvy@gmail.com', '$2y$10$c5QvfF5foRseLKkgrXuTLu34cRjNHcxsjxh9ueqtPD2cl4rgP7Xau', 'student', '2024-11-29 09:11:47', '2024-11-29 09:11:47');
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role`, `registered_at`, `updated_at`, `is_active`) VALUES
+(1, 'silvy', 'absrdgmrs@gmail.com', '$2y$10$rdBYKau8hsDZnGSisZ/ov.hOBD1TQi53VYH8TzXmOB.NnEbRaAF/q', 'student', '2024-11-20 10:46:20', '2024-11-20 10:46:20', 1),
+(2, 'silvy2', 'silvy@gmail.com', '$2y$10$c5QvfF5foRseLKkgrXuTLu34cRjNHcxsjxh9ueqtPD2cl4rgP7Xau', 'student', '2024-11-29 09:11:47', '2024-11-29 09:11:47', 1),
+(3, 'usertest', 'test@gmail.com', '$2y$10$6B4i3MAxUvIBI1oi0ymfBujsD4UePKL1yFZ5g3vop10MFVIHV/mRK', 'student', '2024-12-03 09:57:20', '2024-12-03 09:57:20', 1);
 
 --
 -- Indexes for dumped tables
@@ -160,7 +192,8 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `mood_checkins`
   ADD PRIMARY KEY (`checkin_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD UNIQUE KEY `user_id` (`user_id`,`date`),
+  ADD UNIQUE KEY `unique_user_date` (`user_id`,`date`);
 
 --
 -- Indexes for table `users`
@@ -189,19 +222,19 @@ ALTER TABLE `journals`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `mood_checkins`
 --
 ALTER TABLE `mood_checkins`
-  MODIFY `checkin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `checkin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -224,12 +257,6 @@ ALTER TABLE `journals`
 --
 ALTER TABLE `messages`
   ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `mood_checkins`
---
-ALTER TABLE `mood_checkins`
-  ADD CONSTRAINT `mood_checkins_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

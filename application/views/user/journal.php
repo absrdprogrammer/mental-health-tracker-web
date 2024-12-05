@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/journal.css'); ?>" />
 </head>
 
@@ -37,9 +38,9 @@
             <?php if (!empty($journals)) : ?>
                 <?php foreach ($journals as $journal) : ?>
                     <div class="note" style="background-color: <?php echo $journal['color']; ?>" data-id="<?php echo $journal['journal_id']; ?>">
+                        <small>Created at: <?php echo $journal['created_at']; ?></small>
                         <p><?php echo htmlspecialchars($journal['content']); ?></p>
                         <small>Sentiment: <?php echo ucfirst($journal['sentiment']); ?></small><br>
-                        <small>Created at: <?php echo $journal['created_at']; ?></small>
                         <div class="actions">
                             <button class="edit-btn" onclick="editJournal(<?php echo $journal['journal_id']; ?>, '<?php echo htmlspecialchars($journal['content']); ?>', '<?php echo $journal['color']; ?>')">✎</button>
                             <button class="delete-btn" onclick="deleteJournal(<?php echo $journal['journal_id']; ?>)">🗑</button>
