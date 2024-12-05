@@ -137,7 +137,7 @@
             <div class="profile-header">
                 <div class="image-container">
                     <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-                    <button class="edit-btn" onclick="window.location.href='edit-profile.html'">
+                    <button class="edit-btn" onclick="window.location.href='<?php echo base_url('application/views/user/profile.php'); ?>'">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                 </div>
@@ -185,6 +185,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="<?php echo base_url('assets/js/chart_main.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/calander.js'); ?>"></script>
 </body>
 
 </html>
