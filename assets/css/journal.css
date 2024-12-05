@@ -219,3 +219,11 @@ button:hover {
 button:hover {
     background: #5bc0de;
 }
+
+/* Actions */
+.actions {
+    display: flex;            /* Align buttons side by side */
+    justify-content: left; /* Distribute space between buttons */
+    gap: 10px;                /* Add some space between the buttons */
+    margin-top: 10px;
+}

@@ -7,11 +7,26 @@ function showPopup(color) {
     popup.style.display = 'flex';
 }
 
+function showPopupEdit(journal_id, content) {
+    console.log("Journal ID:", journal_id);
+    const popup = document.getElementById('popup-edit');
+    document.getElementById('journal-id').value = journal_id;
+    document.getElementById('note-text-edit').value = content;
+    popup.style.display = 'flex';
+}
+
 // Close popup
 function closePopup() {
     const popup = document.getElementById('popup');
     popup.style.display = 'none';
     document.getElementById('note-text').value = ''; // Clear input
+    popup.dataset.journalId = ''; // Clear journal ID
+}
+
+function closePopupEdit() {
+    const popup = document.getElementById('popup-edit');
+    popup.style.display = 'none';
+    document.getElementById('note-text-edit').value = ''; // Clear input
     popup.dataset.journalId = ''; // Clear journal ID
 }
 
