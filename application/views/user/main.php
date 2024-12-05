@@ -164,8 +164,21 @@
                     </button>
                 </div>
             </div>
-
-            
+            <div class="calendar-container" id="calendar">
+          <div class="calendar-body">
+            <div class="calendar-navigation">
+              <button id="prevMonth" class="nav-btn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <span class="calendar-month-year" id="currentMonthYear"></span>
+              <button id="nextMonth" class="nav-btn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid">
+              <!-- Days will be dynamically generated -->
+            </div>
+          </div>
         </div>
     </div>
     </div>
