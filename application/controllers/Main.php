@@ -38,4 +38,9 @@ class Main extends CI_Controller
         // Return data dalam format JSON
         echo json_encode(['barData' => $barData, 'pieData' => $pieData]);
     }
+
+    public function edit_profile()
+    {
+        $this->load->view('user/profile');
+    }
 }

@@ -14,15 +14,15 @@
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
-        <button class="sidebar-toggle" id="sidebar-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="menu-bottom">
-          <button class="logout-btn" onclick="logout()">
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu-bottom">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
         </div>
-      </div>
 
         <!-- Main Content -->
         <main class="content">
@@ -53,48 +53,48 @@
                 </div>
                 <div class="stats-section">
                     <!-- Journal Card -->
-            <div class="stats-card stats-journal" onclick="navigateToJournal()">
-              <h2>Journal</h2>
-              <p>View Your Journals</p>
-              <i class="fas fa-book-open"></i>
-            </div>
+                    <div class="stats-card stats-journal" onclick="navigateToJournal()">
+                        <h2>Journal</h2>
+                        <p>View Your Journals</p>
+                        <i class="fas fa-book-open"></i>
+                    </div>
 
-            <!-- Wordspace Card (Motivation) -->
-            <div class="stats-card stats-wordspace">
-              <div class="decoration">
-                <i class="fas fa-comments"></i>
-                <p>Stay Motivated!</p>
-              </div>
-            </div>
-          </div>
+                    <!-- Wordspace Card (Motivation) -->
+                    <div class="stats-card stats-wordspace">
+                        <div class="decoration">
+                            <i class="fas fa-comments"></i>
+                            <p>Stay Motivated!</p>
+                        </div>
+                    </div>
+                </div>
             </header>
 
             <h3>Empower Your Mind</h3>
             <section class="motivation-cards">
-          <!-- Motivational Card 1: Quote -->
-          <div class="motivation-card journey">
-            <div class="text-container">
-              <i class="fas fa-quote-left text-5xl text-orange-500 mb-4 mt-9"></i>
-              <p class="testimonial-text">Your mental health is a priority. <br />Your happiness is an essential. <br>Your self-care is a necessity.</p>
-            </div>
-          </div>
+                <!-- Motivational Card 1: Quote -->
+                <div class="motivation-card journey">
+                    <div class="text-container">
+                        <i class="fas fa-quote-left text-5xl text-orange-500 mb-4 mt-9"></i>
+                        <p class="testimonial-text">Your mental health is a priority. <br />Your happiness is an essential. <br>Your self-care is a necessity.</p>
+                    </div>
+                </div>
 
-          <!-- Motivational Card 2: Goals -->
-          <div class="motivation-card goals">
-            <div class="text-container">
-              <i class="fas fa-smile"></i>
-              <p class="testimonial-text">Dream big, work hard, stay focused, and make it happen.</p>
-            </div>
-          </div>
+                <!-- Motivational Card 2: Goals -->
+                <div class="motivation-card goals">
+                    <div class="text-container">
+                        <i class="fas fa-smile"></i>
+                        <p class="testimonial-text">Dream big, work hard, stay focused, and make it happen.</p>
+                    </div>
+                </div>
 
-          <!-- Motivational Card Progress -->
-          <div class="motivation-card progress">
-            <div class="text-container">
-              <i class="fas fa-heart"></i>
-              <p class="testimonial-text">You are stronger than you think.</p>
-            </div>
-          </div>
-        </section>
+                <!-- Motivational Card Progress -->
+                <div class="motivation-card progress">
+                    <div class="text-container">
+                        <i class="fas fa-heart"></i>
+                        <p class="testimonial-text">You are stronger than you think.</p>
+                    </div>
+                </div>
+            </section>
 
             <div class="weekly-analytics">
                 <div class="charts-container">
@@ -128,7 +128,7 @@
                             <canvas id="pieChartCanvas"></canvas>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </main>
@@ -137,9 +137,9 @@
             <div class="profile-header">
                 <div class="image-container">
                     <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-                    <button class="edit-btn" onclick="window.location.href='<?php echo base_url('application/views/user/profile.php'); ?>'">
-                        <i class="fas fa-pencil-alt"></i>
-                    </button>
+                    <form action="<?php echo base_url('main/edit_profile'); ?>" method="POST">
+                        <button class="edit-btn" type="submit"><i class="fas fa-pencil-alt"></i></button>
+                    </form>
                 </div>
                 <div class="profile-info">
                     <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
@@ -165,22 +165,22 @@
                 </div>
             </div>
             <div class="calendar-container" id="calendar">
-          <div class="calendar-body">
-            <div class="calendar-navigation">
-              <button id="prevMonth" class="nav-btn">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="calendar-month-year" id="currentMonthYear"></span>
-              <button id="nextMonth" class="nav-btn">
-                <i class="fas fa-chevron-right"></i>
-              </button>
+                <div class="calendar-body">
+                    <div class="calendar-navigation">
+                        <button id="prevMonth" class="nav-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="calendar-month-year" id="currentMonthYear"></span>
+                        <button id="nextMonth" class="nav-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Days will be dynamically generated -->
+                    </div>
+                </div>
             </div>
-            <div class="calendar-grid" id="calendarGrid">
-              <!-- Days will be dynamically generated -->
-            </div>
-          </div>
         </div>
-    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

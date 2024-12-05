@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile</title>
-  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/profile.css'); ?>" />
 </head>
+
 <body>
   <div class="edit-profile-container">
     <h2>Edit Profile</h2>
@@ -13,7 +15,7 @@
       <!-- Image Preview Above -->
       <div class="form-group">
         <div class="image-preview">
-          <img id="imagePreview" src="img/gr.png" alt="Profile Preview" />
+          <img id="imagePreview" src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile Preview" />
         </div>
         <label for="profileImgInput">Profile Picture:</label>
         <input type="file" id="profileImgInput" accept="image/*" />
@@ -42,6 +44,7 @@
     </form>
   </div>
 
-  <script src="profile.js"></script>
+  <script src="<?php echo base_url('assets/js/profile.js'); ?>"></script>
 </body>
+
 </html>
