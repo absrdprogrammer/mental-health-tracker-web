@@ -843,45 +843,6 @@ canvas {
   height: auto;
 }
 
-@media (max-width: 768px) {
-  .dashboard {
-    grid-template-areas:
-      "sidebar"
-      "content"
-      "profile";
-    grid-template-columns: 1fr;
-  }
-
-  .content,
-  .profile {
-    padding: 15px;
-  }
-
-  .data-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  body {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .dashboard {
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      "sidebar"
-      "content";
-  }
-
-  .profile {
-    display: none;
-    /* Sembunyikan profil di layar kecil */
-  }
-}
-
 /* General Responsive Enhancements */
 @media (max-width: 480px) {
 
@@ -951,31 +912,40 @@ canvas {
   .time-display {
     font-size: 18px;
   }
-}
 
-@media (max-width: 768px) {
-  .dashboard {
-    grid-template-areas:
-      "sidebar"
-      "content";
-    grid-template-columns: 1fr;
+  /* Responsif Header */
+  .header {
+    flex-direction: column;
+    padding: 15px 0;
   }
 
-  .profile {
-    display: none;
+  .notification-container,
+  .settings-container {
+    margin-left: 5;
   }
 
-  .content {
-    padding: 15px;
+  .notification-dropdown,
+  .settings-dropdown {
+    width: 150px;
+    right: 0;
   }
 
+  /* Responsif Main Content */
   .analytics {
     flex-direction: column;
   }
 
   .analytics-card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .tables-container {
     flex-direction: column;
-    align-items: flex-start;
+  }
+
+  .table-box {
+    width: 100%;
   }
 
   .charts-container {
@@ -985,31 +955,72 @@ canvas {
   .chart-box {
     width: 100%;
     height: auto;
+    margin-bottom: 10px;
   }
 }
 
-@media (max-width: 1024px) {
-  .dashboard {
-    grid-template-areas:
-      "sidebar content"
-      "sidebar profile";
-    grid-template-columns: auto 1fr;
+@media (max-width: 768px) {
+  /* Sidebar */
+  .sidebar {
+    width: 60px;
+    padding-top: 20px;
+    height: 100%;
+    overflow: hidden;
+    grid-area: sidebar;
+    transition: width 0.3s ease;
   }
 
   .sidebar.open {
-    width: 180px;
+    width: 200px;
   }
 
-  .menu li a {
-    font-size: 16px;
+  .menu li {
+    padding: 8px 10px;
   }
 
-  .search-container {
-    width: 250px;
+  /* Responsif Header */
+  .header {
+    flex-direction: column;
+    padding: 15px 0;
   }
 
-  .actions-container {
-    gap: 10px;
+  .notification-container,
+  .settings-container {
+    margin-left: 5;
+  }
+
+  .notification-dropdown,
+  .settings-dropdown {
+    width: 150px;
+    right: 0;
+  }
+
+  /* Responsif Main Content */
+  .analytics {
+    flex-direction: column;
+  }
+
+  .analytics-card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .tables-container {
+    flex-direction: column;
+  }
+
+  .table-box {
+    width: 100%;
+  }
+
+  .charts-container {
+    flex-direction: column;
+  }
+
+  .chart-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
   }
 }
 
