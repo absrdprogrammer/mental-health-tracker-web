@@ -69,7 +69,7 @@
                         </button>
                     </div>
                     <div class="user-profile">
-                        <img src="img/rt.jpg" alt="User Avatar" class="profile-icon" id="profileIcon" />
+                        <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon" />
                         <div id="dropdownMenu" class="dropdown-menu">
                             <a href="#" id="profile">
                                 <i class="fas fa-user"></i> Profile
