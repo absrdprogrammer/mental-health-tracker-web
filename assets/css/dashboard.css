@@ -105,123 +105,6 @@ body {
   padding: 5px 10px;
 }
 
-.notification-container,
-.settings-container {
-  position: relative;
-  margin-left: 15px;
-}
-
-.notification-btn,
-.settings-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #555;
-}
-
-.notification-btn:hover,
-.settings-btn:hover {
-  color: #00bfae;
-}
-
-.notification-dropdown,
-.settings-dropdown {
-  position: absolute;
-  top: 35px;
-  right: 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: none;
-  width: 200px;
-  z-index: 10;
-}
-
-.notification-dropdown p,
-.settings-dropdown a {
-  padding: 10px;
-  font-size: 14px;
-  color: #333;
-  text-decoration: none;
-  display: block;
-}
-
-.settings-dropdown a:hover,
-.notification-dropdown p:hover {
-  background: #f9f9f9;
-}
-
-.notification-container:hover .notification-dropdown,
-.settings-container:hover .settings-dropdown {
-  display: block;
-}
-
-.settings-container {
-  position: relative;
-  margin-left: 15px;
-}
-
-.settings-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #555;
-}
-
-.settings-dropdown {
-  position: absolute;
-  top: 35px;
-  right: 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: none;
-  width: 200px;
-  z-index: 10;
-}
-
-.settings-dropdown a {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 14px;
-  color: #333;
-  text-decoration: none;
-  gap: 10px;
-  /* Jarak antara ikon dan teks */
-}
-
-.settings-dropdown a:hover {
-  background: #f9f9f9;
-}
-
-.settings-container:hover .settings-dropdown {
-  display: block;
-}
-
-/* Untuk memastikan dropdown tersembunyi */
-.notification-dropdown,
-.settings-dropdown {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.notification-btn:focus+.notification-dropdown,
-.settings-btn:focus+.settings-dropdown,
-.notification-container:hover .notification-dropdown,
-.settings-container:hover .settings-dropdown {
-  display: block;
-}
-
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -279,6 +162,58 @@ body {
   color: white;
 }
 
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara teks dan foto */
+  font-size: 14px;
+  color: #333;
+  position: relative; /* Untuk positioning dropdown */
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none; /* Dropdown tidak terlihat secara default */
+  position: absolute;
+  right: 0;
+  top: 100%; /* Tepat di bawah ikon profil */
+  width: 100px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.dropdown-menu a i {
+  margin-right: 10px; /* Jarak antara ikon dan teks */
+  font-size: 16px; /* Ukuran ikon */
+  color: #555; /* Warna ikon */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
 
 /* Main Content */
 .content {
@@ -714,13 +649,6 @@ h3 {
     align-items: center;
   }
 
-
-  .notification-container,
-  .settings-container {
-    position: relative;
-    margin-left: 15px;
-  }
-
   /* Tabel dan Grafik */
   .tables-section,
   .weekly-analytics {
@@ -735,22 +663,141 @@ h3 {
   }
 
   /* Profile Section */
-  .profile-header {
+  .profile {
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 1px solid #ececec;
+    grid-area: profile;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .profile-img {
-    width: 60px;
-    height: 60px;
+  /* Profile Header */
+  .profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-header img {
+    width: 100px; /* Ukuran default untuk desktop */
+    height: 100px; /* Ukuran default untuk desktop */
     border-radius: 50%;
-    /* Membuat gambar profile bulat */
+    object-fit: cover;
+    margin-top: 15px;
+  }
+
+  .profile-header h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* Edit Button */
+  .edit-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+  }
+
+  .profile-header:hover .edit-btn {
+    display: flex;
+  }
+
+  .edit-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .profile-info {
+    text-align: center;
   }
 
   .profile-info h4 {
-    font-size: 18px;
+    font-size: 18px; /* Ukuran font responsif */
     color: #2c3e50;
+    margin: 10px 0;
+  }
+
+  .profile-info p {
+    font-size: 1em;
+    color: #525652;
+    margin: 0;
+  }
+
+  /* Personal Info - Responsiveness */
+  .personal-info {
+    margin-top: 20px;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    color: #333;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(45, 33, 33, 0.12);
+  }
+
+  .personal-info h3 {
+    font-size: 16px; /* Ukuran header untuk personal info */
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 5px;
+  }
+
+  .personal-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .personal-info ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .personal-info ul li::before {
+    content: "•";
+    color: #00bfae;
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
+
+  /* Current Time */
+  .current-time {
+    text-align: center;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .current-time h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 5px;
+  }
+
+  .time-display {
+    font-size: 18px; /* Ukuran waktu di layar kecil */
+    font-weight: bold;
+    color: #333;
   }
 
   /* Teks dalam tabel */
@@ -843,6 +890,7 @@ canvas {
   height: auto;
 }
 
+
 /* General Responsive Enhancements */
 @media (max-width: 480px) {
 
@@ -889,12 +937,12 @@ canvas {
 
   /* Profile */
   .profile-header img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .profile-header h4 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .personal-info h3 {
@@ -902,32 +950,21 @@ canvas {
   }
 
   .personal-info ul li {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .current-time h3 {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .time-display {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   /* Responsif Header */
   .header {
     flex-direction: column;
     padding: 15px 0;
-  }
-
-  .notification-container,
-  .settings-container {
-    margin-left: 5;
-  }
-
-  .notification-dropdown,
-  .settings-dropdown {
-    width: 150px;
-    right: 0;
   }
 
   /* Responsif Main Content */
@@ -984,17 +1021,6 @@ canvas {
     padding: 15px 0;
   }
 
-  .notification-container,
-  .settings-container {
-    margin-left: 5;
-  }
-
-  .notification-dropdown,
-  .settings-dropdown {
-    width: 150px;
-    right: 0;
-  }
-
   /* Responsif Main Content */
   .analytics {
     flex-direction: column;
@@ -1021,6 +1047,31 @@ canvas {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+  }
+
+  .profile-header img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-header h4 {
+    font-size: 18px;
+  }
+
+  .personal-info h3 {
+    font-size: 14px;
+  }
+
+  .personal-info ul li {
+    font-size: 12px;
+  }
+
+  .current-time h3 {
+    font-size: 12px;
+  }
+
+  .time-display {
+    font-size: 16px;
   }
 }
 

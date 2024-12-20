@@ -68,22 +68,15 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                    <div class="notification-container">
-                        <button class="notification-btn" id="notification-btn">
-                            <i class="fas fa-bell"></i>
-                        </button>
-                        <div class="notification-dropdown" id="notification-dropdown">
-                            <p>new notifications</p>
-                        </div>
-                    </div>
-
-                    <div class="settings-container">
-                        <button class="settings-btn" id="settings-btn">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <div class="settings-dropdown" id="settings-dropdown">
-                            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-                            <a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <div class="user-profile">
+                        <img src="img/rt.jpg" alt="User Avatar" class="profile-icon" id="profileIcon" />
+                        <div id="dropdownMenu" class="dropdown-menu">
+                            <a href="#" id="profile">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -135,9 +128,7 @@
                                         <tr>
                                             <td><?= htmlspecialchars($user['username']); ?></td>
                                             <td><?= htmlspecialchars($user['email']); ?></td>
-                                            <td>
-                                                <?= $user['is_active'] ? 'Active' : 'Inactive'; ?>
-                                            </td>
+                                            <td><?= $user['is_active'] ? 'Active' : 'Inactive'; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: ?>
@@ -224,8 +215,9 @@
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                 </div>
-                <div class="profile-info"><?= htmlspecialchars($userbyid['username']); ?></h4>
-                    <p id="userRole"><?= htmlspecialchars($userbyid['role']) ?></p>
+                <div class="profile-info">
+                    <h4><?= htmlspecialchars($userbyid['username']); ?></h4>
+                    <p id="userRole"><?= htmlspecialchars($userbyid['role']); ?></p>
                 </div>
             </div>
             <div class="personal-info">
