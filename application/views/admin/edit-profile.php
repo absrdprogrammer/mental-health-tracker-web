@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
@@ -70,38 +70,30 @@
               <i class="fas fa-search"></i>
             </button>
           </div>
-        </div>  
+        </div>
       </header>
-
-      <!-- Profile Section -->
-      <div class="profile">
-        <div class="profile-header">
-          <!-- Profile Image -->
-          <div class="image-container">
-            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-            <button class="edit-btn" onclick="window.location.href= 'edit-profile.html'">
-              <i class="fas fa-pencil-alt"></i>
-            </button>
+      <div class="edit-profile-container">
+        <h2>Profile</h2>
+        <form action="save-profile.php" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="userEmail">Email:</label>
+            <input type="email" id="userEmail" name="userEmail" value="sahlahr08@gmail.com" required />
           </div>
-
-          <!-- User Information -->
-          <div class="profile-info">
-            <h4 id="userName">[Name]</h4>
-            <p id="userRole">[Role]</p>
+          <div class="form-group">
+            <label for="userName">Nama Lengkap:</label>
+            <input type="text" id="userName" name="userName" value="Sahlah Rizqiyyah" required />
           </div>
-        </div>
-
-        <!-- Personal Information -->
-        <div class="personal-info">
-          <h3>Personal Information</h3>
-          <ul>
-            <li>Email: <span id="userEmail">[Email]</span></li>
-          </ul>
-        </div>
+          <div class="form-group">
+            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" id="profilePreview" />
+            <label for="profileImg">Gambar:</label>
+            <input type="file" id="profileImg" name="profileImg" onchange="previewImage(event)" />
+          </div>
+          <button type="submit">Ubah</button>
+          <button type="button" onclick="window.history.back()">Kembali</button>
+        </form>
       </div>
-    </main>
-  </div>
-  <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
+      <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
 </body>
 
 </html>
+</body>
