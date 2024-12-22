@@ -458,7 +458,7 @@
     </div>
 
 
-    <script src="psikolog.js"></script>
+	<script src="<?php echo base_url('assets/js/psikolog.js'); ?>"></script>
 </body>
 
 </html>
