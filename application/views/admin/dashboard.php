@@ -71,7 +71,7 @@
                     <div class="user-profile">
                         <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon" />
                         <div id="dropdownMenu" class="dropdown-menu">
-                            <a href="profile.html" id="profile">
+                            <a href="profile.php" id="profile">
                                 <i class="fas fa-user"></i> Profile 
                             </a>
                             <a href="#">
