@@ -51,7 +51,7 @@
                 <div class="profile-header">
                   <div class="image-container">
                     <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-                    <button class="edit-btn" onclick="window.location.href='profile.html'">
+                    <button class="edit-btn" onclick="window.location.href='profile.php'">
                       <i class="fas fa-pencil-alt"></i>
                     </button>
                   </div>
