@@ -68,23 +68,16 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                    <div class="notification-container">
-                        <button class="notification-btn" id="notification-btn">
-                            <i class="fas fa-bell"></i>
-                        </button>
-                        <div class="notification-dropdown" id="notification-dropdown">
-                            <p>new notifications</p>
-                        </div>
-                    </div>
-
-                    <div class="settings-container">
-                        <button class="settings-btn" id="settings-btn">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <div class="settings-dropdown" id="settings-dropdown">
-                            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-                            <a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                        </div>
+                    <div class="user-profile">
+                        <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon" />
+                        <div id="dropdownMenu" class="dropdown-menu">
+                            <a href="profile.html" id="profile">
+                                <i class="fas fa-user"></i> Profile 
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>     
                     </div>
                 </div>
             </header>
@@ -220,7 +213,7 @@
             <div class="profile-header">
                 <div class="image-container">
                     <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-                    <button class="edit-btn" onclick="window.location.href='edit-profile.html'">
+                    <button class="edit-btn" onclick="window.location.href='edit-profile.php'">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                 </div>
@@ -232,8 +225,6 @@
                 <h3>Personal Information</h3>
                 <ul>
                     <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
-                    <li>Phone: <span id="userPhone">[Phone]</span></li>
-                    <li>Address: <span id="userAddress">[Address]</span></li>
                 </ul>
             </div>
             <div class="current-time">
