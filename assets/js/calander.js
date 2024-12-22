@@ -1,68 +1,83 @@
-document.addEventListener("DOMContentLoaded", () => {
-	const calendarGrid = document.getElementById("calendarGrid");
-	const currentMonthYear = document.getElementById("currentMonthYear");
-	const prevMonthBtn = document.getElementById("prevMonth");
-	const nextMonthBtn = document.getElementById("nextMonth");
+const currentDate = new Date();
+const currentDay = currentDate.getDate();
+const currentMonth = currentDate.getMonth();
+const currentYear = currentDate.getFullYear();
 
-	let currentDate = new Date();
+// Menampilkan tanggal hari ini
+document.getElementById("current-date").textContent = `${currentDay} ${getMonthName(currentMonth)} ${currentYear}`;
 
-	function renderCalendar(date) {
-		const year = date.getFullYear();
-		const month = date.getMonth();
-		const firstDay = new Date(year, month, 1).getDay();
-		const daysInMonth = new Date(year, month + 1, 0).getDate();
+let currentWeekStart = getStartOfWeek(currentDate);
+let currentWeekEnd = new Date(currentWeekStart);
+currentWeekEnd.setDate(currentWeekStart.getDate() + 6);
 
-		currentMonthYear.textContent = `${date.toLocaleString("default", {
-			month: "long",
-		})} ${year}`;
+// Menampilkan tanggal-tanggal dalam kalender hanya untuk minggu ini
+const calendarContainer = document.querySelector(".calendar-dates");
+generateWeek(currentWeekStart, currentWeekEnd);
 
-		calendarGrid.innerHTML = "";
+// Fungsi untuk menghasilkan minggu pada kalender
+function generateWeek(start, end) {
+  calendarContainer.innerHTML = "";
 
-		// Add day labels
-		const dayLabels = ["S", "M", "T", "W", "T", "F", "S"];
-		dayLabels.forEach((label) => {
-			const dayLabel = document.createElement("div");
-			dayLabel.classList.add("day-label");
-			dayLabel.textContent = label;
-			calendarGrid.appendChild(dayLabel);
-		});
+  const weekElement = document.createElement("div");
+  weekElement.classList.add("week");
 
-		// Add empty slots for days before the first of the month
-		for (let i = 0; i < firstDay; i++) {
-			const emptySlot = document.createElement("div");
-			emptySlot.classList.add("day", "empty");
-			calendarGrid.appendChild(emptySlot);
-		}
+  for (let i = start.getDate(); i <= end.getDate(); i++) {
+    const dateElement = document.createElement("div");
+    dateElement.classList.add("date");
+    dateElement.textContent = i;
 
-		// Add days of the month
-		for (let day = 1; day <= daysInMonth; day++) {
-			const dayElement = document.createElement("div");
-			dayElement.classList.add("day");
-			dayElement.textContent = day;
+    if (i === currentDay) {
+      dateElement.classList.add("today");
+    }
 
-			// Highlight today's date
-			const today = new Date();
-			if (
-				day === today.getDate() &&
-				month === today.getMonth() &&
-				year === today.getFullYear()
-			) {
-				dayElement.classList.add("active");
-			}
+    dateElement.addEventListener("click", () => handleCheckIn(i, dateElement));
 
-			calendarGrid.appendChild(dayElement);
-		}
-	}
+    weekElement.appendChild(dateElement);
+  }
 
-	function navigateMonth(offset) {
-		currentDate.setMonth(currentDate.getMonth() + offset);
-		renderCalendar(currentDate);
-	}
+  calendarContainer.appendChild(weekElement);
+}
 
-	// Event listeners for navigation buttons
-	prevMonthBtn.addEventListener("click", () => navigateMonth(-1));
-	nextMonthBtn.addEventListener("click", () => navigateMonth(1));
+function handleCheckIn(day, element) {
+  element.classList.add("checked");
+  document.getElementById("mood-selection-message").textContent = `You checked in on ${day} ${getMonthName(currentMonth)}!`;
+}
 
-	// Initial render
-	renderCalendar(currentDate);
+function getMonthName(monthIndex) {
+  const months = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+  return months[monthIndex];
+}
+
+// Fungsi untuk mendapatkan awal minggu dari tanggal tertentu
+function getStartOfWeek(date) {
+  const day = date.getDay() || 7;
+  const diff = date.getDate() - day + 1;
+  const startOfWeek = new Date(date);
+  startOfWeek.setDate(diff);
+  startOfWeek.setHours(0, 0, 0, 0);
+  return startOfWeek;
+}
+
+// Fungsi untuk menavigasi minggu ke belakang
+document.getElementById("prev-week").addEventListener("click", () => {
+  currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+  currentWeekEnd.setDate(currentWeekEnd.getDate() - 7);
+  generateWeek(currentWeekStart, currentWeekEnd);
+});
+
+// Fungsi untuk menavigasi minggu ke depan
+document.getElementById("next-week").addEventListener("click", () => {
+  currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+  currentWeekEnd.setDate(currentWeekEnd.getDate() + 7);
+  generateWeek(currentWeekStart, currentWeekEnd);
+});
+
+// Fungsi untuk menutup modal
+document.getElementById("closeModal").addEventListener("click", () => {
+  document.getElementById("moodModal").style.display = "none";
+});
+
+// Menampilkan modal ketika tombol check-in di-klik (misalnya)
+document.getElementById("checkInBtn").addEventListener("click", () => {
+  document.getElementById("moodModal").style.display = "block";
 });
