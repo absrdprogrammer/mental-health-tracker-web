@@ -71,13 +71,13 @@
                     <div class="user-profile">
                         <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon" />
                         <div id="dropdownMenu" class="dropdown-menu">
-                            <a href="profile.html" id="profile">
-                                <i class="fas fa-user"></i> Profile 
+                            <a href="<?php echo base_url('views\admin\profile.html'); ?>" id="profile">
+                                <i class="fas fa-user"></i> Profile
                             </a>
                             <a href="#">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
-                        </div>     
+                        </div>
                     </div>
                 </div>
             </header>
@@ -128,9 +128,7 @@
                                         <tr>
                                             <td><?= htmlspecialchars($user['username']); ?></td>
                                             <td><?= htmlspecialchars($user['email']); ?></td>
-                                            <td>
-                                                <?= $user['is_active'] ? 'Active' : 'Inactive'; ?>
-                                            </td>
+                                            <td><?= $user['is_active'] ? 'Active' : 'Inactive'; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: ?>
@@ -217,8 +215,9 @@
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                 </div>
-                <div class="profile-info"><?= htmlspecialchars($userbyid['username']); ?></h4>
-                    <p id="userRole"><?= htmlspecialchars($userbyid['role']) ?></p>
+                <div class="profile-info">
+                    <h4><?= htmlspecialchars($userbyid['username']); ?></h4>
+                    <p id="userRole"><?= htmlspecialchars($userbyid['role']); ?></p>
                 </div>
             </div>
             <div class="personal-info">
