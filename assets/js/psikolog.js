@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function openTab(evt, tabName) {
     // Sembunyikan semua konten tab
     var tabContent = document.getElementsByClassName("tabcontent");
@@ -123,7 +122,6 @@ function saveProfileChanges() {
     // Sembunyikan form edit, tampilkan kembali profil
     hideEditForm();
 }
-=======
 const psychologists = [
     {
       name: "Dr. Dianne Rachel",
@@ -162,4 +160,3 @@ const psychologists = [
     updatePsychologist(currentIndex);
   }
   
->>>>>>> e99a2cce192ccfd474235047764c6093c6788317
