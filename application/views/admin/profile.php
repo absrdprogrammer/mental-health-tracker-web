@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -60,7 +59,7 @@
       <!-- Header -->
       <header class="header">
         <div class="logo-container">
-          <img src="img/logo.png" alt="Logo" class="logo" />
+          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
           <span class="site-name">Mindfulmatters</span>
         </div>
         <div class="actions-container">
@@ -78,16 +77,16 @@
         <div class="profile-header">
           <!-- Profile Image -->
           <div class="image-container">
-            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-            <button class="edit-btn" onclick="window.location.href= 'edit-profile.html'">
+            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>"  alt="Profile Image" class="profile-img" id="profileImg" />
+            <button class="edit-btn" onclick="window.location.href='edit-profile.php'">
               <i class="fas fa-pencil-alt"></i>
             </button>
           </div>
 
           <!-- User Information -->
           <div class="profile-info">
-            <h4 id="userName">[Name]</h4>
-            <p id="userRole">[Role]</p>
+            <h4><?= htmlspecialchars($userbyid['username']); ?></h4>
+            <p id="userRole"><?= htmlspecialchars($userbyid['role']); ?></p>
           </div>
         </div>
 
@@ -95,7 +94,7 @@
         <div class="personal-info">
           <h3>Personal Information</h3>
           <ul>
-            <li>Email: <span id="userEmail">[Email]</span></li>
+            <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
           </ul>
         </div>
       </div>

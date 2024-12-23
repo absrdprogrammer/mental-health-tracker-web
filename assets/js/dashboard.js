@@ -1,75 +1,52 @@
-// Sidebar toggle functionality
+// Fungsi untuk toggle sidebar (menyembunyikan atau menampilkan sidebar)
 const sidebarToggle = document.getElementById('sidebar-toggle');
 const sidebar = document.getElementById('sidebar');
 
 sidebarToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('open'); // Toggle the 'open' class on the sidebar
+  sidebar.classList.toggle('open'); // Menambahkan atau menghapus kelas 'open' pada sidebar
 });
 
-// Function to update the current time
+// Fungsi untuk memperbarui waktu saat ini
 function updateTime() {
-  const timeDisplay = document.getElementById("timeDisplay"); // Get the time display element
-  const now = new Date(); // Get the current date and time
-  const timeString = now.toLocaleTimeString(); // Format time as a locale string
-  timeDisplay.textContent = timeString; // Update the text content with the current time
+  const timeDisplay = document.getElementById("timeDisplay");
+  const now = new Date(); // Mendapatkan waktu saat ini
+  const timeString = now.toLocaleTimeString(); // Mengubah waktu menjadi format jam:menit:detik
+  timeDisplay.textContent = timeString; // Menampilkan waktu di elemen dengan ID 'timeDisplay'
 }
 
-// Update the time every second
+// Memperbarui waktu setiap detik
 setInterval(updateTime, 1000);
 
-// Initialize the time on page load
+// Menjalankan fungsi updateTime saat halaman dimuat
 updateTime();
 
+// Fungsi untuk menampilkan atau menyembunyikan menu dropdown profil
 document.getElementById('profileIcon').addEventListener('click', function () {
-  var dropdownMenu = document.getElementById('dropdownMenu');
-  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block'; // Menampilkan atau menyembunyikan menu dropdown
 });
 
-// Untuk menutup dropdown jika klik di luar area
+// Menutup menu dropdown jika pengguna mengklik di luar elemen dropdown
 document.addEventListener('click', function (event) {
-  var dropdownMenu = document.getElementById('dropdownMenu');
-  var profileIcon = document.getElementById('profileIcon');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  const profileIcon = document.getElementById('profileIcon');
 
   if (!profileIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
-    dropdownMenu.style.display = 'none';
+    dropdownMenu.style.display = 'none'; // Menyembunyikan dropdown jika klik di luar area dropdown atau ikon profil
   }
 });
 
+// Fungsi untuk menampilkan pesan konfirmasi logout
 document.querySelector('a[href="#logout"]').addEventListener('click', function () {
-  // Tambahkan logika logout, seperti redirect atau AJAX call
-  alert('Logout berhasil!');
+  alert('Logout berhasil!'); // Menampilkan alert dengan pesan logout berhasil
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const profileIcon = document.getElementById("profileIcon");
-  const dropdownMenu = document.getElementById("dropdownMenu");
-  const profile = document.querySelector(".profile");
-  const viewProfile = document.getElementById("viewProfile");
-
-  // Menampilkan dropdown menu saat klik avatar
-  profileIcon.addEventListener("click", function () {
-    dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-  });
-
-  // Menampilkan profil saat menu "Profile" diklik
-  viewProfile.addEventListener("click", function (event) {
-    event.preventDefault(); // Menghindari reload halaman
-    profile.classList.toggle("active"); // Toggle class 'active' pada elemen profile
-  });
-
-  // Menutup dropdown jika klik di luar
-  window.addEventListener("click", function (event) {
-    if (!profileIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
-      dropdownMenu.style.display = "none";
-    }
-  });
-});
-
+// Fungsi untuk menampilkan pratinjau gambar profil yang dipilih
 function previewImage(event) {
-  const reader = new FileReader();
+  const reader = new FileReader(); // Membuat objek FileReader untuk membaca file
   reader.onload = function () {
     const preview = document.getElementById("profilePreview");
-    preview.src = reader.result;
+    preview.src = reader.result; // Menampilkan gambar yang dipilih di elemen dengan ID 'profilePreview'
   };
-  reader.readAsDataURL(event.target.files[0]);
+  reader.readAsDataURL(event.target.files[0]); // Membaca file yang dipilih dan mengubahnya menjadi URL
 }

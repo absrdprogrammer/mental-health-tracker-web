@@ -7,6 +7,7 @@
     <title>Admin</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,7 +72,7 @@
                     <div class="user-profile">
                         <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon" />
                         <div id="dropdownMenu" class="dropdown-menu">
-                            <a href="<?php echo base_url('views\admin\profile.html'); ?>" id="profile">
+                            <a href="<?php echo base_url('views\admin\profile.php'); ?>" id="profile">
                                 <i class="fas fa-user"></i> Profile
                             </a>
                             <a href="#">
@@ -206,26 +207,28 @@
             </div>
         </main>
 
-        <!-- Profile Section -->
-        <div class="profile">
-            <div class="profile-header">
-                <div class="image-container">
-                    <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-                    <button class="edit-btn" onclick="window.location.href='edit-profile.html'">
-                        <i class="fas fa-pencil-alt"></i>
-                    </button>
-                </div>
-                <div class="profile-info">
-                    <h4><?= htmlspecialchars($userbyid['username']); ?></h4>
-                    <p id="userRole"><?= htmlspecialchars($userbyid['role']); ?></p>
-                </div>
-            </div>
-            <div class="personal-info">
-                <h3>Personal Information</h3>
-                <ul>
-                    <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
-                </ul>
-            </div>
+        <!-- Calendar Section -->
+    <div class="calendar-container" id="calendar">
+      <div class="calendar-body">
+        <!-- Calendar Title -->
+        <div class="calendar-header">
+          <h3>Calender</h3>
+        </div>
+        <!-- Calendar Navigation -->
+        <div class="calendar-navigation">
+          <button id="prevMonth" class="nav-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <span class="calendar-month-year" id="currentMonthYear"></span>
+          <button id="nextMonth" class="nav-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <!-- Calendar Grid -->
+        <div class="calendar-grid" id="calendarGrid">
+          <!-- Days will be dynamically generated -->
+        </div>
+      </div>
             <div class="current-time">
                 <h3>Current Time</h3>
                 <div id="timeDisplay" class="time-display">--:--:--</div>
@@ -236,6 +239,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="<?php echo base_url('assets/js/chart_admin.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/kalender db.js'); ?>"></script>
 </body>
 
 </html>

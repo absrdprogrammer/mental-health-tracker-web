@@ -60,7 +60,7 @@
       <!-- Header -->
       <header class="header">
         <div class="logo-container">
-          <img src="img/logo.png" alt="Logo" class="logo" />
+          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
           <span class="site-name">Mindfulmatters</span>
         </div>
         <div class="actions-container">
@@ -76,17 +76,17 @@
         <h2>Profile</h2>
         <form action="save-profile.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
+            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>"  alt="Profile Image" id="profilePreview" />
+            <label for="profileImg">Gambar:</label>
+            <input type="file" id="profileImg" name="profileImg" onchange="previewImage(event)" />
+          </div>
+          <div class="form-group">
             <label for="userEmail">Email:</label>
-            <input type="email" id="userEmail" name="userEmail" value="sahlahr08@gmail.com" required />
+            <input type="email" id="userEmail" name="userEmail" value="sahlahr08@gmail.com" placeholder="Masukan Email" />
           </div>
           <div class="form-group">
             <label for="userName">Nama Lengkap:</label>
-            <input type="text" id="userName" name="userName" value="Sahlah Rizqiyyah" required />
-          </div>
-          <div class="form-group">
-            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" id="profilePreview" />
-            <label for="profileImg">Gambar:</label>
-            <input type="file" id="profileImg" name="profileImg" onchange="previewImage(event)" />
+            <input type="text" id="userName" name="userName" value="Sahlah Rizqiyyah" placeholder="Masukan Nama" />
           </div>
           <button type="submit">Ubah</button>
           <button type="button" onclick="window.history.back()">Kembali</button>
