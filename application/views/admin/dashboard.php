@@ -72,7 +72,7 @@
                     <div class="user-profile">
                         <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
                         <div id="dropdownMenu" class="dropdown-menu">
-                            <a href="<?php echo base_url('views/admin/profile.php'); ?>" id="profile">
+                            <a href="<?php echo base_url('admin/profile.php'); ?>" id="profile">
                                 <i class="fas fa-user"></i> Profile
                             </a>
                             <a href="#">
