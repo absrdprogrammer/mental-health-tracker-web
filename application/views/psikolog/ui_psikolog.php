@@ -79,26 +79,26 @@
                     </nav>
                 </div>
 
-                    <!-- Right side - Search, Notification, Profile -->
+                    <!-- Right side - Search, Notification, Profile (ga di pake) -->
                     <div class="flex items-center space-x-6">
-                        <button class="text-gray-500 hover:text-gray-600" aria-label="Search">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </button>
+                        <!-- <button class="text-gray-500 hover:text-gray-600" aria-label="Search">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+                                <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path> -->
+                            <!-- </svg>
+                        </button> -->
 
-                        <div class="relative">
+                        <!-- <div class="relative">
                             <button class="text-gray-500 hover:text-gray-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                                    </path>
-                                </svg>
-                                <span
-                                    class="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-md text-white">3</span>
-                            </button>
-                        </div>
+                                    </path> -->
+                                <!-- </svg> -->
+                                <!-- <span
+                                    class="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-md text-white">3</span> -->
+                            <!-- </button>
+                        </div> -->
 
                         <!-- Bagian Profil (Trigger Dropdown) -->
 <div class="relative inline-block text-left">
@@ -274,123 +274,55 @@
                 </div>
                 <div id="InQueue" class="tabcontent mt-4">
                     <p>Daftar pasien dalam antrean.</p>
-                    <!-- Patient Cards -->
                     <div class="grid grid-cols-3 gap-6 mt-6">
-                        <!-- Patient Card 1 -->
+                        <!-- Patient Card Example -->
                         <div class="patient-card">
                             <div class="card-header">
                                 <span class="patient-id">#44323</span>
                             </div>
-
                             <div class="patient-info">
                                 <div class="flex items-center">
-                                    <img class="profile-image"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-                                        alt="Patient">
+                                    <img class="profile-image" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient">
                                     <div class="patient-details">
                                         <h3 class="patient-name">Jerome Bellingham</h3>
                                         <p class="patient-contact">jeromebell93@gmail.com</p>
                                     </div>
                                 </div>
-
                                 <div class="doctor-section">
                                     <p class="section-label">Doctor name</p>
                                     <div class="doctor-info">
-                                        <img class="doctor-image"
-                                            src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                            alt="Doctor">
+                                        <img class="doctor-image" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Doctor">
                                         <span class="doctor-name ml-2">Dr. Dianne Rachel</span>
                                     </div>
-
                                     <div class="schedule-info">
                                         <p class="section-label">Estimation Schedule</p>
                                         <p class="schedule-time">7 Jan, 2023 - 10:30</p>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card-actions">
-                                <button class="btn btn-decline">Decline</button>
-                                <button class="btn btn-approve">Approve</button>
+                                <button class="btn btn-decline" onclick="showDeclinePopup()">Decline</button>
+                                <button class="btn btn-approve" onclick="showApprovePopup()">Approve</button>
                             </div>
                         </div>
-
-                        <!-- Patient Card 2 -->
-                        <div class="patient-card">
-                            <div class="card-header">
-                                <span class="patient-id">#44323</span>
-                            </div>
-
-                            <div class="patient-info">
-                                <div class="flex items-center">
-                                    <img class="profile-image"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-                                        alt="Patient">
-                                    <div class="patient-details">
-                                        <h3 class="patient-name">Sarah Johnson</h3>
-                                        <p class="patient-contact">sarah.j@gmail.com</p>
-                                    </div>
-                                </div>
-
-                                <div class="doctor-section">
-                                    <p class="section-label">Doctor name</p>
-                                    <div class="doctor-info">
-                                        <img class="doctor-image"
-                                            src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                                            alt="Doctor">
-                                        <span class="doctor-name ml-2">Dr. Dianne Rachel</span>
-                                    </div>
-
-                                    <div class="schedule-info">
-                                        <p class="section-label">Estimation Schedule</p>
-                                        <p class="schedule-time">7 Jan, 2023 - 10:30</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-actions">
-                                <button class="btn btn-decline">Decline</button>
-                                <button class="btn btn-approve">Approve</button>
-                            </div>
+                    </div>
+                
+                    <div id="approvePopup" class="popup hidden">
+                        <div class="popup-content">
+                            <span class="close" onclick="acceptPatient()">&times;</span>
+                            <div class="success-icon">✔</div>
+                            <p>Pasien berhasil diterima!</p>
                         </div>
-
-                        <!-- Patient Card 3 -->
-                        <div class="patient-card">
-                            <div class="card-header">
-                                <span class="patient-id">#44323</span>
-                            </div>
-
-                            <div class="patient-info">
-                                <div class="flex items-center">
-                                    <img class="profile-image"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                        alt="Patient">
-                                    <div class="patient-details">
-                                        <h3 class="patient-name">Robert Wilson</h3>
-                                        <p class="patient-contact">rwilson@gmail.com</p>
-                                    </div>
-                                </div>
-
-                                <div class="doctor-section">
-                                    <p class="section-label">Doctor name</p>
-                                    <div class="doctor-info">
-                                        <img class="doctor-image"
-                                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                            alt="Doctor">
-                                        <span class="doctor-name ml-2">Dr. Emily Santos</span>
-                                    </div>
-
-                                    <div class="schedule-info">
-                                        <p class="section-label">Estimation Schedule</p>
-                                        <p class="schedule-time">7 Jan, 2023 - 10:30</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-actions">
-                                <button class="btn btn-decline">Decline</button>
-                                <button class="btn btn-approve">Approve</button>
-                            </div>
+                    </div>
+                    
+                
+                    <!-- Decline Popup -->
+                    <div id="declinePopup" class="popup hidden">
+                        <div class="popup-content">
+                            <span class="close" onclick="closePopup('declinePopup')">&times;</span>
+                            <h3>Masukkan alasan penolakan:</h3>
+                            <textarea id="declineReason" placeholder="Ketik alasan di sini..."></textarea>
+                            <button class="btn btn-send" onclick="sendDeclineReason()">Kirim</button>
                         </div>
                     </div>
                 </div>
@@ -429,26 +361,13 @@
                                         <p class="section-label">Estimation Schedule</p>
                                         <p class="schedule-time">7 Jan, 2023 - 10:30</p>
                                     </div>
-                
-                                    <!-- Notes Section -->
-                                    <div class="additional-notes mt-2">
-                                        <label for="notes-44323" class="block text-sm font-medium text-gray-700">
-                                            Notes:
-                                        </label>
-                                        <!-- Textarea and Submit Button -->
-                                        <div id="notes-input-44323">
-                                            <textarea id="notes-44323" name="notes-44323"
-                                                rows="3" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400"
-                                                placeholder="Enter notes here..."></textarea>
-                                            <button onclick="saveNotes('notes-44323')"
-                                                class="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md">
-                                                Kirim
-                                            </button>
-                                        </div>
-                                        <!-- Display Notes -->
-                                        <p id="notes-display-44323" class="hidden mt-2 text-gray-800"></p>
-                                    </div>
                                 </div>
+                            </div>
+                            
+                             <!-- Rejection Reason -->
+                             <div class="rejection-reason mt-4 hidden">
+                                <p class="section-label font-bold">Alasan Penolakan:</p>
+                                <p class="reason-text"></p>
                             </div>
                         </div>
                     </div>
