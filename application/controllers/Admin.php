@@ -48,4 +48,9 @@ class Admin extends CI_Controller
     {
         $this->load->view('admin/profile');
     }
+
+    public function editprofile()
+    {
+        $this->load->view('admin/edit-profile');
+    }
 }
