@@ -20,13 +20,4 @@ class Admin_model extends CI_Model
         $query = $this->db->get('users');
         return $query->result_array();
     }
-
-    public function update_user($user_id, $data)
-    {
-        // Menentukan kondisi untuk update berdasarkan user_id
-        $this->db->where('id', $user_id);
-
-        // Menjalankan query update
-        return $this->db->update('users', $data); // Ganti 'users' dengan nama tabel Anda jika berbeda
-    }
 }
