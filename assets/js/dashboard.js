@@ -1,52 +1,52 @@
-// Fungsi untuk toggle sidebar (menyembunyikan atau menampilkan sidebar)
+// Sidebar toggle functionality
 const sidebarToggle = document.getElementById('sidebar-toggle');
 const sidebar = document.getElementById('sidebar');
 
 sidebarToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('open'); // Menambahkan atau menghapus kelas 'open' pada sidebar
+  sidebar.classList.toggle('open');
 });
 
-// Fungsi untuk memperbarui waktu saat ini
+// Function to update the current time
 function updateTime() {
   const timeDisplay = document.getElementById("timeDisplay");
-  const now = new Date(); // Mendapatkan waktu saat ini
-  const timeString = now.toLocaleTimeString(); // Mengubah waktu menjadi format jam:menit:detik
-  timeDisplay.textContent = timeString; // Menampilkan waktu di elemen dengan ID 'timeDisplay'
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  timeDisplay.textContent = timeString;
 }
 
-// Memperbarui waktu setiap detik
+// Update the time every second
 setInterval(updateTime, 1000);
 
-// Menjalankan fungsi updateTime saat halaman dimuat
+// Initialize the time on page load
 updateTime();
 
-// Fungsi untuk menampilkan atau menyembunyikan menu dropdown profil
+// Profile dropdown functionality
 document.getElementById('profileIcon').addEventListener('click', function () {
   const dropdownMenu = document.getElementById('dropdownMenu');
-  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block'; // Menampilkan atau menyembunyikan menu dropdown
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
-// Menutup menu dropdown jika pengguna mengklik di luar elemen dropdown
+// Close dropdown if clicking outside
 document.addEventListener('click', function (event) {
   const dropdownMenu = document.getElementById('dropdownMenu');
   const profileIcon = document.getElementById('profileIcon');
 
   if (!profileIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
-    dropdownMenu.style.display = 'none'; // Menyembunyikan dropdown jika klik di luar area dropdown atau ikon profil
+    dropdownMenu.style.display = 'none';
   }
 });
 
-// Fungsi untuk menampilkan pesan konfirmasi logout
+// Logout confirmation
 document.querySelector('a[href="#logout"]').addEventListener('click', function () {
-  alert('Logout berhasil!'); // Menampilkan alert dengan pesan logout berhasil
+  alert('Logout berhasil!');
 });
 
-// Fungsi untuk menampilkan pratinjau gambar profil yang dipilih
+// Profile preview functionality
 function previewImage(event) {
-  const reader = new FileReader(); // Membuat objek FileReader untuk membaca file
+  const reader = new FileReader();
   reader.onload = function () {
     const preview = document.getElementById("profilePreview");
-    preview.src = reader.result; // Menampilkan gambar yang dipilih di elemen dengan ID 'profilePreview'
+    preview.src = reader.result;
   };
-  reader.readAsDataURL(event.target.files[0]); // Membaca file yang dipilih dan mengubahnya menjadi URL
+  reader.readAsDataURL(event.target.files[0]);
 }
