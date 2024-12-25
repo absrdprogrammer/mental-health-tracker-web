@@ -47,23 +47,37 @@
                 <div class="w-full md:w-1/2 mb-8 md:mb-0 text-left">
                     <!-- Tag line with pill style -->
                     <div class="mb-6">
-                        <span class="px-4 py-1.5 rounded-full border border-gray-300 text-gray-800 text-sm font-medium tracking-wide bg-white"> MENTAL HEALTH AT 30'S </span>
+                        <span class="px-4 py-1.5 rounded-full border border-gray-300 text-gray-800 text-sm font-medium tracking-wide bg-white"> Glow Up Starts Inside </span>
                     </div>
 
                     <!-- Main Heading with custom styling -->
                     <h1 class="font-serif text-5xl md:text-[4.5rem] leading-[1.1] mb-8">
                         <div class="flex flex-col gap-1">
-                            <span class="block text-amber-800 font-medium">Mental</span>
-                            <span class="block text-amber-800 font-medium">health</span>
+                            <span class="block text-amber-800 font-medium">Track Your Mood</span>
+                            <span class="block text-amber-800 font-medium text-4xl md:text-[3.5rem]">Journal Your Journey </span>
                             <div class="flex items-center gap-4">
-                                <span class="text-gray-900 font-medium">is</span>
-                                <span class="text-gray-900 font-medium">Wealth</span>
+                                <span class="text-gray-900 font-medium">Stay</span>
+                                <span class="text-gray-900 font-medium">Motivated</span>
                             </div>
                         </div>
                     </h1>
 
                     <!-- Description text -->
-                    <p class="text-gray-800 text-lg leading-relaxed mb-12 max-w-md">To live your life to the fullest, we're continuing to find ways to prevent mental health problems.</p>
+                    <p class="text-gray-800 text-lg leading-relaxed mb-8">
+                        <span class="inline-block mr-2">
+                             <!-- Opening heart icon -->
+                        <svg class="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </span>
+                    Prioritize your mental wellness with mood tracking, journaling, and daily motivation. Reflect on your growth and take the next step.
+                    <span class="inline-block ml-2">
+                        <!-- Closing heart icon -->
+                        <svg class="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </span>
+                </p>
 
                     <!-- Scroll Down Arrow in Circle -->
                     <div class="flex items-center">
@@ -144,7 +158,7 @@
                     </h2>
 
                     <div class="space-y-4 text-gray-700 text-lg">
-                        <p>At MindfulMatters, we partner with mental health experts to create innovative tools and programs that promote emotional well-being</p>
+                        <p>At MindfulMatters, we collaborate with mental health specialists to design impactful tools and programs that boost your emotional well-being and mental strength.</p>
                     </div>
 
                     <div class="mt-8">
@@ -250,24 +264,24 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <img src="<?php echo base_url('assets/img/baby1.png'); ?>" alt="Self care" class="mx-auto rounded-xl mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40" />
-                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Self care plans</h3>
-                    <p class="text-gray-600 text-sm sm:text-base">Personalized wellness journey for your needs</p>
+                    <img src="<?php echo base_url('assets/img/wordspace.jpeg'); ?>" alt="Self care" class="mx-auto rounded-xl mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-cover" />
+                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Wordspace</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Write, edit, and save motivational quotes to share or store in your wordspace.</p>
                 </div>
                 <div class="text-center">
-                    <img src="<?php echo base_url('assets/img/baby2.png'); ?>" alt="Mind reset" class="mx-auto rounded-full mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40" />
-                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Mind reset tips</h3>
-                    <p class="text-gray-600 text-sm sm:text-base">Techniques to help you find balance</p>
+                    <img src="<?php echo base_url('assets/img/dokter.jpeg'); ?>" alt="Mind reset" class="mx-auto rounded-full mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-cover" />
+                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Book a Psychologist</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Schedule sessions with psychologists based on expertise and availability online.</p>
                 </div>
                 <div class="text-center">
-                    <img src="<?php echo base_url('assets/img/baby4.png'); ?>" alt="Positive practices" class="mx-auto rounded-full mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40" />
-                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Positive practices</h3>
-                    <p class="text-gray-600 text-sm sm:text-base">Build healthy mental habits daily</p>
+                    <img src="<?php echo base_url('assets/img/jurnal.jpeg'); ?>" alt="Positive practices" class="mx-auto rounded-full mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-cover" />
+                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Personal Journal</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Track emotions, add tags, and view trends to understand your emotional patterns.</p>
                 </div>
                 <div class="text-center">
-                    <img src="<?php echo base_url('assets/img/baby3.png'); ?>" alt="Psychology" class="mx-auto rounded-full mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40" />
-                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Modern psychology</h3>
-                    <p class="text-gray-600 text-sm sm:text-base">Expert guidance for your journey</p>
+                    <img src="<?php echo base_url('assets/img/emotion.jpeg'); ?>" alt="Psychology" class="mx-auto rounded-full mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-cover" />
+                    <h3 class="font-semibold mb-2 text-base sm:text-lg md:text-xl">Mood Tracker</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">The Mood Tracker lets users log emotions daily, helping identify trends and understand emotional shifts.</p>
                 </div>
             </div>
         </div>
