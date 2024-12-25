@@ -85,9 +85,8 @@
           </div>
 
           <!-- User Information -->
-          <div class="profile-info">
-            <h4 id="userName">[Name]</h4>
-            <p id="userRole">[Role]</p>
+          <div class="profile-info"><?= htmlspecialchars($userbyid['username']); ?></h4>
+            <p id="userRole"><?= htmlspecialchars($userbyid['role']) ?></p>
           </div>
         </div>
 
@@ -95,7 +94,7 @@
         <div class="personal-info">
           <h3>Personal Information</h3>
           <ul>
-            <li>Email: <span id="userEmail">[Email]</span></li>
+          <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
           </ul>
         </div>
       </div>
