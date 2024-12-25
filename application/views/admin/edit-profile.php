@@ -74,17 +74,17 @@
       </header>
       <div class="edit-profile-container">
         <h2>Profile</h2>
-        <form action="save-profile.php" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo base_url('admin/save_profile'); ?>" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <label for="userEmail">Email:</label>
-            <input type="email" id="userEmail" name="userEmail" value="sahlahr08@gmail.com" placeholder="Masukan Email" />
+            <input type="email" id="userEmail" name="userEmail" value="<?php echo htmlspecialchars($userbyid['email']); ?>" placeholder="Masukan Email" />
           </div>
           <div class="form-group">
             <label for="userName">Nama Lengkap:</label>
-            <input type="text" id="userName" name="userName" value="Sahlah Rizqiyyah" placeholder="Masukan Nama Lengkap" />
+            <input type="text" id="userName" name="userName" value="<?php echo htmlspecialchars($userbyid['username']); ?>" placeholder="Masukan Nama Lengkap" />
           </div>
           <div class="form-group">
-            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" id="profilePreview" />
+            <img src="<?php echo base_url('assets/img/') . htmlspecialchars($userbyid['profile_image']); ?>" alt="Profile Image" id="profilePreview" />
             <label for="profileImg">Gambar:</label>
             <input type="file" id="profileImg" name="profileImg" onchange="previewImage(event)" />
           </div>
@@ -93,7 +93,8 @@
         </form>
       </div>
       <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
+    </main>
+  </div>
 </body>
 
 </html>
-</body>
