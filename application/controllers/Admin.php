@@ -61,7 +61,10 @@ class Admin extends CI_Controller
 
     public function editprofile()
     {
-        $this->load->view('admin/edit-profile');
+        $user_id = $this->session->userdata('user_id'); // Ambil user_id dari session
+        $data['userbyid'] = $this->User_model->get_users_by_id($user_id); // Ambil data user berdasarkan ID
+    
+        $this->load->view('admin/edit-profile', $data); // Kirim data ke view
     }
 
     public function save_profile()
