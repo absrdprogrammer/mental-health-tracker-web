@@ -43,4 +43,9 @@ class Admin extends CI_Controller
         // Return data dalam format JSON
         echo json_encode(['barData' => $barData, 'pieData' => $pieData]);
     }
+
+    public function profile()
+    {
+        $this->load->view('admin/profile', $data);
+    }
 }
