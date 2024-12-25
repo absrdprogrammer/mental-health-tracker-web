@@ -46,7 +46,15 @@ class Admin extends CI_Controller
 
     public function profile()
     {
-        $this->load->view('admin/profile');
+        $user_id = $this->session->userdata('user_id');
+        log_message('info', 'Session user_id set: ' . $this->session->userdata('user_id'));
+
+        // Ambil data dari model
+        $data['users'] = $this->Admin_model->get_users();
+        $data['userbyid'] = $this->User_model->get_users_by_id($user_id);
+        $data['counts'] = $this->Admin_model->get_counts();
+        
+        $this->load->view('admin/profile', $data);
     }
 
     public function editprofile()
