@@ -79,7 +79,7 @@
           <!-- Profile Image -->
           <div class="image-container">
             <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
-            <button class="edit-btn" onclick="window.location.href='<?php echo base_url('admin/edit-profile'); ?>'">
+            <button class="edit-btn" onclick="window.location.href='<?php echo base_url('admin/editprofile'); ?>'">
               <i class="fas fa-pencil-alt"></i>
             </button>
           </div>
