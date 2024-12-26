@@ -47,6 +47,28 @@ class Journal extends CI_Controller
         redirect('journal');
     }
 
+    public function update()
+    {
+        $content = $this->input->post('content');
+        log_message('info', 'Content: ' . $content);
+        $journal_id = $this->input->post('journal_id');
+        log_message('info', 'Journal id: ' . $journal_id);
+
+        $data = [
+            'content' => $content,
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+        $this->Journal_model->update_journal($journal_id, $data);
+        redirect('journal');
+    }
+
+    public function delete()
+    {
+        $journal_id = $this->input->post('journal_id');
+        $this->Journal_model->delete_journal($journal_id);
+        redirect('journal');
+    }
+
     // Menampilkan jurnal pengguna
     public function index()
     {

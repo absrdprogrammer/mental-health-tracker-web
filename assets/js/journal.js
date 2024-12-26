@@ -7,11 +7,26 @@ function showPopup(color) {
     popup.style.display = 'flex';
 }
 
+function showPopupEdit(journal_id, content) {
+    console.log("Journal ID:", journal_id);
+    const popup = document.getElementById('popup-edit');
+    document.getElementById('journal-id').value = journal_id;
+    document.getElementById('note-text-edit').value = content;
+    popup.style.display = 'flex';
+}
+
 // Close popup
 function closePopup() {
     const popup = document.getElementById('popup');
     popup.style.display = 'none';
     document.getElementById('note-text').value = ''; // Clear input
+    popup.dataset.journalId = ''; // Clear journal ID
+}
+
+function closePopupEdit() {
+    const popup = document.getElementById('popup-edit');
+    popup.style.display = 'none';
+    document.getElementById('note-text-edit').value = ''; // Clear input
     popup.dataset.journalId = ''; // Clear journal ID
 }
 
@@ -36,6 +51,11 @@ function saveNote() {
         return;
     }
 
+    // Format tanggal sesuai dengan format yang diinginkan
+    const date = new Date();
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options); // "25 May 2020"
+
     if (journalId) {
         // Update existing journal
         const note = document.querySelector(`.note[data-id="${journalId}"]`);
@@ -49,8 +69,10 @@ function saveNote() {
         note.style.backgroundColor = color; // Apply selected color
         note.dataset.id = new Date().getTime(); // Simulate unique ID for now
         note.innerHTML = `
-            <p>${text}</p>
-            <small>${new Date().toLocaleDateString()}</small>
+            <div class="note-header">
+                <small>${formattedDate}</small>
+            </div>
+            <p style="color: white;">${text}</p>
             <div class="actions">
                 <button class="favorite-btn" onclick="toggleFavorite(this)">★</button>
                 <button class="edit-btn" onclick="editNote(this)">✎</button>

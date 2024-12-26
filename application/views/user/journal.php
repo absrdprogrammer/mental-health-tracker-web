@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/journal.css'); ?>" />
 </head>
 
@@ -37,12 +38,21 @@
             <?php if (!empty($journals)) : ?>
                 <?php foreach ($journals as $journal) : ?>
                     <div class="note" style="background-color: <?php echo $journal['color']; ?>" data-id="<?php echo $journal['journal_id']; ?>">
+                        <small>
+                            <?php
+                            $timestamp = strtotime($journal['created_at']);
+                            echo date('l,', $timestamp) . "<br>" . date('j F Y', $timestamp);
+                            ?>
+                        </small>
+
                         <p><?php echo htmlspecialchars($journal['content']); ?></p>
-                        <small>Sentiment: <?php echo ucfirst($journal['sentiment']); ?></small><br>
-                        <small>Created at: <?php echo $journal['created_at']; ?></small>
+                        <!-- <small>Sentiment: <?php echo ucfirst($journal['sentiment']); ?></small><br> -->
                         <div class="actions">
-                            <button class="edit-btn" onclick="editJournal(<?php echo $journal['journal_id']; ?>, '<?php echo htmlspecialchars($journal['content']); ?>', '<?php echo $journal['color']; ?>')">✎</button>
-                            <button class="delete-btn" onclick="deleteJournal(<?php echo $journal['journal_id']; ?>)">🗑</button>
+                            <button class="edit-btn" onclick="showPopupEdit(<?php echo $journal['journal_id']; ?>, '<?php echo htmlspecialchars($journal['content']); ?>')">✎</button>
+                            <form action="<?php echo base_url('journal/delete'); ?>" method="POST" id="journal-form">
+                                <input type="hidden" name="journal_id" id="journal-id-delete" value="<?php echo $journal['journal_id']; ?>">
+                                <button type="submit" class="delete-btn">🗑</button>
+                            </form>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -61,6 +71,19 @@
                 <input type="hidden" name="color" id="note-color">
                 <button type="submit">Add Journal</button>
                 <button type="button" class="bg-gray-500 text-white p-2 rounded" onclick="closePopup()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup for adding journal -->
+    <div class="popup" id="popup-edit">
+        <div class="popup-content">
+            <h2>Add New Journal</h2>
+            <form action="<?php echo base_url('journal/update'); ?>" method="POST" id="journal-form">
+                <input type="hidden" name="journal_id" id="journal-id">
+                <textarea name="content" id="note-text-edit" placeholder="Write your journal here..." required></textarea>
+                <button type="submit">Sumbit Journal</button>
+                <button type="button" class="bg-gray-500 text-white p-2 rounded" onclick="closePopupEdit()">Cancel</button>
             </form>
         </div>
     </div>

@@ -7,7 +7,7 @@
 
 /* Body Setup */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: #f4f4f9;
     color: #333;
     display: flex;
@@ -23,7 +23,9 @@ body {
 }
 
 .notes-header h1 {
-    font-size: 32px;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .search-bar input {
@@ -31,7 +33,7 @@ body {
     padding: 10px;
     border-radius: 25px;
     border: 1px solid #ddd;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 10px;
 }
 
@@ -47,6 +49,7 @@ body {
 .sidebar {
     background: #fff;
     width: 75px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,18 +101,19 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     padding: 0 20px;
+    margin-bottom: 60px;
 }
 
 .notes h1 {
     width: 100%;
-    font-size: 45px;
+    font-size: 40px;
     color: #222;
     margin-bottom: 10px;
 }
 
 .note {
-    width: calc(32.345% - 45px);
-    min-height: 120px;
+    width: 190px;
+    min-height: 200px;
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -131,12 +135,14 @@ body {
 .note.blue { background: #4fc3f7; color: white; }
 
 .note p {
-    font-size: 16px;
-    margin: 0;
+    font-size: 18px;
+    margin: 10px 0;
+    color: whitesmoke;
 }
 
 .note small {
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 16px;
     color: rgba(0, 0, 0, 0.6);
     margin-top: 10px;
 }
@@ -212,4 +218,12 @@ button:hover {
 
 button:hover {
     background: #5bc0de;
+}
+
+/* Actions */
+.actions {
+    display: flex;            /* Align buttons side by side */
+    justify-content: left; /* Distribute space between buttons */
+    gap: 10px;                /* Add some space between the buttons */
+    margin-top: 10px;
 }
