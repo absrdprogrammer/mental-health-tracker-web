@@ -57,8 +57,8 @@
                   </button>
                 </div>
                 <div class="profile-info">
-                  <h4>[Name]</h4>
-                  <p>[Email]</p>
+                <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
+                <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
                 </div>
               </div>
               <div class="progress-section">
