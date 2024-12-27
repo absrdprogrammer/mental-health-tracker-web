@@ -276,45 +276,47 @@
                     <p>Daftar pasien dalam antrean.</p>
                     <!-- Patient Cards -->
                     <div class="grid grid-cols-3 gap-6 mt-6">
-                        <!-- Patient Card 1 -->
-                        <div class="patient-card">
-                            <div class="card-header">
-                                <span class="patient-id">#44323</span>
-                            </div>
+                        <?php foreach ($bookings as $booking): ?>
+                            <div class="patient-card">
+                                <div class="card-header">
+                                    <span class="patient-id">#<?php echo $booking->booking_id; ?></span>
+                                </div>
 
-                            <div class="patient-info">
-                                <div class="flex items-center">
-                                    <img class="profile-image"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-                                        alt="Patient">
-                                    <div class="patient-details">
-                                        <h3 class="patient-name">Jerome Bellingham</h3>
-                                        <p class="patient-contact">jeromebell93@gmail.com</p>
+                                <div class="patient-info">
+                                    <div class="flex items-center">
+                                        <img class="profile-image"
+                                            src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                            alt="Patient">
+                                        <div class="patient-details">
+                                            <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
+                                            <p class="patient-contact"><?php echo $booking->user_email; ?></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="doctor-section">
+                                        <p class="section-label">Psychologist Name</p>
+                                        <div class="doctor-info">
+                                            <img class="doctor-image"
+                                                src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                alt="Psychologist">
+                                            <span class="doctor-name ml-2"><?php echo $booking->psychologist_name; ?></span>
+                                        </div>
+
+                                        <div class="schedule-info">
+                                            <p class="section-label">Estimation Schedule</p>
+                                            <p class="schedule-time"><?php echo date('d M, Y - H:i', strtotime($booking->booking_date . ' ' . $booking->booking_time)); ?></p>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="doctor-section">
-                                    <p class="section-label">Doctor name</p>
-                                    <div class="doctor-info">
-                                        <img class="doctor-image"
-                                            src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                            alt="Doctor">
-                                        <span class="doctor-name ml-2">Dr. Dianne Rachel</span>
-                                    </div>
-
-                                    <div class="schedule-info">
-                                        <p class="section-label">Estimation Schedule</p>
-                                        <p class="schedule-time">7 Jan, 2023 - 10:30</p>
-                                    </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-decline">Decline</button>
+                                    <button class="btn btn-approve">Approve</button>
                                 </div>
                             </div>
-
-                            <div class="card-actions">
-                                <button class="btn btn-decline">Decline</button>
-                                <button class="btn btn-approve">Approve</button>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
+
 
                     <div id="Archive" class="tabcontent hidden mt-4">
                         <p>Daftar pasien yang diarsipkan.</p>
