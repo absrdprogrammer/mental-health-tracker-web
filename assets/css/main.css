@@ -1028,6 +1028,11 @@ h3 {
 	align-items: center;
 }
 
+.psychologist-info-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
 .psychologist-image-wrapper {
 	width: 127px;
 	height: 145px;
