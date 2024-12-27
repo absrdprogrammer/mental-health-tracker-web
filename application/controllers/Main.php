@@ -16,6 +16,7 @@ class Main extends CI_Controller
     {
         $user_id = $this->session->userdata('user_id');
         $data['user'] = $this->User_model->get_users_by_id($user_id);
+        $data['psychologists'] = $this->User_model->get_psychologists();
         $this->load->view('user/main', $data);
     }
 
@@ -42,5 +43,29 @@ class Main extends CI_Controller
     public function edit_profile()
     {
         $this->load->view('user/profile');
+    }
+
+    public function submit()
+    {
+        // Ambil data dari request
+        $input = json_decode(file_get_contents('php://input'), true);
+
+        $psychologist_id = $input['psychologist_id'];
+        $booking_date = $input['booking_date'];
+        $booking_time = $input['booking_time'];
+
+        // Simpan ke database
+        $data = [
+            'user_id' => $this->session->userdata('user_id'), // ID user dari session
+            'psychologist_id' => $psychologist_id,
+            'booking_date' => $booking_date,
+            'booking_time' => $booking_time,
+            'status' => 'pending',
+        ];
+
+        $this->db->insert('bookings', $data);
+
+        // Kirim respon ke frontend
+        echo json_encode(['message' => 'Booking berhasil!']);
     }
 }

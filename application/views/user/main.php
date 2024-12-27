@@ -220,13 +220,17 @@
                 <i class="fas fa-chevron-left"></i>
               </button>
 
-              <div class="psychologist-info">
-                <div class="psychologist-image-wrapper">
-                  <img id="psychologistImage" src="<?php echo base_url('assets/img/psikolog.jpeg'); ?>" alt="Psychologist" />
-                </div>
-                <h3 id="psychologistName" class="psychologist-name">Dr. Dianne Rachel</h3>
-                <p id="psychologistTitle" class="psychologist-title">Experienced Psychologist</p>
-                <button class="booking-btn" id="bookingBtn">Booking Psikolog</button>
+              <div class="psychologist-info-wrapper">
+                <?php foreach ($psychologists as $index => $psychologist): ?>
+                  <div class="psychologist-info" data-id="<?php echo $psychologist->user_id; ?>">
+                    <div class="psychologist-image-wrapper">
+                      <img id="psychologistImage" src="<?php echo base_url('assets/img/psikolog.jpeg'); ?>" alt="Psychologist" />
+                    </div>
+                    <h3 class="psychologist-name"><?php echo $psychologist->username; ?></h3>
+                    <p id="psychologistTitle" class="psychologist-title">Experienced Psychologist</p>
+                    <button class="booking-btn" id="bookingBtn" onclick="openBookingModal(<?php echo $psychologist->user_id; ?>)">Booking Psikolog</button>
+                  </div>
+                <?php endforeach; ?>
               </div>
 
               <button class="nav-btn right-btn" onclick="nextPsychologist()">

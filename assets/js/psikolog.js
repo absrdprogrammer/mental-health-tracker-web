@@ -140,23 +140,26 @@ const psychologists = [
     },
   ];
   
-  let currentIndex = 0;
+  let currentIndex = 0; // Index awal
+  const psychologistCards = document.querySelectorAll('.psychologist-info'); // Semua elemen kartu
   
-  // Fungsi untuk memperbarui tampilan psikolog
-  function updatePsychologist(index) {
-    const psychologist = psychologists[index];
-    document.getElementById("psychologistImage").src = psychologist.image;
-    document.getElementById("psychologistName").textContent = psychologist.name;
-    document.getElementById("psychologistTitle").textContent = psychologist.title;
+  function updateVisibility() {
+      psychologistCards.forEach((card, index) => {
+          card.style.display = index === currentIndex ? 'block' : 'none';
+      });
   }
   
   function prevPsychologist() {
-    currentIndex = currentIndex === 0 ? psychologists.length - 1 : currentIndex - 1;
-    updatePsychologist(currentIndex);
+      currentIndex = (currentIndex - 1 + psychologistCards.length) % psychologistCards.length;
+      updateVisibility();
   }
   
   function nextPsychologist() {
-    currentIndex = currentIndex === psychologists.length - 1 ? 0 : currentIndex + 1;
-    updatePsychologist(currentIndex);
+      currentIndex = (currentIndex + 1) % psychologistCards.length;
+      updateVisibility();
   }
+  
+  // Pastikan hanya satu kartu terlihat saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', updateVisibility);
+  
   

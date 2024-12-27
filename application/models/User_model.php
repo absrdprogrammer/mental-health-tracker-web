@@ -10,4 +10,10 @@ class User_model extends CI_Model
         $query = $this->db->get('users');
         return $query->row_array();
     }
+
+    public function get_psychologists()
+    {
+        $this->db->where('role', 'psikolog');
+        return $this->db->get('users')->result();
+    }
 }

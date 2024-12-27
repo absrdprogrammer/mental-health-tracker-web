@@ -35,7 +35,6 @@
             <form action="<?php echo base_url('auth'); ?>" method="POST">
                 <button type="submit" class="get-help-btn bg-blue-500 text-white px-4 py-2 rounded-full my-4">Sign in</button>
             </form>
-
         </div>
     </header>
 

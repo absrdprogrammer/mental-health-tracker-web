@@ -57,27 +57,27 @@
         </aside>
 
         <!-- Main Content -->
-       <!-- Main Content -->
-       <div class="flex-1 ml-16">
-        <!-- Header section yang diperbarui -->
-        <!-- Header section yang diperbarui -->
-        <header class="bg-white border-b border-gray-200">
-            <div class="flex justify-between items-center px-4 py-2">
-                <!-- Left side - Breadcrumb -->
-                <div class="flex items-center">
-                    <nav class="flex items-center space-x-2 text-sm">
-                        <a href="#" class="logo">
-                            <img src="assets\img\logo.png" alt="Logo" class="logo-image">
-                        </a>
-                        <div class="flex items-center">
-                            <!-- <a href="#" class="text-gray-500">Patient Queue</a> -->
-                            <!-- <span class="text-gray-400 mx-2">/</span> -->
-                            <span style="font-weight: bold; color: black; font-size: 1rem; font-family: Arial, sans-serif;">
-                                Approval New Patient
-                            </span>
-                        </div>
-                    </nav>
-                </div>
+        <!-- Main Content -->
+        <div class="flex-1 ml-16">
+            <!-- Header section yang diperbarui -->
+            <!-- Header section yang diperbarui -->
+            <header class="bg-white border-b border-gray-200">
+                <div class="flex justify-between items-center px-4 py-2">
+                    <!-- Left side - Breadcrumb -->
+                    <div class="flex items-center">
+                        <nav class="flex items-center space-x-2 text-sm">
+                            <a href="#" class="logo">
+                                <img src="assets\img\logo.png" alt="Logo" class="logo-image">
+                            </a>
+                            <div class="flex items-center">
+                                <!-- <a href="#" class="text-gray-500">Patient Queue</a> -->
+                                <!-- <span class="text-gray-400 mx-2">/</span> -->
+                                <span style="font-weight: bold; color: black; font-size: 1rem; font-family: Arial, sans-serif;">
+                                    Approval New Patient
+                                </span>
+                            </div>
+                        </nav>
+                    </div>
 
                     <!-- Right side - Search, Notification, Profile -->
                     <div class="flex items-center space-x-6">
@@ -101,75 +101,75 @@
                         </div>
 
                         <!-- Bagian Profil (Trigger Dropdown) -->
-<div class="relative inline-block text-left">
-    <div class="flex items-center space-x-3 cursor-pointer" onclick="toggleDropdown()">
-        <div class="relative">
-            <img src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                alt="Alexander Smith" id="profileImageDisplay"
-                class="w-8 h-8 rounded-full">
-            <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-400 rounded-full border-2 border-white"></span>
-        </div>
-        <div class="text-sm">
-            <p class="font-medium" id="profileNameDisplay">Alexander Smith</p>
-            <p class="text-md text-gray-500">as a Psikolog</p>
-        </div>
-    </div>
+                        <div class="relative inline-block text-left">
+                            <div class="flex items-center space-x-3 cursor-pointer" onclick="toggleDropdown()">
+                                <div class="relative">
+                                    <img src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                        alt="Alexander Smith" id="profileImageDisplay"
+                                        class="w-8 h-8 rounded-full">
+                                    <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-400 rounded-full border-2 border-white"></span>
+                                </div>
+                                <div class="text-sm">
+                                    <p class="font-medium" id="profileNameDisplay">Alexander Smith</p>
+                                    <p class="text-md text-gray-500">as a Psikolog</p>
+                                </div>
+                            </div>
 
-    <!-- Dropdown -->
-    <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50">
-        <!-- Tampilan Profil -->
-        <div id="profileView" class="space-y-3">
-            <div class="flex items-center space-x-3">
-                <img src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" 
-                     alt="Profile Picture" id="profileImagePreview" 
-                     class="w-16 h-16 rounded-full border">
-                <div>
-                    <p class="font-semibold" id="profileNameText">Alexander Smith</p>
-                    <p class="text-gray-500 text-sm" id="profileEmailText">alexander.smith@gmail.com</p>
-                </div>
-            </div>
-            <button onclick="showEditForm()" 
-                    class="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded">
-                Edit Profil
-            </button>
-        </div>
+                            <!-- Dropdown -->
+                            <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50">
+                                <!-- Tampilan Profil -->
+                                <div id="profileView" class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <img src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                            alt="Profile Picture" id="profileImagePreview"
+                                            class="w-16 h-16 rounded-full border">
+                                        <div>
+                                            <p class="font-semibold" id="profileNameText">Alexander Smith</p>
+                                            <p class="text-gray-500 text-sm" id="profileEmailText">alexander.smith@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="showEditForm()"
+                                        class="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded">
+                                        Edit Profil
+                                    </button>
+                                </div>
 
-        <!-- Form Edit Profil -->
-        <div id="profileEditForm" class="hidden space-y-3">
-            <!-- Edit Foto Profil -->
-            <div>
-                <label for="editProfileImage" class="block text-sm font-medium text-gray-700">Foto Profil</label>
-                <input type="file" id="editProfileImage" accept="image/*" class="w-full text-sm">
-            </div>
+                                <!-- Form Edit Profil -->
+                                <div id="profileEditForm" class="hidden space-y-3">
+                                    <!-- Edit Foto Profil -->
+                                    <div>
+                                        <label for="editProfileImage" class="block text-sm font-medium text-gray-700">Foto Profil</label>
+                                        <input type="file" id="editProfileImage" accept="image/*" class="w-full text-sm">
+                                    </div>
 
-            <!-- Edit Nama -->
-            <div>
-                <label for="editProfileName" class="block text-sm font-medium text-gray-700">Nama</label>
-                <input type="text" id="editProfileName" placeholder="Masukkan Nama"
-                       class="w-full p-2 border rounded-md">
-            </div>
+                                    <!-- Edit Nama -->
+                                    <div>
+                                        <label for="editProfileName" class="block text-sm font-medium text-gray-700">Nama</label>
+                                        <input type="text" id="editProfileName" placeholder="Masukkan Nama"
+                                            class="w-full p-2 border rounded-md">
+                                    </div>
 
-            <!-- Edit Email -->
-            <div>
-                <label for="editProfileEmail" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="editProfileEmail" placeholder="Masukkan Email"
-                       class="w-full p-2 border rounded-md">
-            </div>
+                                    <!-- Edit Email -->
+                                    <div>
+                                        <label for="editProfileEmail" class="block text-sm font-medium text-gray-700">Email</label>
+                                        <input type="email" id="editProfileEmail" placeholder="Masukkan Email"
+                                            class="w-full p-2 border rounded-md">
+                                    </div>
 
-            <!-- Tombol Simpan & Batal -->
-            <div class="flex justify-end gap-2">
-                <button onclick="hideEditForm()" 
-                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-1 px-3 rounded text-sm">
-                    Batal
-                </button>
-                <button onclick="saveProfileChanges()" 
-                        class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded text-sm">
-                    Simpan
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+                                    <!-- Tombol Simpan & Batal -->
+                                    <div class="flex justify-end gap-2">
+                                        <button onclick="hideEditForm()"
+                                            class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-1 px-3 rounded text-sm">
+                                            Batal
+                                        </button>
+                                        <button onclick="saveProfileChanges()"
+                                            class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded text-sm">
+                                            Simpan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -314,139 +314,61 @@
                                 <button class="btn btn-approve">Approve</button>
                             </div>
                         </div>
-
-                        <!-- Patient Card 2 -->
-                        <div class="patient-card">
-                            <div class="card-header">
-                                <span class="patient-id">#44323</span>
-                            </div>
-
-                            <div class="patient-info">
-                                <div class="flex items-center">
-                                    <img class="profile-image"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-                                        alt="Patient">
-                                    <div class="patient-details">
-                                        <h3 class="patient-name">Sarah Johnson</h3>
-                                        <p class="patient-contact">sarah.j@gmail.com</p>
-                                    </div>
-                                </div>
-
-                                <div class="doctor-section">
-                                    <p class="section-label">Doctor name</p>
-                                    <div class="doctor-info">
-                                        <img class="doctor-image"
-                                            src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                                            alt="Doctor">
-                                        <span class="doctor-name ml-2">Dr. Dianne Rachel</span>
-                                    </div>
-
-                                    <div class="schedule-info">
-                                        <p class="section-label">Estimation Schedule</p>
-                                        <p class="schedule-time">7 Jan, 2023 - 10:30</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-actions">
-                                <button class="btn btn-decline">Decline</button>
-                                <button class="btn btn-approve">Approve</button>
-                            </div>
-                        </div>
-
-                        <!-- Patient Card 3 -->
-                        <div class="patient-card">
-                            <div class="card-header">
-                                <span class="patient-id">#44323</span>
-                            </div>
-
-                            <div class="patient-info">
-                                <div class="flex items-center">
-                                    <img class="profile-image"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                        alt="Patient">
-                                    <div class="patient-details">
-                                        <h3 class="patient-name">Robert Wilson</h3>
-                                        <p class="patient-contact">rwilson@gmail.com</p>
-                                    </div>
-                                </div>
-
-                                <div class="doctor-section">
-                                    <p class="section-label">Doctor name</p>
-                                    <div class="doctor-info">
-                                        <img class="doctor-image"
-                                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                            alt="Doctor">
-                                        <span class="doctor-name ml-2">Dr. Emily Santos</span>
-                                    </div>
-
-                                    <div class="schedule-info">
-                                        <p class="section-label">Estimation Schedule</p>
-                                        <p class="schedule-time">7 Jan, 2023 - 10:30</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-actions">
-                                <button class="btn btn-decline">Decline</button>
-                                <button class="btn btn-approve">Approve</button>
-                            </div>
-                        </div>
                     </div>
-                </div>
 
-                <div id="Archive" class="tabcontent hidden mt-4">
-                    <p>Daftar pasien yang diarsipkan.</p>
-                    <!-- Patient Cards -->
-                    <div class="grid grid-cols-3 gap-6 mt-6">
-                        <!-- Patient Card 1 -->
-                        <div class="patient-card">
-                            <div class="card-header">
-                                <span class="patient-id">#44323</span>
-                            </div>
-                
-                            <div class="patient-info">
-                                <div class="flex items-center">
-                                    <img class="profile-image"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-                                        alt="Patient">
-                                    <div class="patient-details">
-                                        <h3 class="patient-name">Jerome Bellingham</h3>
-                                        <p class="patient-contact">jeromebell93@gmail.com</p>
-                                    </div>
+                    <div id="Archive" class="tabcontent hidden mt-4">
+                        <p>Daftar pasien yang diarsipkan.</p>
+                        <!-- Patient Cards -->
+                        <div class="grid grid-cols-3 gap-6 mt-6">
+                            <!-- Patient Card 1 -->
+                            <div class="patient-card">
+                                <div class="card-header">
+                                    <span class="patient-id">#44323</span>
                                 </div>
-                
-                                <div class="doctor-section">
-                                    <p class="section-label">Doctor name</p>
-                                    <div class="doctor-info">
-                                        <img class="doctor-image"
-                                            src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                            alt="Doctor">
-                                        <span class="doctor-name ml-2">Dr. Dianne Rachel</span>
-                                    </div>
-                
-                                    <div class="schedule-info">
-                                        <p class="section-label">Estimation Schedule</p>
-                                        <p class="schedule-time">7 Jan, 2023 - 10:30</p>
-                                    </div>
-                
-                                    <!-- Notes Section -->
-                                    <div class="additional-notes mt-2">
-                                        <label for="notes-44323" class="block text-sm font-medium text-gray-700">
-                                            Notes:
-                                        </label>
-                                        <!-- Textarea and Submit Button -->
-                                        <div id="notes-input-44323">
-                                            <textarea id="notes-44323" name="notes-44323"
-                                                rows="3" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400"
-                                                placeholder="Enter notes here..."></textarea>
-                                            <button onclick="saveNotes('notes-44323')"
-                                                class="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md">
-                                                Kirim
-                                            </button>
+
+                                <div class="patient-info">
+                                    <div class="flex items-center">
+                                        <img class="profile-image"
+                                            src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                            alt="Patient">
+                                        <div class="patient-details">
+                                            <h3 class="patient-name">Jerome Bellingham</h3>
+                                            <p class="patient-contact">jeromebell93@gmail.com</p>
                                         </div>
-                                        <!-- Display Notes -->
-                                        <p id="notes-display-44323" class="hidden mt-2 text-gray-800"></p>
+                                    </div>
+
+                                    <div class="doctor-section">
+                                        <p class="section-label">Doctor name</p>
+                                        <div class="doctor-info">
+                                            <img class="doctor-image"
+                                                src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                alt="Doctor">
+                                            <span class="doctor-name ml-2">Dr. Dianne Rachel</span>
+                                        </div>
+
+                                        <div class="schedule-info">
+                                            <p class="section-label">Estimation Schedule</p>
+                                            <p class="schedule-time">7 Jan, 2023 - 10:30</p>
+                                        </div>
+
+                                        <!-- Notes Section -->
+                                        <div class="additional-notes mt-2">
+                                            <label for="notes-44323" class="block text-sm font-medium text-gray-700">
+                                                Notes:
+                                            </label>
+                                            <!-- Textarea and Submit Button -->
+                                            <div id="notes-input-44323">
+                                                <textarea id="notes-44323" name="notes-44323"
+                                                    rows="3" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400"
+                                                    placeholder="Enter notes here..."></textarea>
+                                                <button onclick="saveNotes('notes-44323')"
+                                                    class="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md">
+                                                    Kirim
+                                                </button>
+                                            </div>
+                                            <!-- Display Notes -->
+                                            <p id="notes-display-44323" class="hidden mt-2 text-gray-800"></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -455,10 +377,9 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
-	<script src="<?php echo base_url('assets/js/psikolog.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/psikolog.js'); ?>"></script>
 </body>
 
 </html>
