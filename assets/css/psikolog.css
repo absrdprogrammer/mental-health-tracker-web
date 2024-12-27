@@ -1,0 +1,637 @@
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 64px;
+    background-color: #00bfae;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0;
+}
+
+
+.logo-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* Menggunakan contain agar gambar tidak terpotong */
+    object-position: left; /* Memastikan logo rata kiri */
+  }
+  
+  /* Container untuk logo */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  
+  /* Media query untuk responsivitas */
+  @media screen and (max-width: 768px) {
+    .logo-image {
+      width: 60px;
+      height: 60px;
+    }
+  }
+/* Sidebar Content */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Navigation Menu */
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Menu Items Container */
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* Menu Items Styling */
+  .sidebar nav a {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .sidebar nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+  
+  /* Active State */
+  .sidebar nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #3b82f6;
+  }
+  
+  /* Icons */
+  .sidebar nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Logout Container */
+  .logout-container {
+    margin-top: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 56px;
+      padding: 12px 0;
+    }
+  
+    .sidebar nav svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .sidebar {
+      width: 48px;
+      padding: 8px 0;
+    }
+  
+    .sidebar nav svg {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .menu-items {
+      gap: 0.75rem;
+    }
+  }
+
+/* Card Styling */
+.card1 {
+    background-color: #00bfae; /* Ganti warna latar belakang sesuai permintaan */
+    padding: 1.5rem; /* Sama dengan p-6 */
+    border-radius: 0.5rem; /* Sama dengan rounded-lg */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sama dengan shadow-sm */
+    color: white;
+}
+
+.card2 {
+    background-color: #ff6384; /* Ganti warna latar belakang sesuai permintaan */
+    padding: 1.5rem; /* Sama dengan p-6 */
+    border-radius: 0.5rem; /* Sama dengan rounded-lg */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sama dengan shadow-sm */
+    color: white;
+}
+
+.card3 {
+    background-color: #22c55e; /* Ganti warna latar belakang sesuai permintaan */
+    padding: 1.5rem; /* Sama dengan p-6 */
+    border-radius: 0.5rem; /* Sama dengan rounded-lg */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sama dengan shadow-sm */
+    color: white;
+}
+
+.card4 {
+    background-color:  rgb(237, 92, 92); /* Ganti warna latar belakang sesuai permintaan */
+    padding: 1.5rem; /* Sama dengan p-6 */
+    border-radius: 0.5rem; /* Sama dengan rounded-lg */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sama dengan shadow-sm */
+    color: white;
+}
+
+/* Title in Card */
+.card-title {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.300rem; 
+}
+
+/* Content in Card */
+.card-content {
+    display: flex;
+    align-items: baseline;
+    margin-top: 0.5rem; /* Sama dengan mt-2 */
+}
+
+.card-number {
+    font-size: 1.875rem; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+}
+
+.card-subtext {
+    margin-left: 0.5rem; /* ml-2 */
+    font-size: 1.500rem; /* text-sm */
+    opacity: 0.8;
+}
+
+/* Growth Indicator */
+.card-growth {
+    color: black; /* text-green-500 */
+    font-size: 1.000rem; /* text-sm */
+    margin-top: 0.5rem; /* mt-2 */
+}
+.tablinks {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-right: 5px;
+}
+/* Sembunyikan tab secara default */
+.hidden {
+    display: none;
+}
+
+/* Gaya aktif tab */
+.tablinks.active {
+    border-color: #007bff; /* Warna border aktif */
+    color: #007bff; /* Warna teks aktif */
+}
+.tablinks.text-blue-600 {
+    color: #2563eb; /* Tailwind Blue */
+    border-bottom: 2px solid #2563eb;
+}
+
+.tabcontent {
+    margin-top: 20px;
+}
+
+.patient-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+}
+
+.card-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-image, .doctor-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.patient-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-decline {
+    background-color: #f87171; /* Tailwind Red */
+    color: white;
+}
+
+.btn-approve {
+    background-color: #34d399; /* Tailwind Green */
+    color: white;
+}
+
+
+
+/* Tombol navigasi */
+.nav-button {
+    padding: 4px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #f3f4f6;
+}
+
+
+/* Card Container Styles */
+.patient-cards-container {
+    padding: 1rem;
+}
+
+/* Card Styles */
+.patient-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    overflow: hidden;
+}
+
+.patient-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Patient ID */
+.patient-id {
+    font-family: 'Inter', sans-serif, bold;
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 500;
+    position:relative;
+    left:85%;
+}
+
+
+/* Patient Info Section */
+.patient-info {
+    padding: 1.5rem;
+}
+
+/* Profile Image */
+.profile-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #f3f4f6;
+}
+
+.doctor-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #f3f4f6;
+}
+
+/* Patient Details */
+.patient-details {
+    margin-left: 1rem;
+}
+
+.patient-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.patient-contact {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+/* Doctor Section */
+.doctor-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.section-label {
+    color: #6B7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.doctor-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.doctor-name {
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Schedule Section */
+.schedule-info {
+    margin-top: 1rem;
+}
+
+.schedule-time {
+    font-weight: 600;
+    color: #111827;
+    font-size: 1rem;
+}
+
+/* Action Buttons */
+.card-actions {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-decline {
+    background-color: rgb(237, 92, 92);
+    color: white;
+}
+
+.btn-decline:hover {
+    background-color: #E5E7EB;
+    color: black;
+}
+
+.btn-approve {
+    background-color: #22c55e;
+    color: white;
+}
+
+.btn-approve:hover {
+    background-color: #E5E7EB;
+    color : black;
+}
+
+/* Hover Effects */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.btn:active::after {
+    width: 200%;
+    height: 200%;
+}
+
+/* Loading Skeleton Animation */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.skeleton {
+    animation: pulse 1.5s infinite;
+    background: #f3f4f6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .patient-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Custom Scrollbar */
+.patient-cards-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.patient-cards-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.patient-cards-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.patient-cards-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+
+
+/* Tombol navigasi */
+.nav-button {
+    padding: 4px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #f3f4f6;
+}
+
+/* Responsive Calendar and Patient Cards */
+@media (max-width: 1536px) {
+    /* XXL Breakpoint */
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .patient-card {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    /* XL Breakpoint */
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* LG Breakpoint */
+    .patient-cards-container {
+        padding: 0.75rem;
+    }
+    
+    .patient-card {
+        margin-bottom: 1rem;
+    }
+    
+    .card-header {
+        padding: 1rem 1.25rem;
+    }
+    
+    .patient-info {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* MD Breakpoint */
+    .grid-cols-3 {
+        grid-template-columns: repeat(1, 1fr);
+    } 
+    .patient-card {
+        margin-bottom: 0.75rem;
+    }
+    
+    .card-actions {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    /* SM Breakpoint */
+    .patient-cards-container {
+        padding: 0.5rem;
+    }
+    
+    .patient-card {
+        border-radius: 0.75rem;
+    }
+    
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .patient-info {
+        padding: 1rem;
+    }
+    
+    
+    .profile-image {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .doctor-image {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    .patient-name {
+        font-size: 1rem;
+    }
+    
+    .patient-contact {
+        font-size: 0.75rem;
+    }
+    
+    .btn {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.875rem;
+    }
+    
+}
+
+
+
+
+/* Utility Classes for Better Mobile Experience */
+.touch-none {
+    touch-action: none;
+}
+
+.smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}

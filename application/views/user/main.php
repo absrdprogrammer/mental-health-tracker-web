@@ -35,12 +35,32 @@
                 <i class="fas fa-search"></i>
               </button>
             </div>
+<<<<<<< HEAD
             <div class="notification-container">
               <button class="notification-btn" id="notification-btn">
                 <i class="fas fa-bell"></i>
               </button>
               <div class="notification-dropdown" id="notification-dropdown">
                 <p>new notifications</p>
+=======
+          </div>
+          <div class="profile-container">
+            <button class="icon-btn profile" id="profile-btn">
+              <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile" class="profile-img" />
+            </button>
+            <div class="profile-dropdown" id="profile-dropdown">
+              <div class="profile-header">
+                <div class="image-container">
+                  <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
+                  <button class="edit-btn" onclick="window.location.href='<?php echo base_url('main/edit_profile'); ?>'">
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
+                </div>
+                <div class="profile-info">
+                <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
+                <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
+                </div>
+>>>>>>> 9b0345e3446573d61284aa8001bb59931b49972a
               </div>
             </div>
             <div class="profile-container">
@@ -251,6 +271,53 @@
               </div>
             </div>
           </div>
+<<<<<<< HEAD
+=======
+
+          <!-- Kartu Buat Janji dengan Psikolog -->
+          <div class="psychologist-card">
+            <h2 class="card-title">Our Psychologists</h2>
+            <div class="carousel-card">
+              <button class="nav-btn left-btn" onclick="prevPsychologist()">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+
+              <div class="psychologist-info-wrapper">
+                <?php foreach ($psychologists as $index => $psychologist): ?>
+                  <div class="psychologist-info" data-id="<?php echo $psychologist->user_id; ?>">
+                    <div class="psychologist-image-wrapper">
+                      <img id="psychologistImage" src="<?php echo base_url('assets/img/psikolog.jpeg'); ?>" alt="Psychologist" />
+                    </div>
+                    <h3 class="psychologist-name"><?php echo $psychologist->username; ?></h3>
+                    <p id="psychologistTitle" class="psychologist-title">Experienced Psychologist</p>
+                    <button class="booking-btn" id="bookingBtn" onclick="openBookingModal(<?php echo $psychologist->user_id; ?>)">Booking Psikolog</button>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+
+              <button class="nav-btn right-btn" onclick="nextPsychologist()">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Popup untuk Booking Psikolog -->
+          <div id="bookingModal" class="modal">
+            <div class="modal-content">
+              <span class="close" id="closeBookingModal">&times;</span>
+              <h3>Pilih Waktu dan Tanggal</h3>
+              <form id="bookingForm">
+                <label for="bookingDate">Tanggal:</label>
+                <input type="date" id="bookingDate" required />
+
+                <label for="bookingTime">Waktu:</label>
+                <input type="time" id="bookingTime" required />
+
+                <button type="submit" class="confirm-btn">Konfirmasi Booking</button>
+              </form>
+            </div>
+          </div>
+>>>>>>> 9b0345e3446573d61284aa8001bb59931b49972a
         </div>
       </div>
     </div>
