@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin</title>
+  <title>Edit-Profile</title>
   <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
@@ -76,17 +76,17 @@
         <h2>Profile</h2>
         <form action="save-profile.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
-            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>"  alt="Profile Image" id="profilePreview" />
-            <label for="profileImg">Gambar:</label>
-            <input type="file" id="profileImg" name="profileImg" onchange="previewImage(event)" />
-          </div>
-          <div class="form-group">
             <label for="userEmail">Email:</label>
             <input type="email" id="userEmail" name="userEmail" value="sahlahr08@gmail.com" placeholder="Masukan Email" />
           </div>
           <div class="form-group">
             <label for="userName">Nama Lengkap:</label>
-            <input type="text" id="userName" name="userName" value="Sahlah Rizqiyyah" placeholder="Masukan Nama" />
+            <input type="text" id="userName" name="userName" value="Sahlah Rizqiyyah" placeholder="Masukan Nama Lengkap" />
+          </div>
+          <div class="form-group">
+            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" id="profilePreview" />
+            <label for="profileImg">Gambar:</label>
+            <input type="file" id="profileImg" name="profileImg" onchange="previewImage(event)" />
           </div>
           <button type="submit">Ubah</button>
           <button type="button" onclick="window.history.back()">Kembali</button>

@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin</title>
+  <title>Profile</title>
   <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
@@ -77,16 +78,15 @@
         <div class="profile-header">
           <!-- Profile Image -->
           <div class="image-container">
-            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>"  alt="Profile Image" class="profile-img" id="profileImg" />
-            <button class="edit-btn" onclick="window.location.href='edit-profile.php'">
+            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
+            <button class="edit-btn" onclick="window.location.href='<?php echo base_url('admin/editprofile'); ?>'">
               <i class="fas fa-pencil-alt"></i>
             </button>
           </div>
 
           <!-- User Information -->
-          <div class="profile-info">
-            <h4><?= htmlspecialchars($userbyid['username']); ?></h4>
-            <p id="userRole"><?= htmlspecialchars($userbyid['role']); ?></p>
+          <div class="profile-info"><?= htmlspecialchars($userbyid['username']); ?></h4>
+            <p id="userRole"><?= htmlspecialchars($userbyid['role']) ?></p>
           </div>
         </div>
 
@@ -94,7 +94,7 @@
         <div class="personal-info">
           <h3>Personal Information</h3>
           <ul>
-            <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
+          <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
           </ul>
         </div>
       </div>
