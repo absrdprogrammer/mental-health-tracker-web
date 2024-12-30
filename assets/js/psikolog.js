@@ -43,38 +43,65 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add("text-blue-600", "border-blue-600");
 }
 
+// Menampilkan popup untuk Approve
+function showApprovePopup() {
+    const popup = document.getElementById('approvePopup');
+    popup.classList.remove('hidden');
 
-function saveNotes(textareaId) {
-    const textareaValue = document.getElementById(textareaId).value;
-    if (textareaValue.trim()) {
-        alert("Catatan berhasil disimpan:\n" + textareaValue);
-        // Di sini Anda bisa menambahkan logika untuk menyimpan ke database atau API.
-        console.log("Saved note:", textareaValue);
+    // Otomatis menutup popup setelah beberapa detik
+    setTimeout(() => {
+        popup.classList.add('hidden');
+    }, 800); 
+}
+
+// Menampilkan popup untuk Decline
+function showDeclinePopup() {
+    document.getElementById('declinePopup').classList.remove('hidden');
+}
+
+// Menutup popup berdasarkan ID
+function closePopup(popupId) {
+    document.getElementById(popupId).classList.add('hidden');
+}
+
+// Mengirim alasan penolakan
+function sendDeclineReason() {
+    const reason = document.getElementById('declineReason').value;
+    if (reason.trim()) {
+        alert(`Alasan penolakan: ${reason}`);
+        closePopup('declinePopup');
     } else {
-        alert("Mohon isi catatan terlebih dahulu.");
+        alert('Harap masukkan alasan penolakan.');
+    }
+}
+
+function archivePatientWithReason(reason, patientId) {
+    const archiveSection = document.getElementById('Archive');
+    const patientCard = archiveSection.querySelector(`.patient-card[data-id="${patientId}"]`);
+
+    if (patientCard) {
+        const reasonSection = patientCard.querySelector('.rejection-reason');
+        reasonSection.querySelector('.reason-text').textContent = reason; // Menampilkan teks dari textarea
+        reasonSection.classList.remove('hidden'); // Menampilkan elemen alasan penolakan
+    } else {
+        console.error(`Patient with ID ${patientId} not found.`);
     }
 }
 
 
-// Fungsi untuk menyimpan teks dari textarea dan menampilkan keterangan
-// function saveNotes(textAreaId) {
-//     const textArea = document.getElementById(textAreaId); // Ambil textarea
-//     const notes = textArea.value.trim(); // Ambil teks dari textarea
+function sendDeclineReason() {
+    const reason = document.getElementById('declineReason').value; // Ambil teks dari textarea
+    const patientId = document.getElementById('declinePopup').getAttribute('data-patient-id'); // Ambil ID pasien
 
-//     if (notes) {
-//         const notesDisplay = document.getElementById(`notes-display-${textAreaId.split('-')[1]}`); // Ambil elemen keterangan
-//         const notesInput = document.getElementById(`notes-input-${textAreaId.split('-')[1]}`); // Ambil div textarea + button
+    if (reason.trim()) {
+        closePopup('declinePopup');
+        archivePatientWithReason(reason, patientId); // Kirim alasan untuk ditampilkan di kartu pasien
+    } else {
+        alert('Harap masukkan alasan penolakan.');
+    }
+}
 
-//         // Tampilkan keterangan
-//         notesDisplay.textContent = `Keterangan: ${notes}`;
-//         notesDisplay.classList.remove('hidden');
 
-//         // Sembunyikan textarea dan tombol kirim
-//         notesInput.classList.add('hidden');
-//     } else {
-//         alert("Harap masukkan keterangan terlebih dahulu.");
-//     }
-// }
 
 // Toggle dropdown
 function toggleDropdown() {
@@ -122,23 +149,6 @@ function saveProfileChanges() {
     // Sembunyikan form edit, tampilkan kembali profil
     hideEditForm();
 }
-const psychologists = [
-    {
-      name: "Dr. Dianne Rachel",
-      title: "Experienced Psychologist",
-      image: "img/download (3).jpeg",
-    },
-    {
-      name: "Dr. John Smith",
-      title: "Clinical Psychologist",
-      image: "img/download (4).jpeg",
-    },
-    {
-      name: "Dr. Susan Lee",
-      title: "Child Psychologist",
-      image: "img/download (5).jpeg",
-    },
-  ];
   
   let currentIndex = 0; // Index awal
   const psychologistCards = document.querySelectorAll('.psychologist-info'); // Semua elemen kartu

@@ -7,6 +7,7 @@ class Psikolog extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->check_login();
         $this->load->library('session');
         $this->load->model('Booking_model');
     }
@@ -24,5 +25,15 @@ class Psikolog extends CI_Controller
         $data['bookings'] = $this->Booking_model->get_bookings(); // Ambil data dari model
 
         $this->load->view('psikolog/psikolog', $data); // Kirim data ke view
+    }
+
+    public function check_login()
+    {
+        if (!$this->session->userdata('user_id')) {
+            log_message('error', 'User ID not found in session. Redirecting to auth.');
+            redirect('psikolog');
+        } else {
+            log_message('info', 'User ID in session: ' . $this->session->userdata('user_id'));
+        }
     }
 }

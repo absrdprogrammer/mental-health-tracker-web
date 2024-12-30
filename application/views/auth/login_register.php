@@ -8,7 +8,7 @@
     <!-- BOXICONS -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- STYLE -->
-    <link rel="stylesheet" href= "<?php echo base_url('assets/css/auth.css'); ?>"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/auth.css'); ?>" />
 </head>
 
 <body>
@@ -57,7 +57,9 @@
                         <i class="bx bx-lock-alt icon"></i>
                     </div>
                     <div class="forgot-pass">
-                        <a href="#">Forgot Password</a>
+                        <div class="forgot-pass">
+                            <a href="<?= site_url('auth_psikolog') ?>">Forgot Password</a>
+                        </div>
                     </div>
                     <div class="input-box">
                         <button type="submit" class="input-submit">
