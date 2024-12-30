@@ -149,25 +149,6 @@ function saveProfileChanges() {
     // Sembunyikan form edit, tampilkan kembali profil
     hideEditForm();
 }
-<<<<<<< HEAD
-=======
-const psychologists = [
-    {
-      name: "Dr. Dianne Rachel",
-      title: "Experienced Psychologist",
-      image: "img/download (3).jpeg",
-    },
-    {
-      name: "Dr. John Smith",
-      title: "Clinical Psychologist",
-      image: "img/download (4).jpeg",
-    },
-    {
-      name: "Dr. Susan Lee",
-      title: "Child Psychologist",
-      image: "img/download (5).jpeg",
-    },
-  ];
   
   let currentIndex = 0; // Index awal
   const psychologistCards = document.querySelectorAll('.psychologist-info'); // Semua elemen kartu
@@ -192,4 +173,3 @@ const psychologists = [
   document.addEventListener('DOMContentLoaded', updateVisibility);
   
   
->>>>>>> db02a616e18f6edf40080d4b02825b8d2b002ad6
