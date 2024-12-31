@@ -1033,18 +1033,18 @@ h3 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Menyelaraskan elemen ke tengah secara horizontal */
-    justify-content: center; /* Menyelaraskan elemen ke tengah secara vertikal */
-    height: 100%; /* Pastikan wrapper memiliki tinggi yang cukup */
+    align-items: center; 
+    justify-content: center; 
+    height: 100%; 
 }
 
 .psychologist-info {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Pastikan semua konten di dalamnya rata tengah */
-    justify-content: center; /* Menjaga elemen sejajar secara vertikal */
+    align-items: center; 
+    justify-content: center;
     text-align: center;
-    height: 100%; /* Sesuaikan tinggi untuk keselarasan */
+    height: 100%; 
 }
 
 .psychologist-image-wrapper {
@@ -1053,8 +1053,8 @@ h3 {
     background-color: #f3f3f3;
     border-radius: 50%;
     display: flex;
-    align-items: center; /* Sejajarkan gambar di tengah */
-    justify-content: center; /* Sejajarkan gambar di tengah */
+    align-items: center; 
+    justify-content: center; 
     margin-bottom: 10px;
 }
 
@@ -1078,7 +1078,7 @@ h3 {
     font-size: 14px;
     color: #888;
     margin-bottom: 20px;
-    height: auto; /* Sesuaikan tinggi agar fleksibel */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
