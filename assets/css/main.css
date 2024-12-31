@@ -1031,44 +1031,59 @@ h3 {
 .psychologist-info-wrapper {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menyelaraskan elemen ke tengah secara horizontal */
+    justify-content: center; /* Menyelaraskan elemen ke tengah secara vertikal */
+    height: 100%; /* Pastikan wrapper memiliki tinggi yang cukup */
+}
+
+.psychologist-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pastikan semua konten di dalamnya rata tengah */
+    justify-content: center; /* Menjaga elemen sejajar secara vertikal */
+    text-align: center;
+    height: 100%; /* Sesuaikan tinggi untuk keselarasan */
 }
 
 .psychologist-image-wrapper {
-	width: 127px;
-	height: 145px;
-	background-color: #f3f3f3;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 10px;
+    width: 127px;
+    height: 145px;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; /* Sejajarkan gambar di tengah */
+    justify-content: center; /* Sejajarkan gambar di tengah */
+    margin-bottom: 10px;
 }
 
 .psychologist-image-wrapper img {
-	width: 95%;
-	height: 95%;
-	border-radius: 50%;
-	object-fit: cover;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .psychologist-name {
-	font-size: 18px;
-	margin-bottom: 5px;
-	height: 25px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    font-size: 18px;
+    margin-bottom: 5px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .psychologist-title {
-	font-size: 14px;
-	color: #888;
-	margin-bottom: 20px;
-	height: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+    height: auto; /* Sesuaikan tinggi agar fleksibel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /* Tombol booking */
 .booking-btn {
