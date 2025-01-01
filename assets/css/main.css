@@ -425,7 +425,7 @@ body {
 	font-size: 16px;
 }
 
-/* modal */
+/* Modal */
 .modal {
 	display: none;
 	position: fixed;
@@ -438,43 +438,77 @@ body {
 }
 
 .modal-content {
-	background-color: #fefefe;
+	background-color: #ffffff;
 	margin: auto;
-	padding: 30px;
-	border: 1px solid #888;
-	width: 80%;
-	top: 50%;
+	padding: 20px;
+	border: none;
+	width: 100%;
 	max-width: 400px;
 	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	position: relative;
 	text-align: center;
 }
 
 .close {
 	color: #aaa;
-	float: right;
-	font-size: 28px;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 20px;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
+	color: #ff6b6b;
 }
 
-/* booking psikolog */
+/* Kontainer untuk tanggal dan waktu */
+.date-time-container,
+.age-gender-container {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+/* Atur agar label sejajar ke kiri */
+.date-time-container label,
+.age-gender-container label {
+	display: block;
+	text-align: left;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.date-time-container div,
+.age-gender-container div {
+	flex: 1;
+}
+
+/* Input */
 input[type="date"],
-input[type="time"] {
+input[type="time"],
+input[type="number"],
+select {
 	width: 100%;
-	padding: 10px;
-	margin-top: 5px;
+	padding: 8px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
+	font-size: 14px;
+	box-sizing: border-box;
 }
 
+input::placeholder {
+	font-size: 12px;
+	color: #888;
+}
+
+/* Tombol konfirmasi */
 .confirm-btn {
-	margin-top: 20px;
+	margin-top: 15px;
 	padding: 10px 20px;
 	background-color: #00bfae;
 	color: white;
@@ -482,6 +516,7 @@ input[type="time"] {
 	border-radius: 5px;
 	cursor: pointer;
 	font-size: 16px;
+	transition: background-color 0.3s ease;
 }
 
 .confirm-btn:hover {
@@ -988,6 +1023,10 @@ h3 {
 	padding: 20px;
 	text-align: center;
 	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	text-align: center;
 }
 
 .card-title {
@@ -1029,24 +1068,38 @@ h3 {
 }
 
 .psychologist-info-wrapper {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.psychologist-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100%;
 }
 
 .psychologist-image-wrapper {
 	width: 127px;
 	height: 145px;
-	background-color: #f3f3f3;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 10px;
+	margin: 0 auto;
 }
 
 .psychologist-image-wrapper img {
 	width: 95%;
-	height: 95%;
+	height: 90%;
 	border-radius: 50%;
 	object-fit: cover;
 }
@@ -1064,7 +1117,7 @@ h3 {
 	font-size: 14px;
 	color: #888;
 	margin-bottom: 20px;
-	height: 10px;
+	height: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
