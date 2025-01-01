@@ -7,6 +7,8 @@
   <title>Ludiflex | Login & Register</title>
   <!-- BOXICONS -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <!-- STYLE -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/auth_psikolog.css'); ?>" />
 </head>
@@ -40,7 +42,7 @@
         </div>
         <div class="form-inputs">
           <div class="input-box">
-            <input type="text" class="input-field" placeholder="Username" required />
+            <input type="text" class="input-field" placeholder="Email" required />
             <i class="bx bx-user icon"></i>
           </div>
           <div class="input-box">
@@ -70,16 +72,25 @@
             <i class="bx bx-envelope icon"></i>
           </div>
           <div class="input-box">
-            <input type="text" class="input-field" placeholder="Username" required />
+            <input type="text" class="input-field" placeholder="Nama Lengkap" required />
+            <i class="bx bx-user icon"></i>
+          </div>
+					<div class="input-box">
+            <input type="date" class="input-field" placeholder="Tanggal Lahir" required />
+            <i class="bx bx-calendar icon" onclick="document.querySelector('.input-field[type=date]').focus();"></i>
+          </div>
+					<div class="input-box">
+            <input type="text" class="input-field" placeholder="Jenis Kelamin" required />
             <i class="bx bx-user icon"></i>
           </div>
           <div class="input-box">
             <input type="password" class="input-field" placeholder="Password" required />
             <i class="bx bx-lock-alt icon"></i>
           </div>
-          <div class="input-box">
-            <input type="text" class="input-field" placeholder="Jenis Kelamin" required />
-            <i class="bx bx-user icon"></i>
+					<div class="input-box">
+            <label for="photo-upload" class="file-label">Upload Foto (JPG/PNG)</label>
+            <input type="file" id="photo-upload" class="input-field" accept="image/jpeg, image/png" required />
+            <i class="bx bx-image icon"></i>
           </div>
           <div class="input-box">
             <label for="certificate-upload" class="file-label">Upload Sertifikat Profesi (PDF)</label>
