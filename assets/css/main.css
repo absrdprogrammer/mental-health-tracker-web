@@ -435,9 +435,9 @@ body {
 	width: 100%;
 	height: 100%;
 	padding-top: 0;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
 	background-color: #ffffff;
 	margin: auto;
 	padding: 20px;
@@ -445,12 +445,12 @@ body {
 	width: 100%;
 	max-width: 400px;
 	border-radius: 10px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 	position: relative;
 	text-align: center;
-  }
-  
-  .close {
+}
+
+.close {
 	color: #aaa;
 	position: absolute;
 	top: 10px;
@@ -458,56 +458,56 @@ body {
 	font-size: 20px;
 	font-weight: bold;
 	cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
 	color: #ff6b6b;
-  }
-  
-  /* Kontainer untuk tanggal dan waktu */
-  .date-time-container,
-  .age-gender-container {
+}
+
+/* Kontainer untuk tanggal dan waktu */
+.date-time-container,
+.age-gender-container {
 	display: flex;
-	gap: 10px; 
+	gap: 10px;
 	margin-bottom: 15px;
-  }
-  
-  /* Atur agar label sejajar ke kiri */
-  .date-time-container label,
-  .age-gender-container label {
-	display: block; 
-	text-align: left; 
-	margin-bottom: 5px; 
-	font-size: 14px; 
-	font-weight: bold; 
-  }
-  
-  .date-time-container div,
-  .age-gender-container div {
-	flex: 1; 
-  }
-  
-  /* Input */
-  input[type="date"],
-  input[type="time"],
-  input[type="number"],
-  select {
+}
+
+/* Atur agar label sejajar ke kiri */
+.date-time-container label,
+.age-gender-container label {
+	display: block;
+	text-align: left;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.date-time-container div,
+.age-gender-container div {
+	flex: 1;
+}
+
+/* Input */
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select {
 	width: 100%;
-	padding: 8px; 
+	padding: 8px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	font-size: 14px;
-	box-sizing: border-box; 
-  }
-  
-  input::placeholder {
-	font-size: 12px; 
+	box-sizing: border-box;
+}
+
+input::placeholder {
+	font-size: 12px;
 	color: #888;
-  }
-  
-  /* Tombol konfirmasi */
-  .confirm-btn {
+}
+
+/* Tombol konfirmasi */
+.confirm-btn {
 	margin-top: 15px;
 	padding: 10px 20px;
 	background-color: #00bfae;
@@ -517,11 +517,11 @@ body {
 	cursor: pointer;
 	font-size: 16px;
 	transition: background-color 0.3s ease;
-  }
-  
-  .confirm-btn:hover {
+}
+
+.confirm-btn:hover {
 	background-color: #2ba096;
-  }
+}
 
 /* Mood Tracker Section */
 .mood-tracker {
@@ -1023,6 +1023,10 @@ h3 {
 	padding: 20px;
 	text-align: center;
 	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Menjaga semua elemen di tengah */
+	text-align: center;
 }
 
 .card-title {
@@ -1064,61 +1068,61 @@ h3 {
 }
 
 .psychologist-info-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    height: 100%; 
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 }
 
 .psychologist-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    text-align: center;
-    height: 100%; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100%;
 }
 
 .psychologist-image-wrapper {
-    width: 127px;
-    height: 145px;
-    background-color: #f3f3f3;
-    border-radius: 50%;
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 10px;
+	width: 127px;
+	height: 145px;
+	background-color: #f3f3f3;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+	margin: 0 auto;
 }
 
 .psychologist-image-wrapper img {
-    width: 95%;
-    height: 95%;
-    border-radius: 50%;
-    object-fit: cover;
+	width: 95%;
+	height: 95%;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 .psychologist-name {
-    font-size: 18px;
-    margin-bottom: 5px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	font-size: 18px;
+	margin-bottom: 5px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .psychologist-title {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 20px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	font-size: 14px;
+	color: #888;
+	margin-bottom: 20px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-
 
 /* Tombol booking */
 .booking-btn {
