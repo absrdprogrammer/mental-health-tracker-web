@@ -57,8 +57,8 @@
                   </button>
                 </div>
                 <div class="profile-info">
-                <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
-                <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
+                  <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
+                  <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
                 </div>
               </div>
               <div class="progress-section">
@@ -122,14 +122,14 @@
         </div>
         <div class="stats-section">
           <!-- Journal Card -->
-          <div class="stats-card stats-journal" onclick="navigateToJournal()">
+          <div class="stats-card stats-journal" onclick="window.location.href='<?= site_url('journal') ?>'">
             <h2>Journal</h2>
             <p>View Your Journals</p>
             <i class="fas fa-book-open"></i>
           </div>
 
           <!-- Wordspace Card (Motivation) -->
-          <div class="stats-card stats-wordspace">
+          <div class="stats-card stats-wordspace" onclick="window.location.href='<?= site_url('wordspace') ?>'">
             <div class="decoration">
               <i class="fas fa-comments"></i>
               <p>Stay Motivated!</p>
@@ -239,47 +239,47 @@
             </div>
           </div>
 
-           <!-- Popup untuk Booking Psikolog -->
-           <div id="bookingModal" class="modal">
-              <div class="modal-content">
-                <span class="close" id="closeBookingModal">&times;</span>
-                <div class="modal-flex-container">
-                  <!-- Form Booking -->
-                  <div class="form-container">
-                    <h3>Pilih Waktu dan Tanggal</h3>
-                    <form id="bookingForm">
-                      <div class="date-time-container">
-                        <div>
-                          <label for="bookingDate">Tanggal</label>
-                          <input type="date" id="bookingDate" required />
-                        </div>
-                        <div>
-                          <label for="bookingTime">Waktu</label>
-                          <input type="time" id="bookingTime" required />
-                        </div>
+          <!-- Popup untuk Booking Psikolog -->
+          <div id="bookingModal" class="modal">
+            <div class="modal-content">
+              <span class="close" id="closeBookingModal">&times;</span>
+              <div class="modal-flex-container">
+                <!-- Form Booking -->
+                <div class="form-container">
+                  <h3>Pilih Waktu dan Tanggal</h3>
+                  <form id="bookingForm">
+                    <div class="date-time-container">
+                      <div>
+                        <label for="bookingDate">Tanggal</label>
+                        <input type="date" id="bookingDate" required />
                       </div>
-
-                      <div class="age-gender-container">
-                        <div>
-                          <label for="bookingAge">Umur</label>
-                          <input type="number" id="bookingAge" min="1" max="120" placeholder="Masukkan umur" required />
-                        </div>
-                        <div>
-                          <label for="bookingGender">Jenis Kelamin</label>
-                          <select id="bookingGender" required>
-                            <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                            <option value="Laki-laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                          </select>
-                        </div>
+                      <div>
+                        <label for="bookingTime">Waktu</label>
+                        <input type="time" id="bookingTime" required />
                       </div>
+                    </div>
 
-                      <button type="submit" class="confirm-btn">Konfirmasi Booking</button>
-                    </form>
-                  </div>
+                    <div class="age-gender-container">
+                      <div>
+                        <label for="bookingAge">Umur</label>
+                        <input type="number" id="bookingAge" min="1" max="120" placeholder="Masukkan umur" required />
+                      </div>
+                      <div>
+                        <label for="bookingGender">Jenis Kelamin</label>
+                        <select id="bookingGender" required>
+                          <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                          <option value="Laki-laki">Laki-laki</option>
+                          <option value="Perempuan">Perempuan</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="confirm-btn">Konfirmasi Booking</button>
+                  </form>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
