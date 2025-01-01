@@ -117,12 +117,12 @@
                         </button>
                     </div>
                 </form>
-                <div class="social-login">
+                <!-- <div class="social-login">
                     <i class="bx bxl-google"></i>
                     <i class="bx bxl-facebook"></i>
                     <i class="bx bxl-twitter"></i>
                     <i class="bx bxl-github"></i>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
