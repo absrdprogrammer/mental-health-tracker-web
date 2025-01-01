@@ -7,7 +7,7 @@ class Psikolog extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->check_login();
+        // $this->check_login();
         $this->load->library('session');
         $this->load->model('Booking_model');
     }
@@ -31,7 +31,7 @@ class Psikolog extends CI_Controller
     {
         if (!$this->session->userdata('user_id')) {
             log_message('error', 'User ID not found in session. Redirecting to auth.');
-            redirect('psikolog');
+            redirect('auth_psikolog');
         } else {
             log_message('info', 'User ID in session: ' . $this->session->userdata('user_id'));
         }

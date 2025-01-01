@@ -31,6 +31,13 @@ registerBtn.addEventListener('click', () => {
     document.querySelector(".col-1").style.borderRadius = "0 20% 30% 0"
 })
 
+document.addEventListener('DOMContentLoaded', function () {
+    flatpickr(".input-field[type=date]", {
+      dateFormat: "Y-m-d"
+    });
+  });
+
+
 
 
 
