@@ -1087,10 +1087,9 @@ h3 {
 }
 
 .psychologist-image-wrapper {
-	width: 95%;
-	height: 90%;
-	background-color: #f3f3f3;
-	border-radius: 40%;
+	width: 127px;
+	height: 145px;
+	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
