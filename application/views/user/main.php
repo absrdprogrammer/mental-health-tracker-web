@@ -239,22 +239,47 @@
             </div>
           </div>
 
-          <!-- Popup untuk Booking Psikolog -->
-          <div id="bookingModal" class="modal">
-            <div class="modal-content">
-              <span class="close" id="closeBookingModal">&times;</span>
-              <h3>Pilih Waktu dan Tanggal</h3>
-              <form id="bookingForm">
-                <label for="bookingDate">Tanggal:</label>
-                <input type="date" id="bookingDate" required />
+           <!-- Popup untuk Booking Psikolog -->
+           <div id="bookingModal" class="modal">
+              <div class="modal-content">
+                <span class="close" id="closeBookingModal">&times;</span>
+                <div class="modal-flex-container">
+                  <!-- Form Booking -->
+                  <div class="form-container">
+                    <h3>Pilih Waktu dan Tanggal</h3>
+                    <form id="bookingForm">
+                      <div class="date-time-container">
+                        <div>
+                          <label for="bookingDate">Tanggal</label>
+                          <input type="date" id="bookingDate" required />
+                        </div>
+                        <div>
+                          <label for="bookingTime">Waktu</label>
+                          <input type="time" id="bookingTime" required />
+                        </div>
+                      </div>
 
-                <label for="bookingTime">Waktu:</label>
-                <input type="time" id="bookingTime" required />
+                      <div class="age-gender-container">
+                        <div>
+                          <label for="bookingAge">Umur</label>
+                          <input type="number" id="bookingAge" min="1" max="120" placeholder="Masukkan umur" required />
+                        </div>
+                        <div>
+                          <label for="bookingGender">Jenis Kelamin</label>
+                          <select id="bookingGender" required>
+                            <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                          </select>
+                        </div>
+                      </div>
 
-                <button type="submit" class="confirm-btn">Konfirmasi Booking</button>
-              </form>
+                      <button type="submit" class="confirm-btn">Konfirmasi Booking</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
