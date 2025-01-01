@@ -172,6 +172,7 @@ body {
   position: absolute;
   transition: all 0.5s ease; /* Animasi transisi */
   width: 100%; /* Sesuaikan dengan lebar container */
+  min-height: 100vh;
 }
 
 .login-form {

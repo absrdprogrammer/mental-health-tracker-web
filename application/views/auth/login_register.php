@@ -95,15 +95,19 @@
                         <i class="bx bx-envelope icon"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" name="username" class="input-field" placeholder="Username" required />
+                        <input type="text" class="input-field" placeholder="Nama Lengkap" required />
                         <i class="bx bx-user icon"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password" class="input-field" placeholder="Password" required />
-                        <i class="bx bx-lock-alt icon"></i>
+                        <input type="date" class="input-field" placeholder="Tanggal Lahir" required />
+                        <i class="bx bx-calendar icon" onclick="document.querySelector('.input-field[type=date]').focus();"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password_confirm" class="input-field" placeholder="Confirm Password" required />
+                    <input type="text" class="input-field" placeholder="Jenis Kelamin" required />
+                    <i class="bx bx-user icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" class="input-field" placeholder="Password" required />
                         <i class="bx bx-lock-alt icon"></i>
                     </div>
                     <div class="input-box">
