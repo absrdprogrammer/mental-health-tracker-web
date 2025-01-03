@@ -68,4 +68,31 @@ class Main extends CI_Controller
         // Kirim respon ke frontend
         echo json_encode(['message' => 'Booking berhasil!']);
     }
+
+    public function checkin_user()
+    {
+        $json = file_get_contents('php://input');
+        $input = json_decode($json, true);
+
+        $mood = $input['mood'];
+
+        $data = [
+            'user_id' => $this->session->userdata('user_id'),
+            'mood' => $mood,
+            'date' => date('Y-m-d'),
+        ];
+
+        log_message('debug', 'Prepared Data: ' . print_r($data, true));
+
+        if ($this->Mood_model->mood_checkin($data)) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(['message' => 'Check-in berhasil']));
+        } else {
+            $this->output
+                ->set_status_header(500)
+                ->set_content_type('application/json')
+                ->set_output(json_encode(['message' => 'Gagal menyimpan check-in']));
+        }
+    }
 }
