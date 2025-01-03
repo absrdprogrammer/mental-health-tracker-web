@@ -7,6 +7,7 @@
     <title>MindfulMatters | Login & Register</title>
     <!-- BOXICONS -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- STYLE -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/auth.css'); ?>" />
 </head>
