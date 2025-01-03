@@ -14,7 +14,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <div class="menu-bottom">
-        <button class="logout-btn" onclick="logout()">
+        <button class="logout-btn" onclick="window.location.href='<?= base_url('auth/logout') ?>'">
           <i class="fas fa-sign-out-alt"></i>
         </button>
       </div>
@@ -87,15 +87,15 @@
 
                   <!-- Mood Options -->
                   <div class="mood-options">
-                    <button class="mood-btn" data-mood="Happy">
+                    <button class="mood-btn" data-mood="Happy" onclick="handleMood('happy')">
                       <i class="fas fa-smile" style="color: #ff6384"></i>
                       <span>Happy</span>
                     </button>
-                    <button class="mood-btn" data-mood="Neutral">
+                    <button class="mood-btn" data-mood="Neutral" onclick="handleMood('neutral')">
                       <i class="fas fa-meh" style="color: #f6d750"></i>
                       <span>Neutral</span>
                     </button>
-                    <button class="mood-btn" data-mood="Sad">
+                    <button class="mood-btn" data-mood="Sad" onclick="handleMood('sad')">
                       <i class="fas fa-frown" style="color: #ff4500"></i>
                       <span>Sad</span>
                     </button>

@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['get-mood-data'] = 'Main/get_mood_data';
 $route['get-mood-all-data'] = 'Admin/get_mood_all_data';
+$route['checkin-user'] = 'Main/checkin_user';
