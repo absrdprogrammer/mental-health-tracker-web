@@ -79,12 +79,12 @@
         <div class="form-inputs">
           <form action="<?php echo base_url('auth_psikolog/register'); ?>" method="POST" enctype="multipart/form-data">
             <div class="input-box">
-              <input type="text" name="email" class="input-field" placeholder="Email" required />
-              <i class="bx bx-envelope icon"></i>
-            </div>
-            <div class="input-box">
               <input type="text" name="full_name" class="input-field" placeholder="Nama Lengkap" required />
               <i class="bx bx-user icon"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" name="email" class="input-field" placeholder="Email" required />
+              <i class="bx bx-envelope icon"></i>
             </div>
             <div class="input-box">
               <input type="date" name="birth_date" class="input-field" placeholder="Tanggal Lahir" required />

@@ -7,6 +7,8 @@
     <title>MindfulMatters | Login & Register</title>
     <!-- BOXICONS -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- STYLE -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/auth.css'); ?>" />
 </head>
@@ -49,7 +51,7 @@
                 </div>
                 <form action="<?php echo base_url('auth/login'); ?>" method="post" class="form-inputs">
                     <div class="input-box">
-                        <input type="text" name="username" class="input-field" placeholder="Username" required />
+                        <input type="text" name="email" class="input-field" placeholder="Email" required />
                         <i class="bx bx-user icon"></i>
                     </div>
                     <div class="input-box">
@@ -91,20 +93,20 @@
                 </div>
                 <form action="<?php echo base_url('auth/register'); ?>" method="post" class="form-inputs">
                     <div class="input-box">
+                        <input type="text" name="full_name" class="input-field" placeholder="Nama Lengkap" required />
+                        <i class="bx bx-user icon"></i>
+                    </div>
+                    <div class="input-box">
                         <input type="email" name="email" class="input-field" placeholder="Email" required />
                         <i class="bx bx-envelope icon"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Nama Lengkap" required />
-                        <i class="bx bx-user icon"></i>
-                    </div>
-                    <div class="input-box">
-                        <input type="date" class="input-field" placeholder="Tanggal Lahir" required />
+                        <input type="date" name="birth_date" class="input-field" placeholder="Tanggal Lahir" required />
                         <i class="bx bx-calendar icon" onclick="document.querySelector('.input-field[type=date]').focus();"></i>
                     </div>
                     <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Jenis Kelamin" required />
-                    <i class="bx bx-user icon"></i>
+                        <input type="text" name="gender" class="input-field" placeholder="Jenis Kelamin" required />
+                        <i class="bx bx-user icon"></i>
                     </div>
                     <div class="input-box">
                         <input type="password" name="password" class="input-field" placeholder="Password" required />
