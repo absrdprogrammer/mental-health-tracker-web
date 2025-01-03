@@ -39,6 +39,7 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 55%;
+  height: 600px;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(30px);
   border-radius: 0 30% 20% 0;
@@ -176,13 +177,13 @@ body {
 }
 
 .login-form {
-  left: 50%; /* Form login muncul di tengah */
-  opacity: 1; /* Form login terlihat */
+  left: 50%; 
+  opacity: 1; 
 }
 
 .register-form {
-  left: 150%; /* Form register berada di luar layar awalnya */
-  opacity: 0; /* Form register tidak terlihat */
+  left: 150%; 
+  opacity: 0; 
 }
 
 .register-form .form-title {
