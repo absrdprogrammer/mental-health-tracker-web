@@ -44,9 +44,25 @@ function openTab(evt, tabName) {
 }
 
 // Menampilkan popup untuk Approve
-function showApprovePopup() {
+function showApprovePopup(bookingId) {
+    console.log(bookingId);
     const popup = document.getElementById('approvePopup');
     popup.classList.remove('hidden');
+
+    // Kirim permintaan approve ke server
+    $.ajax({
+        url: "psikolog/approve/" + bookingId,
+        type: "POST",
+        success: function (response) {
+            const result = JSON.parse(response);
+            if (result.status === "success") {
+                alert(result.message);
+                location.reload();
+            } else {
+                alert(result.message);
+            }
+        },
+    });
 
     // Otomatis menutup popup setelah beberapa detik
     setTimeout(() => {
@@ -55,8 +71,10 @@ function showApprovePopup() {
 }
 
 // Menampilkan popup untuk Decline
-function showDeclinePopup() {
+function showDeclinePopup(bookingId) {
     document.getElementById('declinePopup').classList.remove('hidden');
+    // Simpan bookingId ke input hidden jika diperlukan
+    document.getElementById('declineBookingId').value = bookingId;
 }
 
 // Menutup popup berdasarkan ID
@@ -64,15 +82,33 @@ function closePopup(popupId) {
     document.getElementById(popupId).classList.add('hidden');
 }
 
-// Mengirim alasan penolakan
+// Kirim alasan penolakan ke server
 function sendDeclineReason() {
+    const bookingId = document.getElementById('declineBookingId').value;
     const reason = document.getElementById('declineReason').value;
-    if (reason.trim()) {
-        alert(`Alasan penolakan: ${reason}`);
-        closePopup('declinePopup');
-    } else {
-        alert('Harap masukkan alasan penolakan.');
+
+    if (!reason.trim()) {
+        alert("Masukkan alasan penolakan.");
+        return;
     }
+
+    $.ajax({
+        url: "psikolog/decline",
+        type: "POST",
+        data: { booking_id: bookingId, reason: reason },
+        success: function (response) {
+            const result = JSON.parse(response);
+            if (result.status === "success") {
+                alert(result.message);
+                location.reload();
+            } else {
+                alert(result.message);
+            }
+        },
+    });
+
+    // Tutup popup setelah mengirim data
+    document.getElementById('declinePopup').classList.add('hidden');
 }
 
 function archivePatientWithReason(reason, patientId) {
@@ -87,21 +123,6 @@ function archivePatientWithReason(reason, patientId) {
         console.error(`Patient with ID ${patientId} not found.`);
     }
 }
-
-
-function sendDeclineReason() {
-    const reason = document.getElementById('declineReason').value; // Ambil teks dari textarea
-    const patientId = document.getElementById('declinePopup').getAttribute('data-patient-id'); // Ambil ID pasien
-
-    if (reason.trim()) {
-        closePopup('declinePopup');
-        archivePatientWithReason(reason, patientId); // Kirim alasan untuk ditampilkan di kartu pasien
-    } else {
-        alert('Harap masukkan alasan penolakan.');
-    }
-}
-
-
 
 // Toggle dropdown
 function toggleDropdown() {

@@ -18,18 +18,18 @@ class User_model extends CI_Model
         return $this->db->get('psikolog')->result();
     }
 
-    // Fungsi untuk mengambil gambar profil psikolog berdasarkan ID
-    public function get_image_profile($psikolog_id)
+    // Fungsi untuk mengambil data psikolog berdasarkan ID
+    public function get_psychologist_by_id($psychologist_id)
     {
-        $this->db->select('photo');
-        $this->db->from('psikolog');
-        $this->db->where('id', $psikolog_id); // Menyesuaikan dengan primary key atau ID psikolog
-        $query = $this->db->get();
+        // Query untuk mengambil data psikolog berdasarkan ID
+        $this->db->where('id', $psychologist_id);  // Menambahkan kondisi untuk ID
+        $query = $this->db->get('psikolog');  // Query untuk tabel psychologists
 
-        if ($query->num_rows() == 1) {
-            return $query->row()->photo; // Mengembalikan nama file foto
+        // Memeriksa apakah data ditemukan
+        if ($query->num_rows() > 0) {
+            return $query->row();  // Mengembalikan satu baris data (psikolog)
+        } else {
+            return null;  // Jika tidak ada data ditemukan, mengembalikan null
         }
-
-        return null; // Jika tidak ditemukan
     }
 }

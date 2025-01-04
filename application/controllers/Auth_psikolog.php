@@ -49,8 +49,8 @@ class Auth_psikolog extends CI_Controller
     public function register()
     {
         // Validasi form input
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('full_name', 'Nama Lengkap', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('birth_date', 'Tanggal Lahir', 'required');
         $this->form_validation->set_rules('gender', 'Jenis Kelamin', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
@@ -111,5 +111,13 @@ class Auth_psikolog extends CI_Controller
                 redirect('auth_psikolog');
             }
         }
+    }
+
+    // Logout
+    public function logout()
+    {
+        $this->session->unset_userdata('psikolog_id');
+        $this->session->set_flashdata('success', 'Anda telah logout.');
+        redirect('auth_psikolog');
     }
 }
