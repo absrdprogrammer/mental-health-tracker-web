@@ -30,19 +30,19 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-tachometer-alt"></i>
+                        <i class="las la-tachometer-alt"></i>
                         <span class="menu-text">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-clipboard-list"></i>
+                        <i class="las la-clipboard-list"></i>
                         <span class="menu-text">Daftar User</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-user-doctor"></i>
+                        <i class="las fa-user-doctor"></i>
                         <span class="menu-text">Daftar Psikolog</span>
                     </a>
                 </li>
