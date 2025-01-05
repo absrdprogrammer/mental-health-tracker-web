@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <a href="<?php echo base_url('admin/daftarpsikolog'); ?>" id="daftarpsikolog">
-                        <i class="las la-user-doctor"></i>
+                        <i class="las la-user-md"></i>
                         <span class="menu-text">Daftar Psikolog</span>
                     </a>
                 </li>
@@ -114,7 +114,7 @@
                     <div class="table-box">
                         <div class="table-header">
                             <h3>Data Pengguna</h3>
-                            <button class="see-all-btn">See All</button>
+                            <a href="<?php echo base_url('admin/daftaruser'); ?>" class="see-all-btn">See All</a>
                         </div>
                         <table class="data-table">
                             <thead>
@@ -146,7 +146,7 @@
                     <div class="table-box">
                         <div class="table-header">
                             <h3>Data Jurnal</h3>
-                            <button class="see-all-btn">See All</button>
+                            <a href="<?php echo base_url('admin/jurnal'); ?>" class="see-all-btn">See All</a>
                         </div>
                         <table class="data-table">
                             <thead>

@@ -60,7 +60,7 @@
       <!-- Header -->
       <header class="header">
         <div class="logo-container">
-          <img src="img/logo.png" alt="Logo" class="logo" />
+          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
           <span class="site-name">Mindfulmatters</span>
         </div>
         <div class="actions-container">
