@@ -22,7 +22,7 @@
         <button class="home-btn">
           <i class="fas fa-home"></i>
         </button>
-        <a href="daftar_user.php">
+        <a href="daftar_user.phpsid">
           <button class="list-btn">
             <i class="fas fa-clipboard-list"></i>
           </button>
