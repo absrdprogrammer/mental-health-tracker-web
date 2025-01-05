@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin</title>
-  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
@@ -19,24 +19,18 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <div class="menu-top">
-        <a href="dashboard.php">
-        <button class="home-btn">
+        <button class="home-btn" onclick="window.location.href='<?= base_url('admin') ?>'">
           <i class="fas fa-home"></i>
         </button>
-    </a>
-        <a href="daftar_user.php">
-          <button class="list-btn">
-            <i class="fas fa-clipboard-list"></i>
-          </button>
-        </a>
-        <a href="daftar_psikolog.php">
-            <button class="list-btn">
-              <i class="fa-solid fa-user-doctor"></i>
-            </button>
-          </a>
+        <button class="list-btn" onclick="window.location.href='<?= base_url('admin/users') ?>'">
+          <i class="fas fa-clipboard-list"></i>
+        </button>
+        <button class="list-btn" onclick="window.location.href='<?= base_url('admin/psychologists') ?>'">
+          <i class="fa-solid fa-user-doctor"></i>
+        </button>
       </div>
       <div class="menu-bottom">
-        <button class="logout-btn" onclick="logout()">
+        <button class="logout-btn" onclick="window.location.href='<?= base_url('auth/logout') ?>'">
           <i class="fas fa-sign-out-alt"></i>
         </button>
       </div>
@@ -46,20 +40,20 @@
     <main class="content">
       <header class="header">
         <div class="logo-container">
-          <img src="img/logo.png" alt="Logo" class="logo" />
+          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo">
           <span class="site-name">Mindfulmatters</span>
         </div>
-        <div class="actions-container-list">
+        <div class="actions-container">
           <div class="search-container">
-            <input type="text" class="search-bar" placeholder="Search..." />
+            <input type="text" class="search-bar" placeholder="Search...">
             <button class="search-button">
               <i class="fas fa-search"></i>
             </button>
           </div>
           <div class="user-profile">
-            <img src="img/rt.jpg" alt="User Avatar" class="profile-icon" id="profileIcon" />
+            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
             <div id="dropdownMenu" class="dropdown-menu">
-              <a href="profile.html" id="profile">
+              <a href="<?php echo base_url('admin/profile'); ?>" id="profile">
                 <i class="fas fa-user"></i> Profile
               </a>
               <a href="#">
@@ -97,12 +91,11 @@
             </tbody>
           </table>
         </div>
-        </div>
+      </div>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script src="chart.js"></script>
       <script src="script.js"></script>
       <script src="kalender.js"></script>
-    </body>
-    
-    </html>
-    
+</body>
+
+</html>

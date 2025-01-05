@@ -19,7 +19,7 @@ class Admin extends CI_Controller
         log_message('info', 'Session user_id set: ' . $this->session->userdata('user_id'));
 
         // Ambil data dari model
-        $data['users'] = $this->Admin_model->get_users();
+        $data['users'] = $this->User_model->get_users();
         $data['userbyid'] = $this->User_model->get_users_by_id($user_id);
         $data['counts'] = $this->Admin_model->get_counts();
 
@@ -52,7 +52,7 @@ class Admin extends CI_Controller
         log_message('info', 'Session user_id set: ' . $this->session->userdata('user_id'));
 
         // Ambil data dari model
-        $data['users'] = $this->Admin_model->get_users();
+        $data['users'] = $this->User_model->get_users();
         $data['userbyid'] = $this->User_model->get_users_by_id($user_id);
         $data['counts'] = $this->Admin_model->get_counts();
 
@@ -62,5 +62,17 @@ class Admin extends CI_Controller
     public function editprofile()
     {
         $this->load->view('admin/edit-profile');
+    }
+
+    public function users()
+    {
+        $data['users'] = $this->User_model->get_users();
+        $this->load->view('admin/daftar_user', $data);
+    }
+
+    public function psychologists()
+    {
+        $data['psychologists'] = $this->User_model->get_psychologists();
+        $this->load->view('admin/daftar_psikolog', $data);
     }
 }
