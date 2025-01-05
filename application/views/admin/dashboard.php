@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="las la-user-doctor"></i>
+                        <i class="las la-user-md"></i>
                         <span class="menu-text">Daftar Psikolog</span>
                     </a>
                 </li>
