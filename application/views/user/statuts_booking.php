@@ -14,12 +14,12 @@
       <!-- Sidebar -->
       <div class="sidebar-booking">
         <div class="menu-top">
-          <a href="index.html">
+          <a href="main.php">
             <button class="home-btn">
               <i class="fas fa-home"></i>
             </button>
           </a>
-          <a href="status_booking.html">
+          <a href="status_booking.php">
             <button class="calendar-btn">
               <i class="fas fa-calendar"></i>
             </button>
