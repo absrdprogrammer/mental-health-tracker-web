@@ -44,4 +44,9 @@ class Mood_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function mood_checkin($data)
+    {
+        return $this->db->insert('mood_checkins', $data);
+    }
 }

@@ -129,25 +129,26 @@ body {
   align-items: center;
 }
 
+/* Search Bar */
 .search-container {
   display: flex;
   align-items: center;
-  width: 350px;
-  /* Lebar pencarian */
-  background-color: #fff;
+  background-color: #f9f9f9;
   border: 1px solid #ccc;
-  border-radius: 20px;
+  border-radius: 25px;
+  overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 350px; 
 }
 
 .search-bar {
   flex: 1;
-  padding: 10px 15px;
+  padding: 10px;
   border: none;
-  font-size: 14px;
-  color: #7d7d7d;
-  background-color: transparent;
   outline: none;
+  font-size: 14px;
+  background-color: #f7f7f7;
+  color: #7d7d7d;
 }
 
 .search-button {

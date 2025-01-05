@@ -127,7 +127,7 @@
                                 <?php if (!empty($users)): ?>
                                     <?php foreach ($users as $user): ?>
                                         <tr>
-                                            <td><?= htmlspecialchars($user['username']); ?></td>
+                                            <td><?= htmlspecialchars($user['full_name']); ?></td>
                                             <td><?= htmlspecialchars($user['email']); ?></td>
                                             <td><?= $user['is_active'] ? 'Active' : 'Inactive'; ?></td>
                                         </tr>

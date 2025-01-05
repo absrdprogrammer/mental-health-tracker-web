@@ -13,8 +13,16 @@
   <div class="dashboard">
     <!-- Sidebar -->
     <div class="sidebar">
+      <div class="menu-top">
+        <button class="home-btn">
+          <i class="fas fa-home"></i>
+        </button>
+        <button class="calendar-btn" onclick="window.location.href='<?= base_url('main/booking') ?>'">
+          <i class="fas fa-calendar"></i>
+        </button>
+      </div>
       <div class="menu-bottom">
-        <button class="logout-btn" onclick="logout()">
+        <button class="logout-btn" onclick="window.location.href='<?= base_url('auth/logout') ?>'">
           <i class="fas fa-sign-out-alt"></i>
         </button>
       </div>
@@ -57,8 +65,8 @@
                   </button>
                 </div>
                 <div class="profile-info">
-                  <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
-                  <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
+                  <h4 id="userName"><?= htmlspecialchars($user['full_name']); ?></h4>
+                  <p id="userRole"><?= htmlspecialchars($user['age']); ?> tahun</p>
                 </div>
               </div>
               <div class="progress-section">
@@ -75,7 +83,7 @@
               <div id="moodModal" class="modal">
                 <div class="modal-content">
                   <span class="close" id="closeModal">&times;</span>
-                  <h3>Halo, Sara!</h3>
+                  <h3>Halo, <?= htmlspecialchars($user['full_name']); ?>!</h3>
 
                   <!-- Calendar Section -->
                   <div class="calendar">
@@ -87,15 +95,15 @@
 
                   <!-- Mood Options -->
                   <div class="mood-options">
-                    <button class="mood-btn" data-mood="Happy">
+                    <button class="mood-btn" data-mood="Happy" onclick="handleMood('happy')">
                       <i class="fas fa-smile" style="color: #ff6384"></i>
                       <span>Happy</span>
                     </button>
-                    <button class="mood-btn" data-mood="Neutral">
+                    <button class="mood-btn" data-mood="Neutral" onclick="handleMood('neutral')">
                       <i class="fas fa-meh" style="color: #f6d750"></i>
                       <span>Neutral</span>
                     </button>
-                    <button class="mood-btn" data-mood="Sad">
+                    <button class="mood-btn" data-mood="Sad" onclick="handleMood('sad')">
                       <i class="fas fa-frown" style="color: #ff4500"></i>
                       <span>Sad</span>
                     </button>
@@ -108,6 +116,8 @@
           </div>
         </div>
       </div>
+
+
 
       <!-- Highlight Box -->
       <header class="header-highlight">
@@ -222,13 +232,13 @@
 
               <div class="psychologist-info-wrapper">
                 <?php foreach ($psychologists as $index => $psychologist): ?>
-                  <div class="psychologist-info" data-id="<?php echo $psychologist->user_id; ?>">
+                  <div class="psychologist-info" data-id="<?php echo $psychologist->id; ?>">
                     <div class="psychologist-image-wrapper">
-                      <img id="psychologistImage" src="<?php echo base_url('assets/img/psikolog.jpeg'); ?>" alt="Psychologist" />
+                      <img id="psychologistImage" src="<?php echo base_url('uploads/' . $psychologist->photo); ?>" alt="Psychologist" />
                     </div>
-                    <h3 class="psychologist-name"><?php echo $psychologist->username; ?></h3>
+                    <h3 class="psychologist-name"><?php echo $psychologist->full_name; ?></h3>
                     <p id="psychologistTitle" class="psychologist-title">Experienced Psychologist</p>
-                    <button class="booking-btn" id="bookingBtn" onclick="openBookingModal(<?php echo $psychologist->user_id; ?>)">Booking Psikolog</button>
+                    <button class="booking-btn" id="bookingBtn" onclick="openBookingModal(<?php echo $psychologist->id; ?>)">Booking Psikolog</button>
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -258,22 +268,6 @@
                         <input type="time" id="bookingTime" required />
                       </div>
                     </div>
-
-                    <div class="age-gender-container">
-                      <div>
-                        <label for="bookingAge">Umur</label>
-                        <input type="number" id="bookingAge" min="1" max="120" placeholder="Masukkan umur" required />
-                      </div>
-                      <div>
-                        <label for="bookingGender">Jenis Kelamin</label>
-                        <select id="bookingGender" required>
-                          <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                          <option value="Laki-laki">Laki-laki</option>
-                          <option value="Perempuan">Perempuan</option>
-                        </select>
-                      </div>
-                    </div>
-
                     <button type="submit" class="confirm-btn">Konfirmasi Booking</button>
                   </form>
                 </div>
