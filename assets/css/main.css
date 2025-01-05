@@ -23,6 +23,27 @@ body {
 	justify-content: space-between;
 }
 
+/*sidebar booking */
+.sidebar-booking {
+	width: 17px;
+	height: auto;
+	background: #00bfae;
+	padding: 20px;
+	padding-top: 35px;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+  }
+
+.menu-top {
+	margin-bottom: 27px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+  }
+
 .menu-bottom {
 	margin-top: auto;
 	padding: 10px 0;
