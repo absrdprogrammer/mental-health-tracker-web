@@ -51,20 +51,21 @@ body {
 	justify-content: center;
 }
 
+.home-btn,
+.calendar-btn,
 .logout-btn {
-	background: none;
-	border: none;
-	color: #fff;
-	font-size: 18px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
 }
 
+.home-btn:hover,
+.calendar-btn:hover,
 .logout-btn:hover {
-	background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
 }
 
 /* Main Content */

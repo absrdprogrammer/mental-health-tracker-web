@@ -17,7 +17,7 @@
           <button class="home-btn">
             <i class="fas fa-home"></i>
           </button>
-          <a href="status_booking.html">
+          <a href="status_booking.php">
             <button class="calendar-btn">
               <i class="fas fa-calendar"></i>
             </button>
