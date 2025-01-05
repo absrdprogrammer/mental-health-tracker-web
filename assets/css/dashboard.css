@@ -26,42 +26,24 @@ body {
   overflow: auto;
 }
 
-.dashboard-list {
-  display: flex;
-  height: auto;
-}
-
 /* Sidebar */
 .sidebar {
-  width: 22px;
-  height: auto;
-  background: #00bfae;
-  padding: 22px;
-  padding-top: 35px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  width: 50px;
+  background-color: #13b2a5;
+  padding-top: 30px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  transition: width 0.3s ease;
+  grid-area: sidebar;
+  overflow: hidden;
 }
 
-.menu-top {
-  margin-bottom: 27px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
+.sidebar.open {
+  width: 200px;
 }
 
-.menu-bottom {
-  margin-top: auto;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.home-btn,
-.list-btn,
-.logout-btn {
+.sidebar-toggle {
   background: none;
   border: none;
   color: #ffffff;
@@ -94,16 +76,27 @@ body {
 .menu li a {
   text-decoration: none;
   color: #ffffff;
-  color: #fff;
   font-size: 18px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
 }
 
-.home-btn:hover,
-.list-btn:hover,
-.logout-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+.menu li a i {
+  font-size: 25px;
+  /* Sesuaikan ukuran font untuk memperbesar ikon */
+}
+
+.menu-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar.open .menu-text {
+  opacity: 1;
+  visibility: visible;
 }
 
 .header {
@@ -401,26 +394,6 @@ img#profilePreview {
   overflow: hidden;
 }
 
-.table-box-list {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(10, 55, 54, 0.1);
-  padding: 20px;
-  flex: 1;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.table-box-psikolog {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(10, 55, 54, 0.1);
-  padding: 20px;
-  flex: 1;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
 .table-header {
   display: flex;
   justify-content: space-between;
@@ -431,7 +404,7 @@ img#profilePreview {
 .table-header h3 {
   font-size: 17px;
   margin: 0;
-  border-bottom: 2px solid #59e4c6;
+  border-bottom: 2px solid #00bfae;
   padding-bottom: 5px;
 }
 
@@ -462,24 +435,6 @@ img#profilePreview {
   white-space: nowrap;
 }
 
-.data-table-list {
-  width: 100%;
-  border-collapse: collapse;
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
-  table-layout: fixed;
-}
-
-.data-table-psikolog {
-  width: 100%;
-  border-collapse: collapse;
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
-  table-layout: fixed;
-}
-
 .data-table th,
 .data-table td {
   text-align: left;
@@ -493,40 +448,6 @@ img#profilePreview {
 }
 
 .data-table tr:hover {
-  background-color: #f9f9f9;
-}
-
-.data-table-list th,
-.data-table-list td {
-  text-align: left;
-  padding: 12px 45px;
-  border-bottom: 1px solid #1eafe8;
-  word-wrap: break-word;
-}
-
-.data-table-list th {
-  background-color: #98efbf;
-  font-weight: bold;
-}
-
-.data-table-list tr:hover {
-  background-color: #f9f9f9;
-}
-
-.data-table-psikolog th,
-.data-table-psikolog td {
-  text-align: left;
-  padding: 12px 63px;
-  border-bottom: 1px solid #1eafe8;
-  word-wrap: break-word;
-}
-
-.data-table-psikolog th {
-  background-color: #98efbf;
-  font-weight: bold;
-}
-
-.data-table-psikolog tr:hover {
   background-color: #f9f9f9;
 }
 

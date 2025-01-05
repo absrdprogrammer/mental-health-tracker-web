@@ -53,28 +53,7 @@
           </a>
         </li>
       </ul>
-
-  <div class="dashboard-list">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="menu-top">
-        <button class="home-btn" onclick="window.location.href='<?= base_url('admin') ?>'">
-          <i class="fas fa-home"></i>
-        </button>
-        <button class="list-btn" onclick="window.location.href='<?= base_url('admin/users') ?>'">
-          <i class="fas fa-clipboard-list"></i>
-        </button>
-        <button class="list-btn" onclick="window.location.href='<?= base_url('admin/psychologists') ?>'">
-          <i class="fa-solid fa-user-doctor"></i>
-        </button>
-      </div>
-      <div class="menu-bottom">
-        <button class="logout-btn" onclick="window.location.href='<?= base_url('auth/logout') ?>'">
-          <i class="fas fa-sign-out-alt"></i>
-        </button>
-      </div>
-    </div>
-
+      
     <!-- Main Content -->
     <main class="content">
       <!-- Header -->
