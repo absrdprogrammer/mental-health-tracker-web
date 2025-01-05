@@ -22,12 +22,12 @@
         <button class="home-btn">
           <i class="fas fa-home"></i>
         </button>
-        <a href="daftar_user.phpsid">
+        <a href="daftar_user.php">
           <button class="list-btn">
             <i class="fas fa-clipboard-list"></i>
           </button>
         </a>
-        <a href="daftar_psikolog.html">
+        <a href="daftar_psikolog.php">
           <button class="list-btn">
             <i class="fa-solid fa-user-doctor"></i>
           </button>
