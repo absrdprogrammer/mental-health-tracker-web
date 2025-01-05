@@ -77,7 +77,8 @@ class Admin extends CI_Controller
     public function jurnal()
     {
         $this->load->view('admin/jurnal');
-
+    }
+    
     public function users()
     {
         $data['users'] = $this->User_model->get_users();
