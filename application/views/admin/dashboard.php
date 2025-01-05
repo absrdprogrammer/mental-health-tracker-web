@@ -17,44 +17,29 @@
 <body>
     <div class="dashboard">
         <!-- Sidebar -->
-        <div class="sidebar" id="sidebar">
-            <button class="sidebar-toggle" id="sidebar-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="menu">
-                <li>
-                    <a href="#">
-                        <i class="fas fa-heart"></i>
-                        <span class="menu-text">Mental Health <center>Tracker</center></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="las la-tachometer-alt"></i>
-                        <span class="menu-text">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="las la-chart-bar"></i>
-                        <span class="menu-text">Analysis</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="las la-comments"></i>
-                        <span class="menu-text">Counseling</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="las la-file-alt"></i>
-                        <span class="menu-text">Content</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
+    <div class="sidebar">
+      <div class="menu-top">
+        <button class="home-btn">
+          <i class="fas fa-home"></i>
+        </button>
+        <a href="daftar_user.php">
+          <button class="list-btn">
+            <i class="fas fa-clipboard-list"></i>
+          </button>
+        </a>
+        <a href="daftar_psikolog.php">
+          <button class="list-btn">
+            <i class="fa-solid fa-user-doctor"></i>
+          </button>
+        </a>
+      </div>
+      <div class="menu-bottom">
+        <button class="logout-btn" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+       
         <!-- Main Content -->
         <main class="content">
             <header class="header">
