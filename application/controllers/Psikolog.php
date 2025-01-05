@@ -56,7 +56,7 @@ class Psikolog extends CI_Controller
             log_message('error', 'User ID not found in session. Redirecting to auth.');
             redirect('auth_psikolog');
         } else {
-            log_message('info', 'User ID in session: ' . $this->session->userdata('user_id'));
+            log_message('info', 'User ID in session: ' . $this->session->userdata('psikolog_id'));
         }
     }
 }

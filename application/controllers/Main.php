@@ -95,4 +95,12 @@ class Main extends CI_Controller
                 ->set_output(json_encode(['message' => 'Gagal menyimpan check-in']));
         }
     }
+
+    // Fungsi untuk load view booking.php
+    public function booking()
+    {
+        $user_id = $this->session->userdata('user_id');
+        $data['user'] = $this->User_model->get_users_by_id($user_id);
+        $this->load->view('user/booking', $data);
+    }
 }
