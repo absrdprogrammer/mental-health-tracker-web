@@ -36,20 +36,14 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="las la-chart-bar"></i>
-                        <span class="menu-text">Analysis</span>
+                        <i class="fas fa-clipboard-list"></i>
+                        <span class="menu-text">Daftar User</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="las la-comments"></i>
-                        <span class="menu-text">Counseling</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="las la-file-alt"></i>
-                        <span class="menu-text">Content</span>
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <span class="menu-text">Daftar Psikolog</span>
                     </a>
                 </li>
             </ul>
