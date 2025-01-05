@@ -13,6 +13,16 @@
   <div class="dashboard">
     <!-- Sidebar -->
     <div class="sidebar">
+    <div class="menu-top">
+          <button class="home-btn">
+            <i class="fas fa-home"></i>
+          </button>
+          <a href="status_booking.php">
+            <button class="calendar-btn">
+              <i class="fas fa-calendar"></i>
+            </button>
+          </a>
+        </div>
       <div class="menu-bottom">
         <button class="logout-btn" onclick="window.location.href='<?= base_url('auth/logout') ?>'">
           <i class="fas fa-sign-out-alt"></i>
@@ -108,6 +118,8 @@
           </div>
         </div>
       </div>
+
+      
 
       <!-- Highlight Box -->
       <header class="header-highlight">
