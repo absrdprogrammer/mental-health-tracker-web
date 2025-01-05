@@ -54,6 +54,7 @@
                     </a>
                 </li>
             </ul>
+        </div>
 
         <!-- Main Content -->
         <main class="content">
@@ -211,7 +212,7 @@
         <div class="calendar-container" id="calendar">
             <div class="calendar-body">
                 <div class="calendar-header">
-                    <h3>Calender</h3>
+                    <h3>Calendar</h3>
                 </div>
                 <div class="calendar-navigation">
                     <button id="prevMonth" class="nav-btn">
