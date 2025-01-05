@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin</title>
-  <link rel="stylesheet" href="dashboard.css" />
+  <title>Data Psikolog</title>
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
@@ -15,94 +15,108 @@
 </head>
 
 <body>
-  <div class="dashboard-list">
+  <div class="dashboard">
     <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="menu-top">
-        <a href="dashboard.php">
-        <button class="home-btn">
-          <i class="fas fa-home"></i>
-        </button>
-    </a>
-        <a href="daftar_user.php">
-          <button class="list-btn">
-            <i class="fas fa-clipboard-list"></i>
-          </button>
-        </a>
-        <a href="daftar_psikolog.php">
-            <button class="list-btn">
-              <i class="fa-solid fa-user-doctor"></i>
-            </button>
+    <div class="sidebar" id="sidebar">
+      <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="menu">
+        <li>
+          <a href="#">
+            <i class="fas fa-heart"></i>
+            <span class="menu-text">Mental Health <center>Tracker</center></span>
           </a>
-      </div>
-      <div class="menu-bottom">
-        <button class="logout-btn" onclick="logout()">
-          <i class="fas fa-sign-out-alt"></i>
-        </button>
-      </div>
+        </li>
+        <li>
+          <a href="#">
+            <i class="las la-tachometer-alt"></i>
+            <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url('admin/daftaruser'); ?>" id="daftaruser">
+            <i class="las la-clipboard-list"></i>
+            <span class="menu-text">Daftar User</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url('admin/daftarpsikolog'); ?>" id="daftarpsikolog">
+            <i class="las la-user-doctor"></i>
+            <span class="menu-text">Daftar Psikolog</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url('admin/jurnal'); ?>" id="jurnal">
+            <i class="las la-file-alt"></i>
+            <span class="menu-text">Daftar Jurnal</span>
+          </a>
+        </li>
+      </ul>
     </div>
 
     <!-- Main Content -->
     <main class="content">
+      <!-- Header -->
       <header class="header">
         <div class="logo-container">
           <img src="img/logo.png" alt="Logo" class="logo" />
           <span class="site-name">Mindfulmatters</span>
         </div>
-        <div class="actions-container-list">
+        <div class="actions-container">
           <div class="search-container">
             <input type="text" class="search-bar" placeholder="Search..." />
             <button class="search-button">
               <i class="fas fa-search"></i>
             </button>
           </div>
-          <div class="user-profile">
-            <img src="img/rt.jpg" alt="User Avatar" class="profile-icon" id="profileIcon" />
-            <div id="dropdownMenu" class="dropdown-menu">
-              <a href="profile.html" id="profile">
-                <i class="fas fa-user"></i> Profile
-              </a>
-              <a href="#">
-                <i class="fas fa-sign-out-alt"></i> Logout
-              </a>
-            </div>
-          </div>
         </div>
       </header>
 
-      <div class="tables-container">
-        <!-- Table Pengguna -->
-        <div class="table-box-psikolog">
-          <div class="table-header">
-            <h3>Data Psikolog</h3>
-          </div>
-          <table class="data-table-psikolog">
-            <thead>
-              <tr>
-                <th>Tanggal Register</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Jumlah Pasien</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>25/10/24</td>
-                <td>Alwan Nazieh</td>
-                <td>Alwan@gmail.com</td>
-                <td>Active</td>
-                <td>3 Jurnal</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        </div>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script src="chart.js"></script>
-      <script src="script.js"></script>
-      <script src="kalender.js"></script>
-    </body>
-    
-    </html>
-    
+      <div class="user-list">
+        <h2 class="table-title">Daftar Psikolog</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal Register</th>
+              <th>Nama</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Jumlah Pasien</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>25/10/24</td>
+              <td>Dr.Sahlah R</td>
+              <td>sahlahr08@gmail.com</td>
+              <td class="status active">Active</td>
+              <td>3 Pasien</td>
+              <td>
+                <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Foto Sahlah" class="profile-pic" />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>08/06/24</td>
+              <td>Dr.jaehyun06</td>
+              <td>jaehyun06@gmail.com</td>
+              <td class="status non-active">Non Active</td>
+              <td>5 Pasien</td>
+              <td>
+                <img src="<?php echo base_url('assets/img/mas.jpg'); ?>" alt="Foto Jaehyun" class="profile-pic" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
+</body>
+
+</html>

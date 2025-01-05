@@ -68,4 +68,14 @@ class Admin extends CI_Controller
     {
         $this->load->view('admin/daftar_user');
     }
+
+    public function daftarpsikolog()
+    {
+        $this->load->view('admin/daftar_psikolog');
+    }
+
+    public function jurnal()
+    {
+        $this->load->view('admin/jurnal');
+    }
 }

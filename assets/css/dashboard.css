@@ -59,15 +59,14 @@ body {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 .menu li {
   padding: 10px 15px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   transition: background-color 0.3s ease;
+  justify-content: flex-start;
 }
 
 .menu li:hover {
@@ -93,7 +92,6 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  font-size: 18px;
 }
 
 .sidebar.open .menu-text {
@@ -132,26 +130,25 @@ body {
   align-items: center;
 }
 
-/* Search Bar */
 .search-container {
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
+  width: 350px;
+  /* Lebar pencarian */
+  background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 25px;
-  overflow: hidden;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 350px; 
 }
 
 .search-bar {
   flex: 1;
-  padding: 10px;
+  padding: 10px 15px;
   border: none;
-  outline: none;
   font-size: 14px;
-  background-color: #f7f7f7;
   color: #7d7d7d;
+  background-color: transparent;
+  outline: none;
 }
 
 .search-button {
@@ -764,6 +761,70 @@ h3 {
   font-weight: bold;
 }
 
+/* kode css daftar-users dan psikolog */
+.table-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+  text-align: justify;
+  padding: 0 15px;
+}
+
+.user-list {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+thead tr {
+  background-color: #00bfae;
+  color: white;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px; /* Ganti menjadi 50px agar lebih proporsional */
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center; /* Untuk memastikan gambar fokus di tengah */
+  border: 2px solid #00bfae; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk kesan depth */
+}
+
+
+.status {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status.active {
+  color: green;
+}
+
+.status.non-active {
+  color: red;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+
 /* Pengaturan Responsif */
 @media (max-width: 300px) {
 
@@ -1288,6 +1349,20 @@ canvas {
   .current-time {
     padding: 10px;
     font-size: 12px;
+  }
+
+  .table-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
   }
 }
 

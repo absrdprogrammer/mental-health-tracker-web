@@ -35,21 +35,21 @@
           </a>
         </li>
         <li>
-          <a href="#">
-            <i class="las la-chart-bar"></i>
-            <span class="menu-text">Analysis</span>
+          <a href="<?php echo base_url('admin/daftaruser'); ?>" id="daftaruser">
+            <i class="las la-clipboard-list"></i>
+            <span class="menu-text">Daftar User</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <i class="las la-comments"></i>
-            <span class="menu-text">Counseling</span>
+          <a href="<?php echo base_url('admin/daftarpsikolog'); ?>" id="daftarpsikolog">
+            <i class="las la-user-doctor"></i>
+            <span class="menu-text">Daftar Psikolog</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="<?php echo base_url('admin/jurnal'); ?>" id="jurnal">
             <i class="las la-file-alt"></i>
-            <span class="menu-text">Content</span>
+            <span class="menu-text">Daftar Jurnal</span>
           </a>
         </li>
       </ul>
@@ -85,8 +85,9 @@
           </div>
 
           <!-- User Information -->
-          <div class="profile-info"><?= htmlspecialchars($userbyid['username']); ?></h4>
-            <p id="userRole"><?= htmlspecialchars($userbyid['role']) ?></p>
+          <div class="profile-info">
+            <h4><?= htmlspecialchars($userbyid['username']); ?></h4>
+            <p id="userRole"><?= htmlspecialchars($userbyid['role']); ?></p>
           </div>
         </div>
 
@@ -94,7 +95,7 @@
         <div class="personal-info">
           <h3>Personal Information</h3>
           <ul>
-          <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
+            <li>Email: <span id="userEmail"><?= htmlspecialchars($userbyid['email']); ?></span></li>
           </ul>
         </div>
       </div>
