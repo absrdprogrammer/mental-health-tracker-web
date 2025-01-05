@@ -53,12 +53,14 @@
           </a>
         </li>
       </ul>
-      
+    </div>
+
     <!-- Main Content -->
     <main class="content">
       <!-- Header -->
+      <header class="header">
         <div class="logo-container">
-          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo">
+          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
           <span class="site-name">Mindfulmatters</span>
         </div>
         <div class="actions-container">
@@ -105,7 +107,7 @@
               <td class="status non-active">Non Active</td>
               <td>5 Pasien</td>
               <td>
-                <img src="<?php echo base_url('assets/img/mas.jpg'); ?>" alt="Foto Jaehyun" class="profile-pic" />
+               <img src="<?php echo base_url('assets/img/mas.jpg'); ?>" alt="Foto Jaehyun" class="profile-pic" />
               </td>
             </tr>
           </tbody>
@@ -117,3 +119,4 @@
   <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
 </body>
 
+</html>
