@@ -30,7 +30,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="las la-tachometer-alt"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                         <span class="menu-text">Dashboard</span>
                     </a>
                 </li>
