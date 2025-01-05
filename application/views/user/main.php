@@ -57,8 +57,8 @@
                   </button>
                 </div>
                 <div class="profile-info">
-                  <h4 id="userName"><?= htmlspecialchars($user['username']); ?></h4>
-                  <p id="userRole"><?= htmlspecialchars($user['role']); ?></p>
+                  <h4 id="userName"><?= htmlspecialchars($user['full_name']); ?></h4>
+                  <p id="userRole"><?= htmlspecialchars($user['age']); ?> tahun</p>
                 </div>
               </div>
               <div class="progress-section">
@@ -75,7 +75,7 @@
               <div id="moodModal" class="modal">
                 <div class="modal-content">
                   <span class="close" id="closeModal">&times;</span>
-                  <h3>Halo, Sara!</h3>
+                  <h3>Halo, <?= htmlspecialchars($user['full_name']); ?>!</h3>
 
                   <!-- Calendar Section -->
                   <div class="calendar">
@@ -108,6 +108,8 @@
           </div>
         </div>
       </div>
+
+      
 
       <!-- Highlight Box -->
       <header class="header-highlight">
@@ -222,13 +224,13 @@
 
               <div class="psychologist-info-wrapper">
                 <?php foreach ($psychologists as $index => $psychologist): ?>
-                  <div class="psychologist-info" data-id="<?php echo $psychologist->user_id; ?>">
+                  <div class="psychologist-info" data-id="<?php echo $psychologist->id; ?>">
                     <div class="psychologist-image-wrapper">
-                      <img id="psychologistImage" src="<?php echo base_url('assets/img/psikolog.jpeg'); ?>" alt="Psychologist" />
+                      <img id="psychologistImage" src="<?php echo base_url('uploads/' . $psychologist->photo); ?>" alt="Psychologist" />
                     </div>
-                    <h3 class="psychologist-name"><?php echo $psychologist->username; ?></h3>
+                    <h3 class="psychologist-name"><?php echo $psychologist->full_name; ?></h3>
                     <p id="psychologistTitle" class="psychologist-title">Experienced Psychologist</p>
-                    <button class="booking-btn" id="bookingBtn" onclick="openBookingModal(<?php echo $psychologist->user_id; ?>)">Booking Psikolog</button>
+                    <button class="booking-btn" id="bookingBtn" onclick="openBookingModal(<?php echo $psychologist->id; ?>)">Booking Psikolog</button>
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -258,22 +260,6 @@
                         <input type="time" id="bookingTime" required />
                       </div>
                     </div>
-
-                    <div class="age-gender-container">
-                      <div>
-                        <label for="bookingAge">Umur</label>
-                        <input type="number" id="bookingAge" min="1" max="120" placeholder="Masukkan umur" required />
-                      </div>
-                      <div>
-                        <label for="bookingGender">Jenis Kelamin</label>
-                        <select id="bookingGender" required>
-                          <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                          <option value="Laki-laki">Laki-laki</option>
-                          <option value="Perempuan">Perempuan</option>
-                        </select>
-                      </div>
-                    </div>
-
                     <button type="submit" class="confirm-btn">Konfirmasi Booking</button>
                   </form>
                 </div>

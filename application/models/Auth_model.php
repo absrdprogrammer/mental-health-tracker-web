@@ -4,10 +4,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Auth_model extends CI_Model
 {
     // Proses Login
-    public function login($username)
+    public function login($email, $psikolog = false)
     {
-        $this->db->where('username', $username);
-        $query = $this->db->get('users');
+        // Tentukan tabel yang akan digunakan berdasarkan parameter psikolog
+        $table = $psikolog ? 'psikolog' : 'users';
+
+        $this->db->where('email', $email);
+        $query = $this->db->get($table);
 
         if ($query->num_rows() == 1) {
             $result = $query->row_array();
@@ -20,8 +23,12 @@ class Auth_model extends CI_Model
     }
 
     // Proses Register
-    public function register($data)
+    public function register($data, $psikolog = false)
     {
-        return $this->db->insert('users', $data);
+        // Tentukan tabel yang akan digunakan berdasarkan parameter psikolog
+        $table = $psikolog ? 'psikolog' : 'users';
+
+        // Insert data ke tabel yang sesuai
+        return $this->db->insert($table, $data);
     }
 }

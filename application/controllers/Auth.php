@@ -7,7 +7,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('auth_model');
+        $this->load->model('Auth_model');
         $this->load->library('form_validation');
     }
 
@@ -21,7 +21,7 @@ class Auth extends CI_Controller
     public function login()
     {
         // Validasi input login
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == FALSE) {
@@ -29,20 +29,20 @@ class Auth extends CI_Controller
             redirect('auth');
         } else {
             $this->load->library('session');
-            $username = $this->input->post('username');
+            $email = $this->input->post('email');
             $password = $this->input->post('password');
 
-            $user = $this->auth_model->login($username);
+            $user = $this->Auth_model->login($email);
 
             if ($user && password_verify($password, $user['password'])) {
                 // Set session untuk user
                 $this->session->set_userdata('user_id', $user['user_id']);
-                $this->session->set_userdata('username', $user['username']);
+                $this->session->set_userdata('user_email', $user['email']);
                 log_message('info', 'Session user_id set: ' . $this->session->userdata('user_id'));
 
                 redirect('main'); // Ganti dengan controller dashboard
             } else {
-                $this->session->set_flashdata('error', 'Username atau password salah.');
+                $this->session->set_flashdata('error', 'Email atau password salah.');
                 redirect('auth');
             }
         }
@@ -51,26 +51,30 @@ class Auth extends CI_Controller
     // Proses Register
     public function register()
     {
-        // Validasi input register
+        // Validasi form input
+        $this->form_validation->set_rules('full_name', 'Nama Lengkap', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[users.username]');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-        $this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required|matches[password]');
+        $this->form_validation->set_rules('birth_date', 'Tanggal Lahir', 'required');
+        $this->form_validation->set_rules('gender', 'Jenis Kelamin', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', validation_errors('<div class="error-message">', '</div>'));
+            log_message('info', 'register gagal');
             redirect('auth');
         } else {
             $data = [
                 'email' => $this->input->post('email'),
-                'username' => $this->input->post('username'),
+                'full_name' => $this->input->post('full_name'),
+                'dob' => $this->input->post('birth_date'),
+                'gender' => $this->input->post('gender'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-                'registered_at' => date('Y-m-d H:i:s'),
+                'created_at' => date('Y-m-d H:i:s'),
 
             ];
             print_r($data);
 
-            if ($this->auth_model->register($data)) {
+            if ($this->Auth_model->register($data)) {
                 $this->session->set_flashdata('success', 'Akun berhasil dibuat! Silakan login.');
                 redirect('auth');
             } else {
@@ -84,7 +88,6 @@ class Auth extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('user_id');
-        $this->session->unset_userdata('username');
         $this->session->set_flashdata('success', 'Anda telah logout.');
         redirect('auth');
     }
