@@ -404,7 +404,7 @@ img#profilePreview {
 .table-header h3 {
   font-size: 17px;
   margin: 0;
-  border-bottom: 2px solid #00bfae;
+  border-bottom: 2px solid #59e4c6;
   padding-bottom: 5px;
 }
 
@@ -443,7 +443,7 @@ img#profilePreview {
 }
 
 .data-table th {
-  background-color: #98efbf;
+  background-color: #00bfae;
   font-weight: bold;
 }
 
