@@ -26,6 +26,11 @@ body {
   overflow: auto;
 }
 
+.dashboard-list {
+  display: flex;
+  height: auto;
+}
+
 /* Sidebar */
 .sidebar {
   width: 50px;
@@ -394,6 +399,26 @@ img#profilePreview {
   overflow: hidden;
 }
 
+.table-box-list {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(10, 55, 54, 0.1);
+  padding: 20px;
+  flex: 1;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.table-box-psikolog {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(10, 55, 54, 0.1);
+  padding: 20px;
+  flex: 1;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
 .table-header {
   display: flex;
   justify-content: space-between;
@@ -435,6 +460,24 @@ img#profilePreview {
   white-space: nowrap;
 }
 
+.data-table-list {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  table-layout: fixed;
+}
+
+.data-table-psikolog {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  table-layout: fixed;
+}
+
 .data-table th,
 .data-table td {
   text-align: left;
@@ -448,6 +491,40 @@ img#profilePreview {
 }
 
 .data-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.data-table-list th,
+.data-table-list td {
+  text-align: left;
+  padding: 12px 45px;
+  border-bottom: 1px solid #1eafe8;
+  word-wrap: break-word;
+}
+
+.data-table-list th {
+  background-color: #98efbf;
+  font-weight: bold;
+}
+
+.data-table-list tr:hover {
+  background-color: #f9f9f9;
+}
+
+.data-table-psikolog th,
+.data-table-psikolog td {
+  text-align: left;
+  padding: 12px 63px;
+  border-bottom: 1px solid #1eafe8;
+  word-wrap: break-word;
+}
+
+.data-table-psikolog th {
+  background-color: #98efbf;
+  font-weight: bold;
+}
+
+.data-table-psikolog tr:hover {
   background-color: #f9f9f9;
 }
 
