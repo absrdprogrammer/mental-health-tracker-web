@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?php echo base_url('admin/daftaruser'); ?>" id="daftaruser">
                         <i class="fas fa-clipboard-list"></i>
                         <span class="menu-text">Daftar User</span>
                     </a>

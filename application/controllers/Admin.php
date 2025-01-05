@@ -63,4 +63,9 @@ class Admin extends CI_Controller
     {
         $this->load->view('admin/edit-profile');
     }
+
+    public function daftaruser()
+    {
+        $this->load->view('admin/daftar_user');
+    }
 }
