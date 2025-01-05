@@ -95,6 +95,10 @@
               <i class="bx bx-user icon"></i>
             </div>
             <div class="input-box">
+              <input type="text" name="clinic_location" class="input-field" placeholder="Alamat Klinik" required />
+              <i class="bx bx-map icon"></i>
+            </div>
+            <div class="input-box">
               <input type="password" name="password" class="input-field" placeholder="Password" required />
               <i class="bx bx-lock-alt icon"></i>
             </div>

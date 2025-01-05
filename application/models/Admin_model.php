@@ -16,7 +16,7 @@ class Admin_model extends CI_Model
 
     public function get_users()
     {
-        $this->db->select('username, email, is_active, role');
+        $this->db->select('full_name, email, is_active, role');
         $query = $this->db->get('users');
         return $query->result_array();
     }

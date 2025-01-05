@@ -26,6 +26,8 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
   const bookingTime = document.getElementById("bookingTime").value;
 
   console.log("Psychologist ID disimpan di form:", bookingForm.dataset.psychologistId);
+  console.log("Booking date disimpan di form:", bookingDate);
+  console.log("Booking time disimpan di form:", bookingTime);
 
   // Kirim data ke backend melalui AJAX
   fetch("main/submit", {

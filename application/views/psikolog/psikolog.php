@@ -227,7 +227,9 @@
                                 Queue</button>
                             <!-- Archive Tab -->
                             <button id="tabArchive" onclick="openTab(event, 'Canceled')"
-                                class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Archive</button>
+                                class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Canceled</button>
+                            <button id="tabArchive" onclick="openTab(event, 'Canceled')"
+                                class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Archieved</button>
                         </nav>
                     </div>
                 </div>
