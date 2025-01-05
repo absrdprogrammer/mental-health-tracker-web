@@ -78,12 +78,13 @@ body {
   font-size: 18px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   white-space: nowrap;
 }
 
 .menu li a i {
-  font-size: 20px;
+  font-size: 25px;
+  margin-right: 15px;
   /* Sesuaikan ukuran font untuk memperbesar ikon */
 }
 
