@@ -13,11 +13,4 @@ class Admin_model extends CI_Model
         ");
         return $query->row_array(); // Mengembalikan hasil sebagai array
     }
-
-    public function get_users()
-    {
-        $this->db->select('full_name, email, is_active, role');
-        $query = $this->db->get('users');
-        return $query->result_array();
-    }
 }

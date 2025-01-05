@@ -54,7 +54,6 @@
                     </a>
                 </li>
             </ul>
-        </div>
 
         <!-- Main Content -->
         <main class="content">

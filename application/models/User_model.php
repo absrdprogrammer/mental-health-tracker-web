@@ -3,6 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User_model extends CI_Model
 {
+    public function get_users()
+    {
+        $this->db->select('full_name, email, is_active, role');
+        $query = $this->db->get('users');
+        return $query->result_array();
+    }
     public function get_users_by_id($user_id)
     {
         $this->db->where('user_id', $user_id);
@@ -11,8 +17,6 @@ class User_model extends CI_Model
         $query = $this->db->get('users');
         return $query->row_array();
     }
-
-
     public function get_psychologists()
     {
         return $this->db->get('psikolog')->result();

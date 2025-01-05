@@ -53,14 +53,12 @@
           </a>
         </li>
       </ul>
-    </div>
 
     <!-- Main Content -->
     <main class="content">
-      <!-- Header -->
-      <header class="header">
+      <!-- Header -->>
         <div class="logo-container">
-          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
+          <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo">
           <span class="site-name">Mindfulmatters</span>
         </div>
         <div class="actions-container">
@@ -122,4 +120,3 @@
   <script src="<?php echo base_url('assets/js/dashboard.js'); ?>"></script>
 </body>
 
-</html>
