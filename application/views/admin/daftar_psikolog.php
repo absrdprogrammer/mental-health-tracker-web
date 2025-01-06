@@ -70,6 +70,7 @@
           <div class="table-header">
             <h3>Data Psikolog</h3>
           </div>
+          <div class="scroll-container">
           <table class="data-table-psikolog">
             <thead>
               <tr>
@@ -104,6 +105,7 @@
               <?php endif; ?>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

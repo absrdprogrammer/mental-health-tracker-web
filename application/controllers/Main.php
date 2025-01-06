@@ -17,7 +17,7 @@ class Main extends CI_Controller
     {
         $user_id = $this->session->userdata('user_id');
         $data['user'] = $this->User_model->get_users_by_id($user_id);
-        $data['psychologists'] = $this->User_model->get_psychologists();
+        $data['psychologists'] = $this->User_model->get_all_psychologists();
         $this->load->view('user/main', $data);
     }
 
