@@ -84,8 +84,8 @@ class Auth_admin extends CI_Controller
     // Logout
     public function logout()
     {
-        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('admin_id');
         $this->session->set_flashdata('success', 'Anda telah logout.');
-        redirect('auth');
+        redirect('auth_admin');
     }
 }
