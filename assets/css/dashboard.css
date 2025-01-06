@@ -413,7 +413,7 @@ img#profilePreview {
 }
 
 .scroll-container {
-  max-height: 300px; /* Batas tinggi untuk scroll vertikal */
+  max-height: 100%; /* Batas tinggi untuk scroll vertikal */
   overflow-y: auto;  /* Menambahkan scroll vertikal */
   overflow-x: auto;  /* Menambahkan scroll horizontal */
   border: 1px solid #ddd; /* Border untuk elemen scroll */
@@ -464,19 +464,17 @@ img#profilePreview {
 .data-table-list {
   width: 100%;
   border-collapse: collapse;
-  display: block;
   overflow-x: auto;
-  white-space: nowrap;
-  table-layout: fixed;
+  white-space: normal;
+  table-layout: auto;
 }
 
 .data-table-psikolog {
   width: 100%;
   border-collapse: collapse;
-  display: block;
   overflow-x: auto;
   white-space: nowrap;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .data-table th,
