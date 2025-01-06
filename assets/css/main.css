@@ -486,6 +486,12 @@ body {
 	align-items: center;
 	gap: 1rem;
   }
+
+  .flex {
+	display: flex; /* Flexbox container */
+	align-items: center; /* Selaraskan elemen dalam satu baris secara vertikal */
+  }
+  
   
   /* Profile Image */
   .profile-image {
@@ -511,6 +517,7 @@ body {
 	display: flex;
 	flex-direction: column; /* Menyusun nama dan email secara vertikal */
 	justify-content: center;
+	margin-left: 1rem;
   }
   
   .patient-name {
