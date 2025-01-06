@@ -475,7 +475,7 @@ img#profilePreview {
 .data-table-list th,
 .data-table-list td {
   text-align: left;
-  padding: 12px 45px;
+  padding: 12px 37px;
   border-bottom: 1px solid #1eafe8;
   word-wrap: break-word;
 }
@@ -492,7 +492,7 @@ img#profilePreview {
 .data-table-psikolog th,
 .data-table-psikolog td {
   text-align: left;
-  padding: 12px 63px;
+  padding: 12px 50px;
   border-bottom: 1px solid #1eafe8;
   word-wrap: break-word;
 }
