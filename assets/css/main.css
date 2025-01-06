@@ -481,7 +481,7 @@ body {
   
   /* Patient Info Section */
   .patient-info {
-	padding: 1rem;
+	padding: 1.5rem;
 	
   }
   
@@ -506,10 +506,7 @@ body {
   
   /* Patient Details */
   .patient-details {
-	display: flex;
-	flex-direction: column; /* Menyusun nama dan email secara vertikal */
-	flex-grow: 1; /
-	
+	margin-left: 1rem;
   }
   
   .patient-name {
@@ -522,7 +519,7 @@ body {
   .patient-contact {
 	color: #6B7280;
 	font-size: 0.875rem;
-	line-height: 1rem;
+	line-height: 1.25rem;
   }
   
   /* Doctor Section */
