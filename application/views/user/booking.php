@@ -133,7 +133,8 @@
             <div class="patient-card">
               <div class="patient-info">
                 <div class="flex items-center">
-                  <img class="profile-image" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient" />
+                  <img class="profile-image" 
+                    src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient" />
                   <div class="patient-details">
                     <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
                     <p class="patient-contact"><?php echo $booking->user_email; ?></p>
