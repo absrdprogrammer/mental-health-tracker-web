@@ -530,42 +530,42 @@ body {
 	border-top: 1px solid #f3f4f6;
 }
   
-  .section-label {
+.section-label {
 	color: #6B7280;
 	font-size: 0.875rem;
 	margin-bottom: 0.5rem;
-  }
+}
   
-  .doctor-info {
+.doctor-info {
 	display: flex;
 	align-items: center;
 	margin-bottom: 1rem;
-  }
+}
   
-  .doctor-name {
+.doctor-name {
 	font-weight: 600;
 	color: #111827;
-  }
+}
   
-  /* Schedule Section */
-  .schedule-info {
+/* Schedule Section */
+.schedule-info {
 	margin-top: 1rem;
-  }
+}
   
-  .schedule-time {
+.schedule-time {
 	font-weight: 600;
 	color: #111827;
 	font-size: 1rem;
-  }
+}
   
-  .card-proses {
+.card-proses {
 	display: flex;
 	justify-content: flex-end; 
 	align-items: center; 
 	margin-top: 4px;
-  }
+}
   
-  .status-card {
+.status-card {
 	display: flex; 
 	align-items: center; 
 	background-color: #f0f9ff; 
@@ -573,19 +573,19 @@ body {
 	border-radius: 8px; 
 	padding: 5px 15px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  }
+}
   
-  .status-icon {
+.status-icon {
 	color: #3b82f6; 
 	font-size: 16px; 
 	margin-right: 8px;
-  }
+}
   
-  .status-label {
+.status-label {
 	color: #3b82f6; 
 	font-size: 14px; 
 	font-weight: bold; 
-  }
+}
   
 
 /* Progress Section */
