@@ -75,4 +75,10 @@ class Admin extends CI_Controller
         $data['psychologists'] = $this->User_model->get_all_psychologists();
         $this->load->view('admin/daftar_psikolog', $data);
     }
+
+    public function review()
+    {
+        $data['psychologists'] = $this->User_model->get_inactive_psychologists();
+        $this->load->view('admin/review', $data);
+    }
 }

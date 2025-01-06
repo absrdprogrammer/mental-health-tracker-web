@@ -398,6 +398,7 @@ img#profilePreview {
   flex: 1;
   overflow: hidden;
   margin-top: 20px;
+  overflow-y: auto; 
 }
 
 .table-box-psikolog {
@@ -408,6 +409,15 @@ img#profilePreview {
   flex: 1;
   overflow: hidden;
   margin-top: 20px;
+  overflow-y: auto; 
+}
+
+.scroll-container {
+  max-height: 300px; /* Batas tinggi untuk scroll vertikal */
+  overflow-y: auto;  /* Menambahkan scroll vertikal */
+  overflow-x: auto;  /* Menambahkan scroll horizontal */
+  border: 1px solid #ddd; /* Border untuk elemen scroll */
+  margin-top: 10px;
 }
 
 .table-header {

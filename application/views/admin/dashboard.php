@@ -28,6 +28,9 @@
                 <button class="list-btn" onclick="window.location.href='<?= base_url('admin/psychologists') ?>'">
                     <i class="fa-solid fa-user-doctor"></i>
                 </button>
+                <button class="list-btn" onclick="window.location.href='<?= base_url('admin/review') ?>'">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </button>
             </div>
             <div class="menu-bottom">
                 <button class="logout-btn" onclick="window.location.href='<?= base_url('auth/logout') ?>'">
