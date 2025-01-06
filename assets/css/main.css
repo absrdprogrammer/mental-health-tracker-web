@@ -395,7 +395,7 @@ body {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
 	border-radius: 8px; /* Sudut melengkung */
 	margin: 20px; /* Jarak luar */
-  }
+}
   
   .status-booking-header h1 {
 	color: #ffffff; /* Warna teks */
@@ -404,14 +404,14 @@ body {
 	margin: 0; /* Hilangkan margin default */
 	font-weight: bold; /* Tebalkan teks */
 	text-transform: uppercase; /* Ubah teks menjadi huruf besar */
-  }
+}
   
   
-  .tabcontent {
+.tabcontent {
 	margin-top: 20px;
-  }
+}
   
-  .patient-card {
+.patient-card {
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	padding: 16px;
@@ -419,115 +419,114 @@ body {
 	width: 330px;
 	height: auto; /* Tinggi menyesuaikan konten */
 	margin-left: 20px;
-  }
+}
   
-  .card-header {
+.card-header {
 	font-weight: bold;
 	margin-bottom: 10px;
-  }
+}
   
-  .profile-image, .doctor-image {
+.profile-image, .doctor-image {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
 	margin-right: 10px;
-  }
+}
   
-  .patient-name {
+.patient-name {
 	font-size: 18px;
 	font-weight: bold;
-  }
+}
   
   
-  /* Card Container Styles */
-  .patient-cards-container {
+/* Card Container Styles */
+.patient-cards-container {
 	padding: 1rem;
-  }
+}
   
-  /* Card Styles */
-  .patient-card {
-	background: white;
-	border-radius: 1rem;
-	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-	transition: all 0.3s ease;
-	border: 1px solid rgba(229, 231, 235, 0.5);
-	overflow: hidden;
-  }
-  
-  .patient-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Card Header */
-  .card-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1.25rem 1.5rem;
-	border-bottom: 1px solid #f3f4f6;
-  }
-  
-  /* Patient ID */
-  .patient-id {
-	font-family: 'Inter', sans-serif, bold;
-	color: black;
-	font-size: 0.875rem;
-	font-weight: 500;
-	position:relative;
-	left:85%;
-  }
-  
-  
-  /* Patient Info Section */
-  .patient-info {
-	padding: 1.5rem;
-	
-  }
-  
-  /* Profile Image */
-  .profile-image {
-	width: 3rem;
-	height: 3rem;
-	border-radius: 50%;
-	object-fit: cover;
-	border: 2px solid #fff;
-	box-shadow: 0 0 0 2px #f3f4f6;
-  }
-  
-  .doctor-image {
-	width: 2.5rem;
-	height: 2.5rem;
-	border-radius: 50%;
-	object-fit: cover;
-	border: 2px solid #fff;
-	box-shadow: 0 0 0 2px #f3f4f6;
-  }
-  
-  /* Patient Details */
-  .patient-details {
-	margin-left: 1rem;
-  }
-  
-  .patient-name {
-	font-size: 1.125rem;
-	font-weight: 600;
-	color: #111827;
-	margin-bottom: 0.25rem;
-  }
-  
-  .patient-contact {
-	color: #6B7280;
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-  }
-  
+/* Card Styles */
+.patient-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    overflow: hidden;
+}
+
+.patient-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Patient ID */
+.patient-id {
+    font-family: 'Inter', sans-serif, bold;
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 500;
+    position:relative;
+    left:85%;
+}
+
+
+/* Patient Info Section */
+.patient-info {
+    padding: 1.5rem;
+}
+
+/* Profile Image */
+.profile-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #f3f4f6;
+}
+
+.doctor-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #f3f4f6;
+}
+
+/* Patient Details */
+.patient-details {
+    margin-left: 1rem;
+}
+
+.patient-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.patient-contact {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
   /* Doctor Section */
-  .doctor-section {
+.doctor-section {
 	margin-top: 1.5rem;
 	padding-top: 1.5rem;
 	border-top: 1px solid #f3f4f6;
-  }
+}
   
   .section-label {
 	color: #6B7280;
