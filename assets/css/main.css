@@ -443,90 +443,94 @@ body {
   .patient-cards-container {
 	padding: 1rem;
   }
-
-/* Card Styles */
-.patient-card {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(229, 231, 235, 0.5);
-    overflow: hidden;
-}
-
-.patient-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* Card Header */
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid #f3f4f6;
-}
-
-/* Patient ID */
-.patient-id {
-    font-family: 'Inter', sans-serif, bold;
-    color: black;
-    font-size: 0.875rem;
-    font-weight: 500;
-    position:relative;
-    left:85%;
-}
-
-
-/* Patient Info Section */
-.patient-info {
-    padding: 1.5rem;
-}
-
-/* Profile Image */
-.profile-image {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px #f3f4f6;
-}
-
-.doctor-image {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px #f3f4f6;
-}
-
-/* Patient Details */
-.patient-details {
-    margin-left: 1rem;
-}
-
-.patient-name {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #2658c2;
-    margin-bottom: 0.25rem;
-}
-
-.patient-contact {
-    color: #6B7280;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-}
-
-/* Doctor Section */
-.doctor-section {
+  
+  /* Card Styles */
+  .patient-card {
+	background: white;
+	border-radius: 1rem;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	transition: all 0.3s ease;
+	border: 1px solid rgba(229, 231, 235, 0.5);
+	overflow: hidden;
+  }
+  
+  .patient-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Card Header */
+  .card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.25rem 1.5rem;
+	border-bottom: 1px solid #f3f4f6;
+  }
+  
+  /* Patient ID */
+  .patient-id {
+	font-family: 'Inter', sans-serif, bold;
+	color: black;
+	font-size: 0.875rem;
+	font-weight: 500;
+	position:relative;
+	left:85%;
+  }
+  
+  
+  /* Patient Info Section */
+  .patient-info {
+	padding: 1rem;
+	
+  }
+  
+  /* Profile Image */
+  .profile-image {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 2px #f3f4f6;
+  }
+  
+  .doctor-image {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 2px #f3f4f6;
+  }
+  
+  /* Patient Details */
+  .patient-details {
+	display: flex;
+	flex-direction: column; /* Menyusun nama dan email secara vertikal */
+	flex-grow: 1; /
+	
+  }
+  
+  .patient-name {
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: #111827;
+	margin-bottom: 0.25rem;
+  }
+  
+  .patient-contact {
+	color: #6B7280;
+	font-size: 0.875rem;
+	line-height: 1rem;
+  }
+  
+  /* Doctor Section */
+  .doctor-section {
 	margin-top: 1.5rem;
 	padding-top: 1.5rem;
 	border-top: 1px solid #f3f4f6;
-}
+  }
   
   .section-label {
 	color: #6B7280;
