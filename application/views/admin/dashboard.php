@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="dashboard">
+    <div class="dashboard-admin">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="menu-top">
