@@ -76,4 +76,11 @@ class User_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+
+    public function get_inactive_psychologists()
+    {
+        $this->db->where('is_active', 0);
+        $query = $this->db->get('psikolog');
+        return $query->result();
+    }
 }
