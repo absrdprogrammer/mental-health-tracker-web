@@ -128,9 +128,9 @@
                                 <?php if (!empty($users)): ?>
                                     <?php foreach ($users as $user): ?>
                                         <tr>
-                                            <td><?= htmlspecialchars($user['full_name']); ?></td>
-                                            <td><?= htmlspecialchars($user['email']); ?></td>
-                                            <td><?= $user['is_active'] ? 'Active' : 'Inactive'; ?></td>
+                                            <td><?= htmlspecialchars($user->full_name); ?></td>
+                                            <td><?= htmlspecialchars($user->email); ?></td>
+                                            <td><?= $user->is_active ? 'Active' : 'Inactive'; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: ?>
@@ -142,31 +142,34 @@
                         </table>
                     </div>
 
-                    <!-- Table Jurnal -->
+                    <!-- Table Psikolog -->
                     <div class="table-box">
                         <div class="table-header">
-                            <h3>Data Jurnal</h3>
-                            <a href="<?php echo base_url('admin/jurnal'); ?>" class="see-all-btn">See All</a>
+                            <h3>Data Psikolog</h3>
+                            <a href="<?php echo base_url('admin/daftarpsikolog'); ?>" class="see-all-btn">See All</a>
                         </div>
                         <table class="data-table">
                             <thead>
                                 <tr>
-                                    <th>Tanggal</th>
-                                    <th>Judul</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>2024-12-01</td>
-                                    <td>Jatuh Hati</td>
-                                    <td>Completed</td>
-                                </tr>
-                                <tr>
-                                    <td>2024-12-02</td>
-                                    <td>Ada Apa dengan Cinta?</td>
-                                    <td>Pending</td>
-                                </tr>
+                                <?php if (!empty($psychologists)): ?>
+                                    <?php foreach ($psychologists as $psychologist): ?>
+                                        <tr>
+                                            <td><?= htmlspecialchars($psychologist->full_name); ?></td>
+                                            <td><?= htmlspecialchars($psychologist->email); ?></td>
+                                            <td><?= $psychologist->is_active ? 'Active' : 'Inactive'; ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="3">No psychologists found.</td>
+                                    </tr>
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>

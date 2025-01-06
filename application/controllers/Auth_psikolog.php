@@ -53,6 +53,7 @@ class Auth_psikolog extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('birth_date', 'Tanggal Lahir', 'required');
         $this->form_validation->set_rules('gender', 'Jenis Kelamin', 'required');
+        $this->form_validation->set_rules('clinic_location', 'Alamat Klinik', 'required|min_length[12]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
 
         if ($this->form_validation->run() === FALSE) {
@@ -96,6 +97,7 @@ class Auth_psikolog extends CI_Controller
                 'full_name' => $this->input->post('full_name'),
                 'dob' => $this->input->post('birth_date'),
                 'gender' => $this->input->post('gender'),
+                'clinic_location' => $this->input->post('clinic_location'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
                 'photo' => $photo,
                 'certificate' => $certificate

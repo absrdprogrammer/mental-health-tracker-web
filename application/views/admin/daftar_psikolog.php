@@ -73,45 +73,47 @@
         </div>
       </header>
 
-      <div class="user-list">
-        <h2 class="table-title">Daftar Psikolog</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Tanggal Register</th>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Status</th>
-              <th>Jumlah Pasien</th>
-              <th>Image</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>25/10/24</td>
-              <td>Dr.Sahlah R</td>
-              <td>sahlahr08@gmail.com</td>
-              <td class="status active">Active</td>
-              <td>3 Pasien</td>
-              <td>
-                <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Foto Sahlah" class="profile-pic" />
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>08/06/24</td>
-              <td>Dr.jaehyun06</td>
-              <td>jaehyun06@gmail.com</td>
-              <td class="status non-active">Non Active</td>
-              <td>5 Pasien</td>
-              <td>
-               <img src="<?php echo base_url('assets/img/mas.jpg'); ?>" alt="Foto Jaehyun" class="profile-pic" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="tables-container">
+        <!-- Table Pengguna -->
+        <div class="table-box-psikolog">
+          <div class="table-header">
+            <h3>Data Psikolog</h3>
+          </div>
+          <table class="data-table-psikolog">
+            <thead>
+              <tr>
+                <th>Tanggal Register</th>
+                <th>Nama</th>
+                <th>Jumlah Pasien</th>
+                <th>Pending</th>
+                <th>Confirmed</th>
+                <th>Canceled</th>
+                <th>Finished</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php if (!empty($psychologists)): ?>
+                <?php foreach ($psychologists as $psychologist): ?>
+                  <tr>
+                    <td><?php echo date('Y-m-d', strtotime($psychologist->created_at)); ?></td>
+                    <td><?= htmlspecialchars($psychologist->full_name); ?></td>
+                    <td><?php echo $psychologist->patient_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->pending_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->confirmed_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->canceled_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->finished_count; ?> Pasien</td>
+                    <td><?= $psychologist->is_active ? 'Active' : 'Inactive'; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <tr>
+                  <td colspan="3">No users found.</td>
+                </tr>
+              <?php endif; ?>
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
   </div>

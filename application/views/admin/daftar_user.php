@@ -73,48 +73,43 @@
         </div>
       </header>
 
-      <div class="user-list">
-        <h2 class="table-title">Daftar User</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Tanggal Register</th>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Status</th>
-              <th>Jumlah Jurnal</th>
-              <th>Jumlah Post</th>
-              <th>Image</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>25/10/24</td>
-              <td>Sahlah R</td>
-              <td>sahlahr08@gmail.com</td>
-              <td class="status active">Active</td>
-              <td>3 jurnal</td>
-              <td>4 post</td>
-              <td>
-                <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="Foto Sahlah" class="profile-pic" />
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>08/06/24</td>
-              <td>jaehyun06</td>
-              <td>jaehyun06@gmail.com</td>
-              <td class="status non-active">Non Active</td>
-              <td>3 jurnal</td>
-              <td>4 post</td>
-              <td>
-                <img src="<?php echo base_url('assets/img/mas.jpg'); ?>" alt="Foto Jaehyun" class="profile-pic" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="tables-container">
+        <!-- Table Pengguna -->
+        <div class="table-box-list">
+          <div class="table-header">
+            <h3>Data Pengguna</h3>
+          </div>
+          <table class="data-table-list">
+            <thead>
+              <tr>
+                <th>Tanggal Register</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Jumlah Jurnal</th>
+                <th>Jumlah Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php if (!empty($users)): ?>
+                <?php foreach ($users as $user): ?>
+                  <tr>
+                    <td><?php echo date('Y-m-d', strtotime($user->created_at)); ?></td>
+                    <td><?= htmlspecialchars($user->full_name); ?></td>
+                    <td><?= htmlspecialchars($user->email); ?></td>
+                    <td><?= $user->is_active ? 'Active' : 'Inactive'; ?></td>
+                    <td><?= $user->journal_count; ?></td>
+                    <td><?= $user->post_count; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <tr>
+                  <td colspan="3">No users found.</td>
+                </tr>
+              <?php endif; ?>
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
   </div>
