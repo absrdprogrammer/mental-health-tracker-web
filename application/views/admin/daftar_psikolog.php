@@ -17,7 +17,7 @@
 <body>
   <div class="dashboard-list">
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar-list">
       <div class="menu-top">
         <button class="home-btn" onclick="window.location.href='<?= base_url('admin') ?>'">
           <i class="fas fa-home"></i>
