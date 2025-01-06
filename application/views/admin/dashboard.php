@@ -23,13 +23,13 @@
                     <i class="fas fa-home"></i>
                 </button>
                 <button class="list-btn" onclick="window.location.href='<?= base_url('admin/users') ?>'">
-                    <i class="fas fa-clipboard-list"></i>
+                    <i class="fas fa-users"></i>
                 </button>
                 <button class="list-btn" onclick="window.location.href='<?= base_url('admin/psychologists') ?>'">
                     <i class="fa-solid fa-user-doctor"></i>
                 </button>
                 <button class="list-btn" onclick="window.location.href='<?= base_url('admin/review') ?>'">
-                    <i class="fa-solid fa-user-doctor"></i>
+                    <i class="fas fa-clipboard-list"></i>
                 </button>
             </div>
             <div class="menu-bottom">
@@ -54,7 +54,7 @@
                         </button>
                     </div>
                     <div class="user-profile">
-                        <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
+                        <img src="<?php echo base_url('assets/img/profile-default.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
                         <div id="dropdownMenu" class="dropdown-menu">
                             <a href="<?php echo base_url('admin/profile'); ?>" id="profile">
                                 <i class="fas fa-user"></i> Profile
@@ -75,6 +75,13 @@
                         <p><?= $counts['total_users'] ?></p>
                     </div>
                 </div>
+                <div class="analytics-card total-psikolog">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <div class="text-container">
+                        <h3>Total Psikolog</h3>
+                        <p><?= $counts['total_psychologists'] ?></p>
+                    </div>
+                </div>
                 <div class="analytics-card total-journal">
                     <i class="fas fa-book"></i>
                     <div class="text-container">
@@ -87,13 +94,6 @@
                     <div class="text-container">
                         <h3>Total Post</h3>
                         <p><?= $counts['total_messages'] ?></p>
-                    </div>
-                </div>
-                <div class="analytics-card total-psikolog">
-                    <i class="fa-solid fa-user-doctor"></i>
-                    <div class="text-container">
-                        <h3>Total Psikolog</h3>
-                        <p>100</p>
                     </div>
                 </div>
             </section>

@@ -52,6 +52,23 @@ class User_model extends CI_Model
         return $query->result();
     }
 
+    public function get_counts_psychologist($psychologist_id)
+    {
+        $this->db->select('COUNT(DISTINCT bookings.user_id) AS patient_count,
+                       COUNT(CASE WHEN bookings.status = "pending" THEN 1 END) AS pending_count,
+                       COUNT(CASE WHEN bookings.status = "confirmed" THEN 1 END) AS confirmed_count,
+                       COUNT(CASE WHEN bookings.status = "canceled" THEN 1 END) AS canceled_count,
+                       COUNT(CASE WHEN bookings.status = "finished" THEN 1 END) AS finished_count');
+        $this->db->from('psikolog');
+        $this->db->join('bookings', 'bookings.psychologist_id = psikolog.id', 'left');
+        $this->db->where('psikolog.id', $psychologist_id);  // Menambahkan filter berdasarkan ID psikolog
+        $this->db->group_by('psikolog.id');
+
+        $query = $this->db->get();
+        return $query->row();  // Menggunakan row() karena hanya ada satu psikolog berdasarkan ID
+    }
+
+
     // Fungsi untuk mengambil data psikolog berdasarkan ID
     public function get_psychologist_by_id($psychologist_id)
     {

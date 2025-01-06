@@ -7,7 +7,7 @@ class Psikolog extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        // $this->check_login();
+        $this->check_login();
         $this->load->library('session');
         $this->load->model('Booking_model');
         $this->load->model('User_model');
@@ -16,6 +16,7 @@ class Psikolog extends CI_Controller
     {
         $psychologist_id = $this->session->userdata('psikolog_id');
 
+        $data['counts'] = $this->User_model->get_counts_psychologist($psychologist_id);
         $data['bookings'] = $this->Booking_model->get_bookings($psychologist_id); // Ambil data dari model
         $data['psychologist'] = $this->User_model->get_psychologist_by_id($psychologist_id); // Ambil data dari model
         $this->load->view('psikolog/psikolog', $data); // Kirim data ke view

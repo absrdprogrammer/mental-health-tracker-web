@@ -23,10 +23,13 @@
           <i class="fas fa-home"></i>
         </button>
         <button class="list-btn" onclick="window.location.href='<?= base_url('admin/users') ?>'">
-          <i class="fas fa-clipboard-list"></i>
+          <i class="fas fa-users"></i>
         </button>
         <button class="list-btn" onclick="window.location.href='<?= base_url('admin/psychologists') ?>'">
           <i class="fa-solid fa-user-doctor"></i>
+        </button>
+        <button class="list-btn" onclick="window.location.href='<?= base_url('admin/review') ?>'">
+          <i class="fas fa-clipboard-list"></i>
         </button>
       </div>
       <div class="menu-bottom">
@@ -51,7 +54,7 @@
             </button>
           </div>
           <div class="user-profile">
-            <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
+            <img src="<?php echo base_url('assets/img/profile-default.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
             <div id="dropdownMenu" class="dropdown-menu">
               <a href="<?php echo base_url('admin/profile'); ?>" id="profile">
                 <i class="fas fa-user"></i> Profile
@@ -71,36 +74,36 @@
             <h3>Data Pengguna</h3>
           </div>
           <div class="scroll-container">
-          <table class="data-table-list">
-            <thead>
-              <tr>
-                <th>Tanggal Register</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Jumlah Jurnal</th>
-                <th>Jumlah Post</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php if (!empty($users)): ?>
-                <?php foreach ($users as $user): ?>
-                  <tr>
-                    <td><?php echo date('Y-m-d', strtotime($user->created_at)); ?></td>
-                    <td><?= htmlspecialchars($user->full_name); ?></td>
-                    <td><?= htmlspecialchars($user->email); ?></td>
-                    <td><?= $user->is_active ? 'Active' : 'Inactive'; ?></td>
-                    <td><?= $user->journal_count; ?></td>
-                    <td><?= $user->post_count; ?></td>
-                  </tr>
-                <?php endforeach; ?>
-              <?php else: ?>
+            <table class="data-table-list">
+              <thead>
                 <tr>
-                  <td colspan="3">No users found.</td>
+                  <th>Tanggal Register</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Jumlah Jurnal</th>
+                  <th>Jumlah Post</th>
                 </tr>
-              <?php endif; ?>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <?php if (!empty($users)): ?>
+                  <?php foreach ($users as $user): ?>
+                    <tr>
+                      <td><?php echo date('Y-m-d', strtotime($user->created_at)); ?></td>
+                      <td><?= htmlspecialchars($user->full_name); ?></td>
+                      <td><?= htmlspecialchars($user->email); ?></td>
+                      <td><?= $user->is_active ? 'Active' : 'Inactive'; ?></td>
+                      <td><?= $user->journal_count; ?></td>
+                      <td><?= $user->post_count; ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                <?php else: ?>
+                  <tr>
+                    <td colspan="3">No users found.</td>
+                  </tr>
+                <?php endif; ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

@@ -54,7 +54,7 @@
                         </button>
                     </div>
                     <div class="user-profile">
-                        <img src="<?php echo base_url('assets/img/rt.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
+                        <img src="<?php echo base_url('assets/img/profile-default.jpg'); ?>" alt="User Avatar" class="profile-icon" id="profileIcon">
                         <div id="dropdownMenu" class="dropdown-menu">
                             <a href="<?php echo base_url('admin/profile'); ?>" id="profile">
                                 <i class="fas fa-user"></i> Profile
@@ -95,7 +95,7 @@
                                         <td><?= htmlspecialchars($psychologist->clinic_location); ?></td>
                                         <td>
                                             <a href="<?= base_url('uploads/' . $psychologist->certificate) ?>" target="_blank">
-                                                <i class="fas fa-file-alt" style="color: red;"></i>
+                                                <i class="fas fa-file-alt" style="color: blue;"></i>
                                             </a>
                                         </td>
                                         <td>
@@ -136,7 +136,6 @@
                             <h5 class="modal-title" id="modalLabel">
                                 <i class="fas fa-exclamation-circle"></i> Confirm Action
                             </h5>
-                            <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
                         <!-- Modal Body -->
