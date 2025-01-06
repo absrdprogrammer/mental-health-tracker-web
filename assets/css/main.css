@@ -410,16 +410,24 @@ body {
   .tabcontent {
 	margin-top: 20px;
   }
-  
-  .patient-card {
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	padding: 16px;
-	background-color: #fff;
-	width: 330px;
-	height: auto; /* Tinggi menyesuaikan konten */
-	margin-left: 20px;
-  }
+/* Container for Patient Cards */
+.patient-cards-container {
+    padding: 1rem;
+}
+
+/* Patient Card */
+.patient-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    overflow: hidden;
+    padding: 16px;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+}
   
   .card-header {
 	font-weight: bold;
@@ -509,12 +517,13 @@ body {
   .patient-details {
 	display: flex;
 	flex-direction: column; /* Menyusun nama dan email secara vertikal */
+	flex-grow: 1;
   }
   
   .patient-name {
 	font-size: 1.125rem;
 	font-weight: 600;
-	color: #5ecc23;
+	color: #2331cc;
 	margin-bottom: 0.25rem;
 	margin: 0;
   }
