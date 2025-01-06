@@ -398,6 +398,7 @@ img#profilePreview {
   flex: 1;
   overflow: hidden;
   margin-top: 20px;
+  overflow-y: auto; 
 }
 
 .table-box-psikolog {
@@ -408,6 +409,7 @@ img#profilePreview {
   flex: 1;
   overflow: hidden;
   margin-top: 20px;
+  overflow-y: auto; 
 }
 
 .table-header {
