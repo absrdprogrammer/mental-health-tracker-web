@@ -131,6 +131,7 @@
             <div class="patient-card">
               <!-- Informasi Pasien -->
               <div class="patient-info">
+                <div class="flex items-center">
                   <!-- Foto Profil Pasien -->
                   <img class="profile-image" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient" />
                   <!-- Detail Pasien -->
