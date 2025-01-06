@@ -407,6 +407,31 @@ body {
 	text-transform: uppercase; /* Ubah teks menjadi huruf besar */
   }
   
+  .tablinks {
+	padding: 10px 25px;
+	background: transparent;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	margin-right: 5px;
+	margin-left: 20px;
+  }
+  
+  /* Sembunyikan tab secara default */
+  .hidden {
+	display: none;
+  }
+  
+  /* Gaya aktif tab */
+  .tablinks.active {
+	border-color: #007bff; /* Warna border aktif */
+	color: #007bff; /* Warna teks aktif */
+	
+  }
+  .tablinks.text-blue-600 {
+	color: #2563eb; /* Tailwind Blue */
+	border-bottom: 2px solid #2563eb;
+  }
   
   .tabcontent {
 	margin-top: 20px;
@@ -577,11 +602,27 @@ body {
 	padding: 5px 15px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   }
+ 
+.cancel-card {
+	display: flex; 
+	align-items: center; 
+	background-color: #f0f9ff; 
+	border: 1px solid #f6573b; 
+	border-radius: 8px; 
+	padding: 5px 18px; 
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
   
   .status-icon {
 	color: #3b82f6; 
 	font-size: 16px; 
 	margin-right: 8px;
+  }
+
+  .cancel-icon {
+	color: #f63b3b; /* Warna ikon */
+	font-size: 20px; /* Ukuran ikon */
+	margin-right: 8px; /* Jarak antara ikon dan teks */
   }
   
   .status-label {
@@ -590,6 +631,11 @@ body {
 	font-weight: bold; 
   }
   
+  .note-text {
+	margin-top: 8px; /* Jarak atas teks catatan */
+	font-style: italic;
+	font-size: small;
+  }
 
 /* Progress Section */
 .progress-section {
