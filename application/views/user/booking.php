@@ -38,7 +38,6 @@
           <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
           <span class="site-name">MindfulMatters</span>
         </div>
-
         <div class="header-right">
           <div class="search-container">
             <input type="text" placeholder="Search something..." class="search-bar" />
@@ -81,7 +80,6 @@
                   </button>
                 </div>
               </div>
-
               <div id="moodModal" class="modal">
                 <div class="modal-content">
                   <span class="close" id="closeModal">&times;</span>
@@ -132,9 +130,7 @@
               <!-- Informasi Pasien -->
               <div class="patient-info">
                 <div class="flex items-center">
-                  <!-- Foto Profil Pasien -->
                   <img class="profile-image" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient" />
-                  <!-- Detail Pasien -->
                   <div class="patient-details">
                     <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
                     <p class="patient-contact"><?php echo $booking->user_email; ?></p>
@@ -190,7 +186,6 @@
           </span>
         </div>
       </div>
-
     </div>
   </div>
 </body>

@@ -443,7 +443,6 @@ body {
   .patient-cards-container {
 	padding: 1rem;
   }
-  
 
 /* Card Styles */
 .patient-card {
@@ -482,8 +481,6 @@ body {
 
 /* Patient Info Section */
 .patient-info {
-	display: flex;
-	align-items: center;
     padding: 1.5rem;
 }
 
@@ -514,7 +511,7 @@ body {
 .patient-name {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #3763c1;
+    color: #2658c2;
     margin-bottom: 0.25rem;
 }
 
