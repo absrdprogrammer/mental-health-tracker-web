@@ -33,13 +33,11 @@
     <!-- Main Content -->
     <div class="main-content">
       <!-- Header -->
-      <!-- Header -->
       <div class="header">
         <div class="header-left">
           <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
           <span class="site-name">MindfulMatters</span>
         </div>
-
         <div class="header-right">
           <div class="search-container">
             <input type="text" placeholder="Search something..." class="search-bar" />
