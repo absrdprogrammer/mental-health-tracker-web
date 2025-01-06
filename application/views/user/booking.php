@@ -33,6 +33,7 @@
     <!-- Main Content -->
     <div class="main-content">
       <!-- Header -->
+      <!-- Header -->
       <div class="header">
         <div class="header-left">
           <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" class="logo" />
@@ -81,6 +82,7 @@
                   </button>
                 </div>
               </div>
+
               <div id="moodModal" class="modal">
                 <div class="modal-content">
                   <span class="close" id="closeModal">&times;</span>
@@ -125,60 +127,64 @@
 
       <!-- Patient Cards -->
       <div class="grid grid-cols-3 gap-6 mt-6">
+        <!-- Contoh Data Pasien (Statis) -->
         <?php foreach ($bookings as $booking): ?>
           <?php if ($booking->status != 'canceled'): ?>
             <div class="patient-card">
               <div class="patient-info">
                 <div class="flex items-center">
-                  <img class="profile-image" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient">
-                  <div class="patient-details ml-4">
+                  <img class="profile-image" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient" />
+                  <div class="patient-details">
                     <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
                     <p class="patient-contact"><?php echo $booking->user_email; ?></p>
                   </div>
                 </div>
-              </div>
-              <div class="doctor-section">
-                <p class="section-label">Psychologist Info</p>
-                <div class="doctor-info">
-                  <img class="doctor-image" src="<?php echo base_url('uploads/' . $booking->psychologist_photo); ?>" alt="Psychologist" />
-                  <span class="doctor-name ml-2"><?php echo $booking->psychologist_name; ?></span>
-                </div>
-                <div class="schedule-info">
-                  <p class="section-label">Estimation Schedule</p>
-                  <p class="schedule-time"><?php echo date('d M, Y - H:i', strtotime($booking->booking_date . ' ' . $booking->booking_time)); ?></p>
+                <div class="doctor-section">
+                  <p class="section-label">Psychologist Info</p>
+                  <div class="doctor-info">
+                    <img class="doctor-image" src="<?php echo base_url('uploads/' . $booking->psychologist_photo); ?>" alt="Psychologist" />
+                    <span class="doctor-name ml-2"><?php echo $booking->psychologist_name; ?></span>
+                  </div>
+                  <div class="schedule-info">
+                    <p class="section-label">Estimation Schedule</p>
+                    <p class="schedule-time"><?php echo date('d M, Y - H:i', strtotime($booking->booking_date . ' ' . $booking->booking_time)); ?></p>
+                  </div>
                 </div>
               </div>
               <div class="card-proses">
                 <div class="status-card">
                   <span class="status-icon">
                     <?php
+                    // Tentukan ikon berdasarkan status
                     switch ($booking->status) {
                       case 'pending':
-                        echo '<i class="fas fa-clock" style="color: orange;"></i>';
+                        echo '<i class="fas fa-clock" style="color: orange;"></i>'; // Ikon jam untuk pending
                         break;
                       case 'confirmed':
-                        echo '<i class="fas fa-check-circle" style="color: green;"></i>';
+                        echo '<i class="fas fa-check-circle" style="color: green;"></i>'; // Ikon centang untuk confirmed
                         break;
                       case 'canceled':
-                        echo '<i class="fas fa-times-circle" style="color: red;"></i>';
+                        echo '<i class="fas fa-times-circle" style="color: red;"></i>'; // Ikon silang untuk canceled
                         break;
                       case 'finished':
-                        echo '<i class="fas fa-flag-checkered" style="color: blue;"></i>';
+                        echo '<i class="fas fa-flag-checkered" style="color: blue;"></i>'; // Ikon bendera untuk finished
                         break;
                       default:
-                        echo '<i class="fas fa-question-circle" style="color: gray;"></i>';
+                        echo '<i class="fas fa-question-circle" style="color: gray;"></i>'; // Ikon pertanyaan untuk status tidak dikenali
                         break;
                     }
                     ?>
                   </span>
                   <span class="status-label">
-                    <?php echo ucfirst($booking->status); ?>
+                    <?php echo ucfirst($booking->status); ?> <!-- Status dengan huruf pertama kapital -->
                   </span>
                 </div>
               </div>
+
             </div>
           <?php endif; ?>
         <?php endforeach; ?>
+        <!-- Tambahkan lebih banyak kartu pasien di sini -->
       </div>
     </div>
   </div>
