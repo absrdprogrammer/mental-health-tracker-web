@@ -482,7 +482,8 @@ body {
   /* Patient Info Section */
   .patient-info {
 	padding: 1rem;
-	
+	align-items: center;
+	gap: 1rem;
   }
   
   /* Profile Image */
@@ -509,7 +510,6 @@ body {
 	display: flex;
 	flex-direction: column; /* Menyusun nama dan email secara vertikal */
 	flex-grow: 1; /
-	
   }
   
   .patient-name {
