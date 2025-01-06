@@ -486,11 +486,6 @@ body {
     padding: 1.5rem;
 }
 
-.flex {
-	display: flex;
-	align-items: center;
-}
-
 /* Profile Image */
 .profile-image {
     width: 3rem;
