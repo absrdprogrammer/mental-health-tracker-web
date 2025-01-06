@@ -81,4 +81,28 @@ class Admin extends CI_Controller
         $data['psychologists'] = $this->User_model->get_inactive_psychologists();
         $this->load->view('admin/review', $data);
     }
+
+    public function approve($psychologist_id)
+    {
+        $psychologist = $this->User_model->get_psychologist_by_id($psychologist_id);
+
+        if ($psychologist && $psychologist->is_active == 0) {
+            $this->User_model->update_status($psychologist_id, 1);
+            echo json_encode(['status' => 'success', 'message' => 'Psychologist approved successfully.']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Psychologist cannot be approved.']);
+        }
+    }
+
+    public function decline($psychologist_id)
+    {
+        $psychologist = $this->User_model->get_psychologist_by_id($psychologist_id);
+
+        if ($psychologist && $psychologist->status === 'pending') {
+            $this->User_model->update_status($psychologist_id, 2);
+            echo json_encode(['status' => 'success', 'message' => 'Psychologist declined successfully.']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Psychologist cannot be declined.']);
+        }
+    }
 }

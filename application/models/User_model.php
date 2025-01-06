@@ -83,4 +83,15 @@ class User_model extends CI_Model
         $query = $this->db->get('psikolog');
         return $query->result();
     }
+
+    public function update_status($psychologist_id, $status)
+    {
+        $data = [
+            'is_active' => $status,
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+
+        $this->db->where('id', $psychologist_id);
+        return $this->db->update('psikolog', $data);
+    }
 }

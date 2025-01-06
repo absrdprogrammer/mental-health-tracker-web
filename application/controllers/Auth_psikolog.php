@@ -30,21 +30,38 @@ class Auth_psikolog extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('password');
 
+            // Get the user by email
             $user = $this->Auth_model->login($email, true);
 
-            if ($user && password_verify($password, $user['password'])) {
-                // Set session untuk user
-                $this->session->set_userdata('psikolog_id', $user['id']);
-                $this->session->set_userdata('psikolog_email', $user['email']);
-                log_message('info', 'Session psikolog_id set: ' . $this->session->userdata('psikolog_id'));
+            if ($user) {
+                // Check the account status
+                if ($user['is_active'] == 0) {
+                    $this->session->set_flashdata('error', 'Akun Anda sedang diverifikasi.');
+                    redirect('auth_psikolog');
+                } elseif ($user['is_active'] == 2) {
+                    $this->session->set_flashdata('error', 'Akun Anda telah ditolak.');
+                    redirect('auth_psikolog');
+                } else {
+                    // Verify password
+                    if (password_verify($password, $user['password'])) {
+                        // Set session for user
+                        $this->session->set_userdata('psikolog_id', $user['id']);
+                        $this->session->set_userdata('psikolog_email', $user['email']);
+                        log_message('info', 'Session psikolog_id set: ' . $this->session->userdata('psikolog_id'));
 
-                redirect('psikolog'); // Ganti dengan controller dashboard
+                        redirect('psikolog'); // Redirect to dashboard
+                    } else {
+                        $this->session->set_flashdata('error', 'Username atau password salah.');
+                        redirect('auth_psikolog');
+                    }
+                }
             } else {
-                $this->session->set_flashdata('error', 'Username atau password salah.');
+                $this->session->set_flashdata('error', 'Email tidak terdaftar.');
                 redirect('auth_psikolog');
             }
         }
     }
+
 
     public function register()
     {
