@@ -10,6 +10,7 @@ class Main extends CI_Controller
         $this->check_login();
         $this->load->model('Mood_model');
         $this->load->model('User_model');
+        $this->load->model('Booking_model');
         $this->load->library('session');
     }
     public function index()
@@ -50,13 +51,33 @@ class Main extends CI_Controller
         // Ambil data dari request
         $input = json_decode(file_get_contents('php://input'), true);
 
+        $user_id = $this->session->userdata('user_id');
         $psychologist_id = $input['psychologist_id'];
         $booking_date = $input['booking_date'];
         $booking_time = $input['booking_time'];
 
+        // Cek apakah user masih memiliki booking yang aktif
+        $this->db->where('user_id', $user_id);
+        $this->db->where_in('status', ['pending', 'confirmed']);
+        $active_booking = $this->db->get('bookings')->row();
+
+        if ($active_booking) {
+            echo json_encode(['message' => 'Anda masih memiliki booking yang aktif!']);
+            return;
+        }
+
+        // Cek apakah booking date dan time minimal hari berikutnya
+        $booking_datetime = strtotime("$booking_date $booking_time");
+        $current_datetime = strtotime('now');
+
+        if ($booking_datetime <= strtotime('tomorrow', $current_datetime)) {
+            echo json_encode(['message' => 'Booking hanya diperbolehkan minimal untuk hari berikutnya!']);
+            return;
+        }
+
         // Simpan ke database
         $data = [
-            'user_id' => $this->session->userdata('user_id'), // ID user dari session
+            'user_id' => $user_id, // ID user dari session
             'psychologist_id' => $psychologist_id,
             'booking_date' => $booking_date,
             'booking_time' => $booking_time,
@@ -68,6 +89,7 @@ class Main extends CI_Controller
         // Kirim respon ke frontend
         echo json_encode(['message' => 'Booking berhasil!']);
     }
+
 
     public function checkin_user()
     {
@@ -101,6 +123,7 @@ class Main extends CI_Controller
     {
         $user_id = $this->session->userdata('user_id');
         $data['user'] = $this->User_model->get_users_by_id($user_id);
+        $data['bookings'] = $this->Booking_model->get_bookings_by_user($user_id);
         $this->load->view('user/booking', $data);
     }
 }

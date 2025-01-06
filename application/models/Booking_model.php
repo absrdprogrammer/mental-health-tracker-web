@@ -7,11 +7,25 @@ class Booking_model extends CI_Model
     {
         $this->db->select('bookings.id as booking_id, bookings.booking_date, bookings.booking_time, bookings.status, 
                        users.full_name as user_name, users.email as user_email,
-                       psychologists.full_name as psychologist_name');
+                       psychologists.full_name as psychologist_name,
+                       psychologists.photo as psychologist_photo');
         $this->db->from('bookings');
         $this->db->join('users', 'users.user_id = bookings.user_id', 'left');
         $this->db->join('psikolog as psychologists', 'psychologists.id = bookings.psychologist_id', 'left');
         $this->db->where('bookings.psychologist_id', $psychologist_id);
+        return $this->db->get()->result();
+    }
+
+    public function get_bookings_by_user($user_id)
+    {
+        $this->db->select('bookings.id as booking_id, bookings.booking_date, bookings.booking_time, bookings.status, 
+                       users.full_name as user_name, users.email as user_email,
+                       psychologists.full_name as psychologist_name,
+                       psychologists.photo as psychologist_photo');
+        $this->db->from('bookings');
+        $this->db->join('users', 'users.user_id = bookings.user_id', 'left');
+        $this->db->join('psikolog as psychologists', 'psychologists.id = bookings.psychologist_id', 'left');
+        $this->db->where('bookings.user_id', $user_id);
         return $this->db->get()->result();
     }
 
