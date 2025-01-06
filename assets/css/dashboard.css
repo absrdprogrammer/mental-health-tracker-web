@@ -413,11 +413,52 @@ img#profilePreview {
 }
 
 .scroll-container {
-  max-height: 300px; /* Batas tinggi untuk scroll vertikal */
+  max-height: 100%; /* Batas tinggi untuk scroll vertikal */
   overflow-y: auto;  /* Menambahkan scroll vertikal */
   overflow-x: auto;  /* Menambahkan scroll horizontal */
   border: 1px solid #ddd; /* Border untuk elemen scroll */
   margin-top: 10px;
+}
+
+.status-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the buttons */
+}
+
+.action-btn {
+  font-size: 22px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.approve i {
+  color: green;
+}
+
+.decline i {
+  color: red;
+}
+
+.modal-footer {
+  flex-wrap: nowrap !important;
+}
+
+.btn-close {
+  width: 50px !important; /* Paksa ukuran lebar */
+  height: 30px !important; /* Paksa ukuran tinggi */
+  padding: 0 !important; /* Hilangkan padding */
+  background-color: red !important; /* Warna background merah */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.btn-close::before {
+  color: white !important; /* Warna ikon close */
+  font-size: 1rem !important; /* Ukuran ikon */
 }
 
 .table-header {
@@ -464,19 +505,17 @@ img#profilePreview {
 .data-table-list {
   width: 100%;
   border-collapse: collapse;
-  display: block;
   overflow-x: auto;
-  white-space: nowrap;
-  table-layout: fixed;
+  white-space: normal;
+  table-layout: auto;
 }
 
 .data-table-psikolog {
   width: 100%;
   border-collapse: collapse;
-  display: block;
   overflow-x: auto;
   white-space: nowrap;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .data-table th,

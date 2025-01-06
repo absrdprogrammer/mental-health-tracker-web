@@ -52,6 +52,23 @@ class User_model extends CI_Model
         return $query->result();
     }
 
+    public function get_counts_psychologist($psychologist_id)
+    {
+        $this->db->select('COUNT(DISTINCT bookings.user_id) AS patient_count,
+                       COUNT(CASE WHEN bookings.status = "pending" THEN 1 END) AS pending_count,
+                       COUNT(CASE WHEN bookings.status = "confirmed" THEN 1 END) AS confirmed_count,
+                       COUNT(CASE WHEN bookings.status = "canceled" THEN 1 END) AS canceled_count,
+                       COUNT(CASE WHEN bookings.status = "finished" THEN 1 END) AS finished_count');
+        $this->db->from('psikolog');
+        $this->db->join('bookings', 'bookings.psychologist_id = psikolog.id', 'left');
+        $this->db->where('psikolog.id', $psychologist_id);  // Menambahkan filter berdasarkan ID psikolog
+        $this->db->group_by('psikolog.id');
+
+        $query = $this->db->get();
+        return $query->row();  // Menggunakan row() karena hanya ada satu psikolog berdasarkan ID
+    }
+
+
     // Fungsi untuk mengambil data psikolog berdasarkan ID
     public function get_psychologist_by_id($psychologist_id)
     {
@@ -75,5 +92,23 @@ class User_model extends CI_Model
         $this->db->limit(5);
         $query = $this->db->get();
         return $query->result();
+    }
+
+    public function get_inactive_psychologists()
+    {
+        $this->db->where('is_active', 0);
+        $query = $this->db->get('psikolog');
+        return $query->result();
+    }
+
+    public function update_status($psychologist_id, $status)
+    {
+        $data = [
+            'is_active' => $status,
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+
+        $this->db->where('id', $psychologist_id);
+        return $this->db->update('psikolog', $data);
     }
 }

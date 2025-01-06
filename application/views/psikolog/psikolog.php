@@ -26,20 +26,6 @@
                                 </path>
                             </svg>
                         </a>
-                        <a href="#">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                        </a>
                     </div>
 
                     <!-- Logout Container -->
@@ -103,7 +89,7 @@
 
                         <!-- Bagian Profil (Trigger Dropdown) -->
                         <div class="relative inline-block text-left">
-                            <div class="flex items-center space-x-3 cursor-pointer" onclick="toggleDropdown()">
+                            <div class="flex items-center space-x-3 cursor-pointer">
                                 <div class="relative">
                                     <img src="<?php echo base_url('uploads/' . $psychologist->photo); ?>"
                                         alt="Alexander Smith" id="profileImageDisplay"
@@ -182,7 +168,7 @@
                     <div class="card1  p-4 shadow rounded-lg">
                         <p class="font-medium text-lg">Total Patients</p>
                         <div class="mt-2">
-                            <h3 class="text-3xl font-semibold">432</h3>
+                            <h3 class="text-3xl font-semibold"><?= $counts->patient_count ?></h3>
                             <p class="text-sm text-white-500">Patient</p>
                         </div>
                     </div>
@@ -190,7 +176,7 @@
                     <div class="card2 p-4 shadow rounded-lg">
                         <p class="font-medium text-lg">New Patient Pending</p>
                         <div class="mt-2">
-                            <h3 class="text-3xl font-semibold">432</h3>
+                            <h3 class="text-3xl font-semibold"><?= $counts->pending_count ?></h3>
                             <p class="text-sm text-white-500">Patient</p>
                         </div>
                     </div>
@@ -199,7 +185,7 @@
                     <div class="card3 p-4 shadow rounded-lg">
                         <p class="font-medium text-lg">New Patient Accepted</p>
                         <div class="mt-2">
-                            <h3 class="text-3xl font-semibold">432</h3>
+                            <h3 class="text-3xl font-semibold"><?= $counts->confirmed_count ?></h3>
                             <p class="text-sm text-white-500">Patient</p>
                         </div>
                     </div>
@@ -209,10 +195,11 @@
                     <div class="card4 p-4 shadow rounded-lg">
                         <p class="font-medium text-lg">Rejected</p>
                         <div class="mt-2">
-                            <h3 class="text-3xl font-semibold">432</h3>
+                            <h3 class="text-3xl font-semibold"><?= $counts->canceled_count ?></h3>
                             <p class="text-sm text-white-500">Patient</p>
                         </div>
                     </div>
+
                 </div>
                 <!-- Tabs -->
                 <div class="mt-8">
@@ -228,8 +215,8 @@
                             <!-- Archive Tab -->
                             <button id="tabArchive" onclick="openTab(event, 'Canceled')"
                                 class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Canceled</button>
-                            <button id="tabArchive" onclick="openTab(event, 'Canceled')"
-                                class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Archieved</button>
+                            <button id="tabFinished" onclick="openTab(event, 'Finished')"
+                                class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Finished</button>
                         </nav>
                     </div>
                 </div>
@@ -249,7 +236,7 @@
                                     <div class="patient-info">
                                         <div class="flex items-center">
                                             <img class="profile-image"
-                                                src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                                src="<?php echo base_url('assets/img/profile-default.jpg'); ?>"
                                                 alt="Patient">
                                             <div class="patient-details">
                                                 <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
@@ -292,7 +279,7 @@
                                     <div class="patient-info">
                                         <div class="flex items-center">
                                             <img class="profile-image"
-                                                src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                                src="<?php echo base_url('assets/img/profile-default.jpg'); ?>"
                                                 alt="Patient">
                                             <div class="patient-details">
                                                 <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
@@ -362,7 +349,50 @@
                                     <div class="patient-info">
                                         <div class="flex items-center">
                                             <img class="profile-image"
-                                                src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                                src="<?php echo base_url('assets/img/profile-default.jpg'); ?>"
+                                                alt="Patient">
+                                            <div class="patient-details">
+                                                <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
+                                                <p class="patient-contact"><?php echo $booking->user_email; ?></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="doctor-section">
+                                            <p class="section-label">Psychologist Info</p>
+                                            <div class="doctor-info">
+                                                <img class="doctor-image"
+                                                    src="<?php echo base_url('uploads/' . $booking->psychologist_photo); ?>"
+                                                    alt="Psychologist">
+                                                <span class="doctor-name ml-2"><?php echo $booking->psychologist_name; ?></span>
+                                            </div>
+
+                                            <div class="schedule-info">
+                                                <p class="section-label">Estimation Schedule</p>
+                                                <p class="schedule-time"><?php echo date('d M, Y - H:i', strtotime($booking->booking_date . ' ' . $booking->booking_time)); ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div id="Finished" class="tabcontent hidden mt-4">
+                    <p>Daftar pasien yang telah selesai.</p>
+                    <!-- Patient Cards -->
+                    <div class="grid grid-cols-3 gap-6 mt-6">
+                        <?php foreach ($bookings as $booking): ?>
+                            <?php if ($booking->status == 'finished'): ?>
+                                <div class="patient-card">
+                                    <div class="card-header">
+                                        <span class="patient-id">#<?php echo $booking->booking_id; ?></span>
+                                    </div>
+
+                                    <div class="patient-info">
+                                        <div class="flex items-center">
+                                            <img class="profile-image"
+                                                src="<?php echo base_url('assets/img/profile-default.jpg'); ?>"
                                                 alt="Patient">
                                             <div class="patient-details">
                                                 <h3 class="patient-name"><?php echo $booking->user_name; ?></h3>
