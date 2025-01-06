@@ -376,13 +376,9 @@ img#profilePreview {
   margin-top: 20px;
 }
 
-.table-container {
-  max-height: 300px; /* Batas tinggi container */
-  overflow-y: auto;  /* Scroll vertikal */
-  overflow-x: auto;  /* Scroll horizontal */
-  border: 1px solid #ccc; /* Opsional: menambahkan border */
-  padding: 5px; /* Opsional: padding di sekitar tabel */
-  background-color: #f9f9f9; /* Opsional: warna background */
+.tables-container {
+  display: flex;
+  gap: 20px;
 }
 
 .table-box {
@@ -414,6 +410,14 @@ img#profilePreview {
   overflow: hidden;
   margin-top: 20px;
   overflow-y: auto; 
+}
+
+.scroll-container {
+  max-height: 300px; /* Batas tinggi untuk scroll vertikal */
+  overflow-y: auto;  /* Menambahkan scroll vertikal */
+  overflow-x: auto;  /* Menambahkan scroll horizontal */
+  border: 1px solid #ddd; /* Border untuk elemen scroll */
+  margin-top: 10px;
 }
 
 .table-header {

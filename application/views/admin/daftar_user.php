@@ -70,6 +70,7 @@
           <div class="table-header">
             <h3>Data Pengguna</h3>
           </div>
+          <div class="scroll-container">
           <table class="data-table-list">
             <thead>
               <tr>
@@ -100,6 +101,7 @@
               <?php endif; ?>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
