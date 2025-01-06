@@ -481,7 +481,14 @@ body {
 
 /* Patient Info Section */
 .patient-info {
+	display: flex;
+	align-items: center;
     padding: 1.5rem;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
 }
 
 /* Profile Image */
