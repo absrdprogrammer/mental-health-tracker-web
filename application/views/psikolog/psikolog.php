@@ -261,7 +261,7 @@
                                             <p class="section-label">Psychologist Info</p>
                                             <div class="doctor-info">
                                                 <img class="doctor-image"
-                                                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                    src="<?php echo base_url('uploads/' . $booking->psychologist_photo); ?>"
                                                     alt="Psychologist">
                                                 <span class="doctor-name ml-2"><?php echo $booking->psychologist_name; ?></span>
                                             </div>
@@ -304,7 +304,7 @@
                                             <p class="section-label">Psychologist Info</p>
                                             <div class="doctor-info">
                                                 <img class="doctor-image"
-                                                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                    src="<?php echo base_url('uploads/' . $booking->psychologist_photo); ?>"
                                                     alt="Psychologist">
                                                 <span class="doctor-name ml-2"><?php echo $booking->psychologist_name; ?></span>
                                             </div>
@@ -374,7 +374,7 @@
                                             <p class="section-label">Psychologist Info</p>
                                             <div class="doctor-info">
                                                 <img class="doctor-image"
-                                                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                    src="<?php echo base_url('uploads/' . $booking->psychologist_photo); ?>"
                                                     alt="Psychologist">
                                                 <span class="doctor-name ml-2"><?php echo $booking->psychologist_name; ?></span>
                                             </div>
