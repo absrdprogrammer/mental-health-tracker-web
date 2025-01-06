@@ -82,14 +82,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>25/10/24</td>
-                <td>Alwan Nazieh</td>
-                <td>Alwan@gmail.com</td>
-                <td>Active</td>
-                <td>3 Jurnal</td>
-                <td>4 Post</td>
-              </tr>
+              <?php if (!empty($users)): ?>
+                <?php foreach ($users as $user): ?>
+                  <tr>
+                    <td><?php echo date('Y-m-d', strtotime($user->created_at)); ?></td>
+                    <td><?= htmlspecialchars($user->full_name); ?></td>
+                    <td><?= htmlspecialchars($user->email); ?></td>
+                    <td><?= $user->is_active ? 'Active' : 'Inactive'; ?></td>
+                    <td><?= $user->journal_count; ?></td>
+                    <td><?= $user->post_count; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <tr>
+                  <td colspan="3">No users found.</td>
+                </tr>
+              <?php endif; ?>
             </tbody>
           </table>
         </div>

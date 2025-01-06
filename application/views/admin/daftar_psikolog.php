@@ -75,19 +75,33 @@
               <tr>
                 <th>Tanggal Register</th>
                 <th>Nama</th>
-                <th>Email</th>
-                <th>Status</th>
                 <th>Jumlah Pasien</th>
+                <th>Pending</th>
+                <th>Confirmed</th>
+                <th>Canceled</th>
+                <th>Finished</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>25/10/24</td>
-                <td>Alwan Nazieh</td>
-                <td>Alwan@gmail.com</td>
-                <td>Active</td>
-                <td>3 Jurnal</td>
-              </tr>
+              <?php if (!empty($psychologists)): ?>
+                <?php foreach ($psychologists as $psychologist): ?>
+                  <tr>
+                    <td><?php echo date('Y-m-d', strtotime($psychologist->created_at)); ?></td>
+                    <td><?= htmlspecialchars($psychologist->full_name); ?></td>
+                    <td><?php echo $psychologist->patient_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->pending_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->confirmed_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->canceled_count; ?> Pasien</td>
+                    <td><?php echo $psychologist->finished_count; ?> Pasien</td>
+                    <td><?= $psychologist->is_active ? 'Active' : 'Inactive'; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <tr>
+                  <td colspan="3">No users found.</td>
+                </tr>
+              <?php endif; ?>
             </tbody>
           </table>
         </div>

@@ -3,12 +3,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User_model extends CI_Model
 {
-    public function get_users()
+    public function get_all_users()
     {
-        $this->db->select('full_name, email, is_active, role');
-        $query = $this->db->get('users');
-        return $query->result_array();
+        $this->db->select('users.*, 
+                       COUNT(messages.message_id) AS post_count, 
+                       COUNT(journals.journal_id) AS journal_count');
+        $this->db->from('users');
+        $this->db->join('messages', 'messages.user_id = users.user_id', 'left'); // Join dengan tabel posts
+        $this->db->join('journals', 'journals.user_id = users.user_id', 'left'); // Join dengan tabel journals
+        $this->db->where('users.role', 'user');
+        $this->db->group_by('users.user_id'); // Kelompokkan data berdasarkan user ID
+        $query = $this->db->get();
+        return $query->result();
     }
+
     public function get_users_by_id($user_id)
     {
         $this->db->where('user_id', $user_id);
@@ -17,9 +25,31 @@ class User_model extends CI_Model
         $query = $this->db->get('users');
         return $query->row_array();
     }
-    public function get_psychologists()
+
+    public function get_last_5_users()
     {
-        return $this->db->get('psikolog')->result();
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('role', 'user');
+        $this->db->order_by('created_at', 'DESC');
+        $this->db->limit(5);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function get_all_psychologists()
+    {
+        $this->db->select('psikolog.*, 
+                    COUNT(DISTINCT bookings.user_id) AS patient_count,
+                       COUNT(CASE WHEN bookings.status = "pending" THEN 1 END) AS pending_count,
+                       COUNT(CASE WHEN bookings.status = "confirmed" THEN 1 END) AS confirmed_count,
+                       COUNT(CASE WHEN bookings.status = "canceled" THEN 1 END) AS canceled_count,
+                       COUNT(CASE WHEN bookings.status = "finished" THEN 1 END) AS finished_count');
+        $this->db->from('psikolog');
+        $this->db->join('bookings', 'bookings.psychologist_id = psikolog.id', 'left');
+        $this->db->group_by('psikolog.id');
+
+        $query = $this->db->get();
+        return $query->result();
     }
 
     // Fungsi untuk mengambil data psikolog berdasarkan ID
@@ -35,5 +65,15 @@ class User_model extends CI_Model
         } else {
             return null;  // Jika tidak ada data ditemukan, mengembalikan null
         }
+    }
+
+    public function get_last_5_psychologists()
+    {
+        $this->db->select('*');
+        $this->db->from('psikolog');
+        $this->db->order_by('created_at', 'DESC');
+        $this->db->limit(5);
+        $query = $this->db->get();
+        return $query->result();
     }
 }

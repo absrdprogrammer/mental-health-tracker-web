@@ -29,15 +29,11 @@ class Journal extends CI_Controller
         $user_id = $this->session->userdata('user_id');
         $content = $this->input->post('content');
 
-        // Analisis sentimen
-        $sentiment = 'Neutral';
-
         // Data untuk disimpan
         $data = [
             'user_id' => $user_id,
             'content' => $content,
             'color' => $color,
-            'sentiment' => $sentiment,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
