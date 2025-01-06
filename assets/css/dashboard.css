@@ -26,7 +26,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: 22px;
-  height: auto;
+  height: 100vh;
   background: #00bfae;
   padding: 22px;
   padding-top: 35px;
