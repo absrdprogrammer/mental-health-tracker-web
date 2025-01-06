@@ -125,7 +125,22 @@
         <h1>Your Booking</h1>
       </div>
 
-      <!-- Patient Cards -->
+      <!-- Tabs -->
+      <div class="mt-8">
+          <div class="border-b border-gray-200">
+              <nav class="flex space-x-8">
+                  <!-- Accepted Tab -->
+                  <button id="tabAccepted" onclick="openTab(event, 'Accepted')"
+                      class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Accepted</button>
+                  <!-- In Queue Tab -->
+                  <button id="tabInQueue" onclick="openTab(event, 'Expired')"
+                      class="tablinks text-gray-500 py-4 px-1 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300">Expired</button>
+              </nav>
+          </div>
+      </div>
+
+       <!-- Patient Cards -->
+    <div id="Accepted" class="tabcontent hidden mt-4">
       <div class="grid grid-cols-3 gap-6 mt-6">
         <!-- Contoh Data Pasien (Statis) -->
         <?php foreach ($bookings as $booking): ?>
@@ -187,6 +202,48 @@
         <!-- Tambahkan lebih banyak kartu pasien di sini -->
       </div>
     </div>
+
+    <!-- Patient Cards Expired -->
+<div id="Expired" class="tabcontent hidden mt-4">
+  <div class="grid grid-cols-3 gap-6 mt-6">
+    <!-- Contoh Data Pasien (Statis) -->
+    <div class="patient-card">
+      <div class="patient-info">
+        <div class="flex items-center">
+          <img class="profile-image" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Patient" />
+          <div class="patient-details">
+            <h3 class="patient-name">Nana Zein</h3>
+            <p class="patient-contact">johndoe@example.com</p>
+          </div>
+        </div>
+        <div class="doctor-section">
+          <p class="section-label">Psychologist Info</p>
+          <div class="doctor-info">
+            <img class="doctor-image" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Psychologist" />
+            <span class="doctor-name ml-2">Dr. Jane Smith</span>
+          </div>
+          <div class="schedule-info">
+            <p class="section-label">Estimation Schedule</p>
+            <p class="schedule-time">05 Jan, 2025 - 14:30</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-proses-status">
+        <div class="cancel-card">
+          <span class="cancel-icon">
+            <i class="fas fa-ban"></i>
+            <!-- Ikon jam -->
+          </span>
+          <!-- <span class="cancel-label">Di Cancel</span> -->
+          
+          <p class="note-text text-sm">Booking ini dibatalkan karena psikolog tidak tersedia pada waktu yang telah ditentukan.</p>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+</div> 
   </div>
 </body>
 
