@@ -13,10 +13,11 @@ body {
 
 /* Sidebar */
 .sidebar {
-	width: 10px;
+	width: 17px;
 	height: auto;
 	background: #00bfae;
 	padding: 20px;
+	padding-top: 35px;
 	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
@@ -26,7 +27,7 @@ body {
 /*sidebar booking */
 .sidebar-booking {
 	width: 17px;
-	height: auto;
+	height: 100;
 	background: #00bfae;
 	padding: 20px;
 	padding-top: 35px;

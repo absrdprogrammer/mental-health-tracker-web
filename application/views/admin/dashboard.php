@@ -86,6 +86,13 @@
                         <p><?= $counts['total_messages'] ?></p>
                     </div>
                 </div>
+                <div class="analytics-card total-psikolog">
+          <i class="fa-solid fa-user-doctor"></i>
+          <div class="text-container">
+            <h3>Total Psikolog</h3>
+            <p>100</p>
+          </div>
+        </div>
             </section>
 
             <section class="tables-section">
@@ -157,62 +164,61 @@
             </section>
 
             <div class="weekly-analytics">
-                <div class="charts-container">
-                    <div class="chart-box">
-                        <h3>
-                            Daily Mood Overview
-                            <div class="chart-options">
-                                <button id="barChartBtn" class="btn active">
-                                    <i class="fas fa-chart-bar"></i>
-                                </button>
-                                <button id="lineChartBtn" class="btn">
-                                    <i class="fas fa-chart-line"></i>
-                                </button>
-                            </div>
-                        </h3>
-                        <div class="chart-container">
-                            <canvas id="barChartCanvas"></canvas>
-                        </div>
-                    </div>
-                    <div class="chart-box">
-                        <h3>
-                            Sentiment Overview
-                            <div class="chart-options">
-                                <button id="pieChartBtn" class="btn active">
-                                    <i class="fas fa-chart-pie"></i>
-                                </button>
-                            </div>
-                        </h3>
-                        <div class="chart-container">
-                            <canvas id="pieChartCanvas"></canvas>
-                        </div>
-                    </div>
+        <div class="charts-calendar-container">
+          <!-- Container Grafik Mingguan -->
+          <div class="charts-container">
+            <!-- Chart Box 1: Weekly Progress -->
+            <div class="chart-box">
+              <h3>
+                Daily Mood Overview
+                <div class="chart-options">
+                  <button id="barChartBtn" class="btn active">
+                    <i class="fas fa-chart-bar"></i>
+                  </button>
+                  <button id="lineChartBtn" class="btn">
+                    <i class="fas fa-chart-line"></i>
+                  </button>
                 </div>
+              </h3>
+              <div class="chart-container">
+                <canvas id="barChartCanvas"></canvas>
+              </div>
             </div>
-        </main>
 
-        <!-- Calendar Section -->
+            <!-- Chart Box 2: Mood Tracker -->
+            <div class="chart-box">
+              <h3>
+                Sentiment Overview
+                <div class="chart-options">
+                  <button id="pieChartBtn" class="btn active">
+                    <i class="fas fa-chart-pie"></i>
+                  </button>
+                </div>
+              </h3>
+              <div class="chart-container">
+                <canvas id="pieChartCanvas"></canvas>
+              </div>
+            </div>
+          </div>
         <div class="calendar-container" id="calendar">
-            <div class="calendar-body">
-                <div class="calendar-header">
-                    <h3>Calender</h3>
-                </div>
-                <div class="calendar-navigation">
-                    <button id="prevMonth" class="nav-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <span class="calendar-month-year" id="currentMonthYear"></span>
-                    <button id="nextMonth" class="nav-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                <div class="calendar-grid" id="calendarGrid"></div>
+          <div class="calendar-body">
+            <div class="calendar-navigation">
+              <button id="prevMonth" class="nav-btn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <span class="calendar-month-year" id="currentMonthYear"></span>
+              <button id="nextMonth" class="nav-btn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
-            <div class="current-time">
-                <h3>Current Time</h3>
-                <div id="timeDisplay" class="time-display">--:--:--</div>
+            <div class="calendar-grid" id="calendarGrid">
+              <!-- Days will be dynamically generated -->
             </div>
+          </div>
         </div>
+      </div>
+
+       
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
