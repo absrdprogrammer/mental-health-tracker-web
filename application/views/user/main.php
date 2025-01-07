@@ -214,8 +214,12 @@
             <div id="scoreModal" class="modal-score hidden">
               <div class="modal-content-score">
                 <div id="loadingAnimation" class="loading-spinner"></div>
-                <p id="scoreContent" class="hidden">Your Mental Health Score: 85</p>
-                <button id="closeModalBtn" class="btn">Close</button>
+                <p id="scoreContent" class="hidden"><strong>Score: 85</strong></p>
+                <p id="categoryContent" class="hidden"><strong>Category: Resilient</strong>
+                <p id="interpretationContent" class="hidden"><strong>Your mental health is strong and stable. Keep it up!</strong></p>
+                <div id="errorMessage" class="hidden"></div>
+                <br>
+                <button id="closeModalBtn" class="btn active">Close</button>
               </div>
             </div>
 
@@ -305,16 +309,45 @@
       const modal = document.getElementById('scoreModal');
       const loading = document.getElementById('loadingAnimation');
       const scoreContent = document.getElementById('scoreContent');
+      const categoryContent = document.getElementById('categoryContent');
+      const interpretationContent = document.getElementById('interpretationContent');
 
       // Tampilkan modal dan loading spinner
       modal.classList.remove('hidden');
       loading.classList.remove('hidden');
       scoreContent.classList.add('hidden');
+      categoryContent.classList.add('hidden');
+      interpretationContent.classList.add('hidden');
 
       // Simulasi proses loading
       setTimeout(() => {
-        loading.classList.add('hidden');
-        scoreContent.classList.remove('hidden');
+        // Panggil API
+        fetch(`get-mental-health-score`)
+          .then(response => response.json())
+          .then(data => {
+
+            if (!data.success) {
+              loading.classList.add('hidden');
+              errorMessage.textContent = data.message;
+              errorMessage.classList.remove('hidden');
+              return;
+            }
+            // Perbarui data di modal
+            document.getElementById('scoreContent').innerText = data.score;
+            document.getElementById('categoryContent').innerText = data.category;
+            document.getElementById('interpretationContent').innerText = data.interpretation;
+
+            // Sembunyikan loading dan tampilkan konten skor
+            loading.classList.add('hidden');
+            scoreContent.classList.remove('hidden');
+            categoryContent.classList.remove('hidden');
+            interpretationContent.classList.remove('hidden');
+          })
+          .catch(error => {
+            console.error('Error fetching score:', error);
+            alert('Error fetching mental health score. Please try again.');
+            modal.classList.add('hidden'); // Tutup modal jika gagal
+          });
       }, 2000); // Durasi 2 detik
     });
 

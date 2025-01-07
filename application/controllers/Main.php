@@ -126,4 +126,23 @@ class Main extends CI_Controller
         $data['bookings'] = $this->Booking_model->get_bookings_by_user($user_id);
         $this->load->view('user/booking', $data);
     }
+
+    public function get_mental_health_score()
+    {
+        $user_id = $this->session->userdata('user_id');
+
+        // Hitung skor mental health
+        $result = $this->Mood_model->calculate_mental_health_score($user_id);
+
+        if (!$result['success']) {
+            echo json_encode([
+                'success' => false,
+                'message' => $result['message'],
+            ]);
+            return;
+        }
+
+        // Berikan respon dalam format JSON
+        $this->output->set_content_type('application/json')->set_output(json_encode($result));
+    }
 }

@@ -104,7 +104,11 @@
                         <i class="bx bx-calendar icon" onclick="document.querySelector('.input-field[type=date]').focus();"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" name="gender" class="input-field" placeholder="Jenis Kelamin" required />
+                        <select name="gender" class="input-field" required>
+                            <option value="" disabled selected>Jenis Kelamin</option>
+                            <option value="male">Laki-laki</option>
+                            <option value="female">Perempuan</option>
+                        </select>
                         <i class="bx bx-user icon"></i>
                     </div>
                     <div class="input-box">
