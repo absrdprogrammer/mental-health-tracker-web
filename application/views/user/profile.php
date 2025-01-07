@@ -40,7 +40,8 @@
       </div>
 
       <!-- Submit Button -->
-      <button type="button" id="saveButton">Save Changes</button>
+      <button type="button" id="saveButton">Save</button>
+      <button type="button" id="backButton">Back</button>
     </form>
   </div>
 
