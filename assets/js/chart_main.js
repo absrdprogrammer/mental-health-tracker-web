@@ -62,7 +62,7 @@ fetch('get-mood-data') // Endpoint dari CodeIgniter
                                 const moodCount = context.raw.count;
                                 return `${context.raw.y === 1 ? '😢 Sad' :
                                         context.raw.y === 2 ? '😐 Neutral' :
-                                        '😊 Happy'}: ${moodCount}`;
+                                        '😊 Happy'}`;
                             }
                         }
                     },

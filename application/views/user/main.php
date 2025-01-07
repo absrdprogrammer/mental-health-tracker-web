@@ -54,12 +54,12 @@
           </div>
           <div class="profile-container">
             <button class="icon-btn profile" id="profile-btn">
-              <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile" class="profile-img" />
+              <img src="<?php echo base_url('assets/img/profile-default.jpg'); ?>" alt="Profile" class="profile-img" />
             </button>
             <div class="profile-dropdown" id="profile-dropdown">
               <div class="profile-header">
                 <div class="image-container">
-                  <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
+                  <img src="<?php echo base_url('assets/img/profile-default.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
                   <button class="edit-btn" onclick="window.location.href='<?php echo base_url('main/edit_profile'); ?>'">
                     <i class="fas fa-pencil-alt"></i>
                   </button>
@@ -193,16 +193,33 @@
               <h3>
                 Your Weekly Progress
                 <div class="chart-options">
-                  <button id="barChartBtn" class="btn active">
-                    <i class="fas fa-chart-bar"></i>
-                  </button>
-                  <button id="lineChartBtn" class="btn">
-                    <i class="fas fa-chart-line"></i>
-                  </button>
+                  <div class="chart-options">
+                    <button id="barChartBtn" class="btn active">
+                      <i class="fas fa-chart-bar"></i>
+                    </button>
+                    <button id="checkScoreBtn" class="btn active">
+                      <i class="fas fa-info-circle"></i> <!-- Tambahkan ikon (opsional) -->
+                      <span>Check Score</span>
+                    </button>
+                  </div>
+
                 </div>
               </h3>
               <div class="chart-container">
                 <canvas id="barChartCanvas"></canvas>
+              </div>
+            </div>
+
+            <!-- Modal untuk menampilkan skor -->
+            <div id="scoreModal" class="modal-score hidden">
+              <div class="modal-content-score">
+                <div id="loadingAnimation" class="loading-spinner"></div>
+                <p id="scoreContent" class="hidden"><strong>Score: 85</strong></p>
+                <p id="categoryContent" class="hidden"><strong>Category: Resilient</strong>
+                <p id="interpretationContent" class="hidden"><strong>Your mental health is strong and stable. Keep it up!</strong></p>
+                <div id="errorMessage" class="hidden"></div>
+                <br>
+                <button id="closeModalBtn" class="btn active">Close</button>
               </div>
             </div>
 
@@ -237,7 +254,7 @@
                       <img id="psychologistImage" src="<?php echo base_url('uploads/' . $psychologist->photo); ?>" alt="Psychologist" />
                     </div>
                     <h3 class="psychologist-name"><?php echo $psychologist->full_name; ?></h3>
-                    <p id="psychologistTitle" class="psychologist-title">Experienced Psychologist</p>
+                    <p id="psychologistTitle" class="psychologist-title"><?php echo $psychologist->clinic_location; ?></p>
                     <button class="booking-btn" id="bookingBtn" onclick="openBookingModal(<?php echo $psychologist->id; ?>)">Booking Psikolog</button>
                   </div>
                 <?php endforeach; ?>
@@ -287,6 +304,58 @@
   <script src="<?php echo base_url('assets/js/tracker.js'); ?>"></script>
   <script src="<?php echo base_url('assets/js/mood.js'); ?>"></script>
   <script src="<?php echo base_url('assets/js/booking.js'); ?>"></script>
+  <script>
+    document.getElementById('checkScoreBtn').addEventListener('click', function() {
+      const modal = document.getElementById('scoreModal');
+      const loading = document.getElementById('loadingAnimation');
+      const scoreContent = document.getElementById('scoreContent');
+      const categoryContent = document.getElementById('categoryContent');
+      const interpretationContent = document.getElementById('interpretationContent');
+
+      // Tampilkan modal dan loading spinner
+      modal.classList.remove('hidden');
+      loading.classList.remove('hidden');
+      scoreContent.classList.add('hidden');
+      categoryContent.classList.add('hidden');
+      interpretationContent.classList.add('hidden');
+
+      // Simulasi proses loading
+      setTimeout(() => {
+        // Panggil API
+        fetch(`get-mental-health-score`)
+          .then(response => response.json())
+          .then(data => {
+
+            if (!data.success) {
+              loading.classList.add('hidden');
+              errorMessage.textContent = data.message;
+              errorMessage.classList.remove('hidden');
+              return;
+            }
+            // Perbarui data di modal
+            document.getElementById('scoreContent').innerText = data.score;
+            document.getElementById('categoryContent').innerText = data.category;
+            document.getElementById('interpretationContent').innerText = data.interpretation;
+
+            // Sembunyikan loading dan tampilkan konten skor
+            loading.classList.add('hidden');
+            scoreContent.classList.remove('hidden');
+            categoryContent.classList.remove('hidden');
+            interpretationContent.classList.remove('hidden');
+          })
+          .catch(error => {
+            console.error('Error fetching score:', error);
+            alert('Error fetching mental health score. Please try again.');
+            modal.classList.add('hidden'); // Tutup modal jika gagal
+          });
+      }, 2000); // Durasi 2 detik
+    });
+
+    document.getElementById('closeModalBtn').addEventListener('click', function() {
+      document.getElementById('scoreModal').classList.add('hidden');
+    });
+  </script>
+
 </body>
 
 </html>

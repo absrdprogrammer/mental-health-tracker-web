@@ -55,12 +55,12 @@
           </div>
           <div class="profile-container">
             <button class="icon-btn profile" id="profile-btn">
-              <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile" class="profile-img" />
+              <img src="<?php echo base_url('assets/img/profile-default.jpg'); ?>" alt="Profile" class="profile-img" />
             </button>
             <div class="profile-dropdown" id="profile-dropdown">
               <div class="profile-header">
                 <div class="image-container">
-                  <img src="<?php echo base_url('assets/img/gr.png'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
+                  <img src="<?php echo base_url('assets/img/profile-default.jpg'); ?>" alt="Profile Image" class="profile-img" id="profileImg" />
                   <button class="edit-btn" onclick="window.location.href='<?php echo base_url('main/edit_profile'); ?>'">
                     <i class="fas fa-pencil-alt"></i>
                   </button>
