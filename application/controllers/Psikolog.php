@@ -60,4 +60,16 @@ class Psikolog extends CI_Controller
             log_message('info', 'User ID in session: ' . $this->session->userdata('psikolog_id'));
         }
     }
+
+    public function update_status($booking_id)
+    {
+        $booking = $this->Booking_model->get_booking_by_id($booking_id);
+
+        if ($booking && $booking->status === 'pending') {
+            $this->Booking_model->update_status($booking_id, 'confirmed');
+            echo json_encode(['status' => 'success', 'message' => 'Booking approved successfully.']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Booking cannot be approved.']);
+        }
+    }
 }

@@ -46,6 +46,7 @@ class User_model extends CI_Model
                        COUNT(CASE WHEN bookings.status = "finished" THEN 1 END) AS finished_count');
         $this->db->from('psikolog');
         $this->db->join('bookings', 'bookings.psychologist_id = psikolog.id', 'left');
+        $this->db->where('psikolog.is_active', 1);
         $this->db->group_by('psikolog.id');
 
         $query = $this->db->get();

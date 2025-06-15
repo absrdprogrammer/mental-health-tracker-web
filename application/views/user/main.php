@@ -191,7 +191,7 @@
             <!-- Chart Box 1: Weekly Progress -->
             <div class="chart-box">
               <h3>
-                Your Weekly Progress
+                Your Daily Progress
                 <div class="chart-options">
                   <div class="chart-options">
                     <button id="barChartBtn" class="btn active">
@@ -214,9 +214,11 @@
             <div id="scoreModal" class="modal-score hidden">
               <div class="modal-content-score">
                 <div id="loadingAnimation" class="loading-spinner"></div>
-                <p id="scoreContent" class="hidden"><strong>Score: 85</strong></p>
-                <p id="categoryContent" class="hidden"><strong>Category: Resilient</strong>
-                <p id="interpretationContent" class="hidden"><strong>Your mental health is strong and stable. Keep it up!</strong></p>
+                <p id="scoreContent" class="hidden" style="margin-top: 15px; font-weight: bold; font-size: 1.2em;">
+                  <strong>Score: </strong><span id="scoreValue" style="margin-top: 15px; font-weight: bold; font-size: 1.2em; color: blue;">0</span>
+                </p>
+                <p id="categoryContent" class="hidden" style="color: #28a745; font-style: italic;"><strong>Category: Resilient</strong>
+                <p id="interpretationContent" class="hidden" style="color: #6c757d; font-size: 1em;"><strong>Your mental health is strong and stable. Keep it up!</strong></p>
                 <div id="errorMessage" class="hidden"></div>
                 <br>
                 <button id="closeModalBtn" class="btn active">Close</button>
@@ -333,7 +335,7 @@
               return;
             }
             // Perbarui data di modal
-            document.getElementById('scoreContent').innerText = data.score;
+            document.getElementById('scoreValue').textContent = data.score;
             document.getElementById('categoryContent').innerText = data.category;
             document.getElementById('interpretationContent').innerText = data.interpretation;
 

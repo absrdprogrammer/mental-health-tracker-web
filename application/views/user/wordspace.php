@@ -30,6 +30,11 @@
             <li class="color purple" onclick="showPopup('#ba68c8')"></li>
             <li class="color white" onclick="showPopup('#ffffff')"></li>
         </ul>
+        <div class="back-icon">
+            <a href="<?= base_url('main') ?>" title="Kembali">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
     </aside>
 
     <!-- Hero Section -->

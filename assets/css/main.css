@@ -1380,6 +1380,21 @@ h3 {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1000;
   }
+
+  #scoreContent {
+	margin-top: 15px;
+	font-weight: bold;
+  }
+  
+  #categoryContent {
+	color: #28a745; /* Hijau sukses */
+	font-style: italic;
+  }
+  
+  #interpretationContent {
+	color: #6c757d; /* Abu-abu */
+	font-size: 1em;
+  }
   
   .modal-content-score {
 	background-color: #fff;
@@ -1388,6 +1403,18 @@ h3 {
 	border-radius: 8px;
 	width: 25%;
 	text-align: center;
+  }
+
+  .modal-content-score p {
+	font-size: 1.2em;
+	line-height: 1.6;
+	color: #333;
+	margin-bottom: 10px;
+  }
+  
+  .modal-content-score p strong {
+	color: #2d89ef; /* Biru elegan */
+	font-size: 1.3em;
   }
 
   /* Loading Spinner */

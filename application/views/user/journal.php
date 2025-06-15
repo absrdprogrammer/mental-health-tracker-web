@@ -28,6 +28,11 @@
                 <li class="color purple" onclick="showPopup('#ba68c8')"></li>
                 <li class="color blue" onclick="showPopup('#4fc3f7')"></li>
             </ul>
+            <div class="back-icon">
+                <a href="<?= base_url('main') ?>" title="Kembali">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </a>
+            </div>
         </aside>
 
         <!-- Journals Section -->

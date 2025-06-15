@@ -9,6 +9,10 @@ class Auth_model extends CI_Model
         // Tentukan tabel yang akan digunakan berdasarkan parameter psikolog
         $table = $psikolog ? 'psikolog' : 'users';
 
+        // Tambahkan kondisi untuk role jika tabel adalah users
+        if ($table === 'users') {
+            $this->db->where('role', 'user');
+        }
         $this->db->where('email', $email);
         $query = $this->db->get($table);
 
