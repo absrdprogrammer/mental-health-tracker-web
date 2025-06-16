@@ -37,7 +37,7 @@
                 <button class="btn btn-2" id="register">Sign Up</button>
             </div>
 
-            <!-- Pesan Kesalahan Login -->
+            <!-- Pesan Kesalahan-->
             <?php if ($this->session->flashdata('error')): ?>
                 <div class="error-message">
                     <?php echo $this->session->flashdata('error'); ?>
@@ -77,14 +77,6 @@
                     <i class="bx bxl-github"></i>
                 </div>
             </div>
-
-            <!-- Pesan Kesalahan Register -->
-            <?php echo validation_errors('<div class="error-message">', '</div>'); ?>
-            <?php if ($this->session->flashdata('error')): ?>
-                <div class="error-message">
-                    <?php echo $this->session->flashdata('error'); ?>
-                </div>
-            <?php endif; ?>
 
             <!-- Register Form Container-->
             <div class="register-form">

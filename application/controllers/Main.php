@@ -56,6 +56,15 @@ class Main extends CI_Controller
         $booking_date = $input['booking_date'];
         $booking_time = $input['booking_time'];
 
+        // Cek apakah booking date dan time minimal hari berikutnya
+        $booking_datetime = strtotime("$booking_date $booking_time");
+        $current_datetime = strtotime('now');
+
+        if ($booking_datetime <= strtotime('tomorrow', $current_datetime)) {
+            echo json_encode(['message' => 'Booking hanya diperbolehkan minimal untuk hari berikutnya!']);
+            return;
+        }
+
         // Cek apakah user masih memiliki booking yang aktif
         $this->db->where('user_id', $user_id);
         $this->db->where_in('status', ['pending', 'confirmed']);
@@ -63,15 +72,6 @@ class Main extends CI_Controller
 
         if ($active_booking) {
             echo json_encode(['message' => 'Anda masih memiliki booking yang aktif!']);
-            return;
-        }
-
-        // Cek apakah booking date dan time minimal hari berikutnya
-        $booking_datetime = strtotime("$booking_date $booking_time");
-        $current_datetime = strtotime('now');
-
-        if ($booking_datetime <= strtotime('tomorrow', $current_datetime)) {
-            echo json_encode(['message' => 'Booking hanya diperbolehkan minimal untuk hari berikutnya!']);
             return;
         }
 
