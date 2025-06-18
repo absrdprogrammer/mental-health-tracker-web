@@ -24,23 +24,18 @@ Mindful Matters adalah aplikasi web yang dirancang untuk membantu individu meman
 1️⃣ Clone repository ini:
 git clone https://github.com/username/mindful-matters.git
 2️⃣ Import database:
-
-Buka phpMyAdmin
-Import file SQL yang tersedia di folder database/
-3️⃣ Atur konfigurasi database di:
-application/config/database.php
-4️⃣ Jalankan di local server (XAMPP / MAMP / Laragon).
+1. Buka phpMyAdmin
+2. Import file SQL yang tersedia di folder database/
+3. 3️⃣ Atur konfigurasi database di:
+4. application/config/database.php
+5. 4️⃣ Jalankan di local server (XAMPP / MAMP / Laragon).
 
 🧠 Struktur User
 1. Admin: Mengelola dan memverifikasi data
-
 2. User: Booking, jurnal, motivasi
-
 3. Psikolog: Kelola jadwal booking
 
 🔒 Keamanan
 1. Autentikasi untuk setiap user
-
 2. Validasi input untuk form booking dan jurnal
-
 3. Hanya psikolog terverifikasi yang bisa menerima booking
