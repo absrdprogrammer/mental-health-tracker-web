@@ -292,10 +292,10 @@ body {
 }
 
 .error-message {
-  background-color: #ffe0e0;  /* Soft red background */
-  color: #d8000c;            /* Dark red text */
+  background-color: #ffe0e0;
+  color: #d8000c;            
   padding: 12px 16px;
-  border-left: 4px solid #d8000c;  /* Red border for emphasis */
+  border-left: 4px solid #d8000c;
   border-radius: 6px;
   margin: 10px 0;
   font-size: 0.95rem;

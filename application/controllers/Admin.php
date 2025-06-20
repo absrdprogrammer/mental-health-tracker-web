@@ -99,7 +99,7 @@ class Admin extends CI_Controller
     {
         $psychologist = $this->User_model->get_psychologist_by_id($psychologist_id);
 
-        if ($psychologist && $psychologist->status === 'pending') {
+        if ($psychologist && $psychologist->is_active == 0) {
             $this->User_model->update_status($psychologist_id, 2);
             echo json_encode(['status' => 'success', 'message' => 'Psychologist declined successfully.']);
         } else {
